@@ -1,0 +1,23 @@
+.searchform {
+	margin: 10px 0 0 0;
+}
+.searchtitle {
+}
+input.searchfield {
+}
+input.searchfield[type=text] {
+	display:inline-block;
+	margin-bottom:0px;
+	height:40px;
+	padding:10px 10px;
+	margin:5px 0 0 0;
+}
+input.searchbutton[type=submit] {
+	display:inline-block;
+	height:40px; width: 100px;
+	margin: 5px 0 0 10px;
+	padding:5px;
+}
+input.searchbutton[type=submit]:hover {
+	background-color: ;
+}
