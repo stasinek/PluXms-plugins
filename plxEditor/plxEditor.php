@@ -7,6 +7,10 @@
  **/
 class plxEditor extends plxPlugin {
 
+	public $valid_path = false;
+	private $kind_array = array(0 => "plxeditor", 1 => "ckeditor");
+	const PLX_EDITOR = 0;
+	const CKE_EDITOR = 1;
 	/**
 	 * Constructeur de la classe
 	 *
@@ -16,6 +20,8 @@ class plxEditor extends plxPlugin {
 	 **/
 	public function __construct($default_lang) {
 
+		# Array of editors names, in future also list of default parameters to each. 
+		
 		# Appel du constructeur de la classe plxPlugin (obligatoire)
 		parent::__construct($default_lang);
 
@@ -23,28 +29,62 @@ class plxEditor extends plxPlugin {
 
 		# droits pour accèder à la page config.php du plugin
 		$this->setConfigProfil(PROFIL_ADMIN);
+		$this->addHook('AdminTopBottom', 'AdminTopBottom');
 
+		$this->valid_path = is_dir(PLX_ROOT.($this->getParam("folder")));
+		if(!$this->valid_path) 
+			return;
 		$this->plugPath = PLX_PLUGINS.__CLASS__.'/';
 
 		# déclaration pour ajouter l'éditeur
 		$static = $this->getParam('static')==1 ? '' : '|statique';
-
+		$editor = $this->getParam('kind');
 		# Déclarations des hooks
 		if(!preg_match('/(parametres_edittpl|comment'.$static.')/', basename($_SERVER['SCRIPT_NAME']))) {
-			$this->addHook('AdminTopEndHead', 'AdminTopEndHead');
-			$this->addHook('AdminFootEndBody', 'AdminFootEndBody');
-			$this->addHook('AdminArticlePrepend', 'AdminArticlePrepend'); # conversion des liens pour le preview d'un article
-			$this->addHook('plxAdminEditArticle', 'plxAdminEditArticle');
-			$this->addHook('AdminArticleTop', 'AdminArticleTop');
-			$this->addHook('AdminStaticTop', 'AdminStaticTop');
-			$this->addHook('AdminArticlePreview', 'AdminArticlePreview');
-			$this->addHook('ThemeEndHead', 'ThemeEndHead');
-		}
+			if ($editor==plxEditor::PLX_EDITOR)
+			{				
+				$this->addHook('AdminTopEndHead', 'plxAdminTopEndHead');
+				$this->addHook('AdminFootEndBody', 'plxAdminFootEndBody');
+				$this->addHook('AdminArticlePrepend', 'AdminArticlePrepend'); # conversion des liens pour le preview d'un article
+				$this->addHook('plxAdminEditArticle', 'plxAdminEditArticle');
+				$this->addHook('AdminArticleTop', 'AdminArticleTop');
+				$this->addHook('AdminStaticTop', 'AdminStaticTop');
+				$this->addHook('AdminArticlePreview', 'AdminArticlePreview');
+				$this->addHook('ThemeEndHead', 'ThemeEndHead');
+			}
+			if ($editor==plxEditor::CKE_EDITOR) 
+				{
+				$this->addHook('AdminTopEndHead', 'ckAdminTopEndHead');
+				$this->addHook('AdminFootEndBody', 'ckAdminFootEndBody');
+				$this->addHook('AdminArticlePrepend', 'AdminArticlePrepend'); # conversion des liens pour le preview d'un article
+				$this->addHook('plxAdminEditArticle', 'plxAdminEditArticle');
+				$this->addHook('AdminArticleTop', 'AdminArticleTop');
+				$this->addHook('AdminStaticTop', 'AdminStaticTop');
+				$this->addHook('AdminArticlePreview', 'AdminArticlePreview');
+				$this->addHook('ThemeEndHead', 'ThemeEndHead');
+				}
+			}
+	}
+	#----------
+	/**
+	 * Méthode qui affiche un message si le répertoire de stockage des fichiers n'est pas définit dans la config du plugin
+	 *
+	 * @return	stdio
+	 * @author	Stephane F
+	 **/
+	public function AdminTopBottom() {
+
+		$string = '
+		if($plxAdmin->plxPlugins->aPlugins["'.__CLASS__.'"]->getParam("folder")=="") {
+			echo "<p class=\"warning\">Plugin '.__CLASS__.'<br />'.$this->getLang("L_ERR_FOLDER_NOT_DEFINED").'</p>";
+			plxMsg::Display();
+		} elseif(!$plxAdmin->plxPlugins->aPlugins["'.__CLASS__.'"]->valid_path) {
+			echo "<p class=\"warning\">Plugin '.__CLASS__.'<br />'.$this->getLang("L_ERR_FOLDER_INVALID_DIR").'</p>";
+			plxMsg::Display();
+		}';
+		echo '<?php '.$string.' ?>';
 
 	}
-
-	#----------
-
 	/**
 	 * Méthode qui convertit les liens relatifs en liens absolus
 	 *
@@ -106,9 +146,9 @@ class plxEditor extends plxPlugin {
 	 * @return	stdio
 	 * @author	Stephane F
 	 **/
-	public function AdminTopEndHead() {
+	public function plxAdminTopEndHead() {
 		echo '<?php $plxAdmin->aConf["default_lang"] ?>';
-		echo '<link rel="stylesheet" type="text/css" href="'.$this->plugPath.'plxEditor/css/plxEditor.css" media="screen" />'."\n";
+		echo '<link rel="stylesheet" type="text/css" href="'.$this->plugPath.'plxEditor/plxEditor.css" media="screen" />'."\n";
 		echo '<link rel="stylesheet" type="text/css" href="'.$this->plugPath.'plxEditor/css/viewsource.css" media="screen" />'."\n";
 		echo '<?php
 			$js = "'.$this->plugPath.'plxEditor/lang/".$plxAdmin->aConf["default_lang"].".js";
@@ -118,14 +158,13 @@ class plxEditor extends plxPlugin {
 		echo '<?php $medias = $plxAdmin->aConf["medias"].($plxAdmin->aConf["userfolders"] ? $_SESSION["user"]."/" : ""); ?>';
 		echo '<script src="'.PLX_PLUGINS.'plxEditor/plxEditor/plxEditor.js"></script>'."\n";
 	}
-
 	/**
 	 * Méthode du hook AdminFootEndBody
 	 *
 	 * @return	stdio
 	 * @author	Stephane F
 	 **/
-	public function AdminFootEndBody() {
+	public function plxAdminFootEndBody() {
 		echo '
 		<script>
 			PLUXML_ROOT = "<?php echo $plxAdmin->racine ?>";
@@ -136,7 +175,41 @@ class plxEditor extends plxPlugin {
 		</script>
 		';
 	}
-
+	/**
+	 * Méthode du hook AdminTopEndHead
+	 *
+	 * @return	stdio
+	 * @author	Stanislaw Stasiak
+	 **/
+	public function ckAdminTopEndHead() {
+		echo '<?php $plxAdmin->aConf["default_lang"] ?>';
+		echo '<link rel="stylesheet" type="text/css" href="'.$this->plugPath.'ckEditor/main.css" media="screen" />'."\n";
+		echo '<link rel="stylesheet" type="text/css" href="'.$this->plugPath.'ckEditor/skins/neo/neo.css" media="screen" />'."\n";
+		echo '<?php $medias = $plxAdmin->aConf["medias"].($plxAdmin->aConf["userfolders"] ? $_SESSION["user"]."/" : ""); ?>';
+		echo '<script src="'.PLX_PLUGINS.'plxEditor/ckEditor/ckeditor.js"></script>'."\n";
+		echo '<?php
+			$js = "'.$this->plugPath.'plxEditor/lang/".$plxAdmin->aConf["default_lang"].".js";
+			if(!is_file($js)) $js = "'.$this->plugPath.'ckEditor/lang/fr.js";
+			echo "<script src=\"".$js."\"></script>\n";
+		?>';
+		echo '<script src="'.PLX_PLUGINS.'plxEditor/ckEditor/main.js"></script>'."\n";
+	}
+	/**
+	 * Méthode du hook AdminFootEndBody
+	 *
+	 * @return	stdio
+	 * @author	Stanislaw Stasiak
+	 **/
+	public function ckAdminFootEndBody() {
+		echo '
+		<script>
+			PLUXML_ROOT = "<?php echo $plxAdmin->racine ?>";
+			PLXEDITOR_PATH_MEDIAS = "<?php echo $medias ?>";
+			PLXEDITOR_PATH_PLUGINS = "<?php echo $plxAdmin->aConf["racine_plugins"] ?>";
+			initEditor();
+		</script>
+		';
+	}
 	/**
 	 * Méthode du hook ThemeEndHead
 	 *

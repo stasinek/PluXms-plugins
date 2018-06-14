@@ -29,7 +29,7 @@ class plxSearch extends plxPlugin {
 		$this->addHook('plxShowPageTitle', 'plxShowPageTitle');
 		$this->addHook('SitemapStatics', 'SitemapStatics');
 		$this->addHook('ThemeEndHead', 'ThemeEndHead');
-		$this->addHook('MySearchForm', 'form');
+		$this->addHook('SearchForm', 'form');
 	}
 
 	/**

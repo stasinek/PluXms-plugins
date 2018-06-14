@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document>
-	<title><![CDATA[plxEditor]]></title>
-	<author><![CDATA[Stéphane F.]]></author>
+	<title><![CDATA[Editor]]></title>
+	<author><![CDATA[Stéphane F. + Stanislaw S.]]></author>
 	<version>1.5.4</version>
 	<date>22/03/2017</date>
 	<site>http://pluxopolis.net</site>
-	<description><![CDATA[plxEditor wysiwyg editor]]></description>
+	<description><![CDATA[Wysiwyg Editors bundle]]></description>
 	<requirements></requirements>
 </document>
