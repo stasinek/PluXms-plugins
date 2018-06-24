@@ -1,0 +1,68 @@
+/**
+ * Plugin for Pluxml
+ * @author	DPFPIC
+ * Site : http://dpfpic.com
+ * Licence GNU_GPL
+ **/
+
+.scroll-to-top,
+.scroll-to-bottom {
+	padding: 2px;
+	position: fixed;
+	max-width: 64px;
+	max-height: 64px;
+	opacity: 0.7;
+	cursor: pointer;
+	z-index: 9999;
+}
+
+.sttb-middle-right .scroll-to-top {
+	top: 42%;
+	right: 10px;
+}
+
+.sttb-middle-right .scroll-to-bottom {
+	bottom: 42%;
+	right: 10px;
+}
+
+.sttb-middle-left .scroll-to-top {
+	top: 42%;
+	right: inherit;
+	left: 10px;
+}
+
+.sttb-middle-left .scroll-to-bottom {
+	bottom: 42%;
+	right: inherit;
+	left: 10px;
+}
+ 
+.sttb-bottom-right .scroll-to-top {
+	bottom: 20px;
+	right: 10px;
+}
+
+.sttb-bottom-right .scroll-to-bottom {
+	bottom: 20px;
+	right: 46px;
+}
+
+.sttb-bottom-left .scroll-to-top {
+	right: inherit;
+	bottom: 20px;
+	left: 10px;
+}
+
+.sttb-bottom-left .scroll-to-bottom {
+	right: inherit;
+	bottom: 20px;
+	left: 46px;
+}
+
+@media screen and (max-width:500px){	
+		.sttb-container {
+			display: none;
+		}
+
+}

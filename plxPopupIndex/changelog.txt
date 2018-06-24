@@ -1,0 +1,8 @@
+## Version 1.0.2 (19/11/2017)
+BUG problème d'enregistrement du texte de la popup (merci Jol)
+
+## Version 1.0.1 (04/10/2017)
+[+] Compatibilité avec le plugin CKEditor de Stéphane F. - http://pluxopolis.net
+
+## Version 1.0.0 (08/07/2017)
+Version initiale

@@ -1,0 +1,5 @@
+## Version 1.0.1 (15/10/2017)
+BUG Certaines icônes sont inversées, up à la place de down et l'inverse. Merci à Nyagrodha
+
+## Version 1.0.0 (16/07/2017)
+Version initiale

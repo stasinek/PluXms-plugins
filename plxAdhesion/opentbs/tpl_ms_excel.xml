@@ -1,0 +1,192 @@
+<?xml version="1.0"?>
+<?mso-application progid="Excel.Sheet"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:o="urn:schemas-microsoft-com:office:office"
+ xmlns:x="urn:schemas-microsoft-com:office:excel"
+ xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:html="http://www.w3.org/TR/REC-html40">
+ <DocumentProperties xmlns="urn:schemas-microsoft-com:office:office">
+  <Author>MAGUIRE</Author>
+  <LastAuthor>MAGUIRE</LastAuthor>
+  <LastPrinted>2013-04-10T12:56:49Z</LastPrinted>
+  <Created>2013-04-03T08:37:54Z</Created>
+  <LastSaved>2013-04-03T08:47:23Z</LastSaved>
+  <Version>14.00</Version>
+ </DocumentProperties>
+ <OfficeDocumentSettings xmlns="urn:schemas-microsoft-com:office:office">
+  <AllowPNG/>
+ </OfficeDocumentSettings>
+ <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
+  <WindowHeight>7740</WindowHeight>
+  <WindowWidth>12915</WindowWidth>
+  <WindowTopX>600</WindowTopX>
+  <WindowTopY>60</WindowTopY>
+  <ProtectStructure>False</ProtectStructure>
+  <ProtectWindows>False</ProtectWindows>
+ </ExcelWorkbook>
+ <Styles>
+  <Style ss:ID="Default" ss:Name="Normal">
+   <Alignment ss:Vertical="Bottom"/>
+   <Borders/>
+   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
+   <Interior/>
+   <NumberFormat/>
+   <Protection/>
+  </Style>
+  <Style ss:ID="m55391776">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:ShrinkToFit="1"
+    ss:WrapText="1"/>
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1"/>
+   </Borders>
+   <Interior ss:Color="#BFBFBF" ss:Pattern="Solid"/>
+  </Style>
+  <Style ss:ID="s62">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:ShrinkToFit="1"
+    ss:WrapText="1"/>
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1"/>
+   </Borders>
+   <Interior ss:Color="#BFBFBF" ss:Pattern="Solid"/>
+  </Style>
+  <Style ss:ID="s68">
+   <Alignment ss:Vertical="Bottom" ss:ShrinkToFit="1"/>
+  </Style>
+  <Style ss:ID="s69">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1"/>
+   </Borders>
+  </Style>
+  <Style ss:ID="s70">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1"/>
+   </Borders>
+   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="8" ss:Color="#000000"/>
+  </Style>
+ </Styles>
+ <Worksheet ss:Name="Feuil1">
+  <Table ss:ExpandedColumnCount="16" ss:ExpandedRowCount="5" x:FullColumns="1"
+   x:FullRows="1" ss:DefaultColumnWidth="60" ss:DefaultRowHeight="15">
+   <Column ss:AutoFitWidth="0" ss:Width="90.75" ss:Span="1"/>
+   <Column ss:Index="4" ss:AutoFitWidth="0" ss:Width="125.25"/>
+   <Column ss:AutoFitWidth="0" ss:Width="140.25"/>
+   <Column ss:AutoFitWidth="0" ss:Width="152.25"/>
+   <Column ss:AutoFitWidth="0" ss:Width="83.25" ss:Span="1"/>
+   <Column ss:Index="10" ss:AutoFitWidth="0" ss:Width="85.5"/>
+   <Column ss:AutoFitWidth="0" ss:Width="78" ss:Span="1"/>
+   <Column ss:Index="13" ss:AutoFitWidth="0" ss:Width="138" ss:Span="2"/>
+   <Column ss:Index="16" ss:AutoFitWidth="0" ss:Width="63.75"/>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">Liste des adhérents de l'association [e.nom_asso]</Data></Cell>
+   </Row>
+   <Row ss:Index="4" ss:AutoFitHeight="0" ss:Height="63">
+    <Cell ss:StyleID="s62"><Data ss:Type="String">Nom</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="String">Prénom</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="String">Profession</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="String">Email</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="String">Etablissement</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="String">Service</Data></Cell>
+    <Cell ss:MergeAcross="1" ss:StyleID="m55391776"><Data ss:Type="String">Adresse</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="String">Code Postal</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="String">Ville</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="String">Téléphone</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="String">Téléphone Secondaire ou poste</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="String">Choix</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="String">Mailing</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="String">Publication coordonnées</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="String">Inscription valide</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="66" ss:StyleID="s68">
+    <Cell ss:StyleID="s69"><Data ss:Type="String">[a.nom;block=Row]</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="String">[a.prenom]</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="String">[a.activite]</Data></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">[a.mail]</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="String">[a.etablissement]</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="String">[a.service]</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="String">[a.adresse1]</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="String">[a.adresse2]</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="String">[a.cp]</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="String">[a.ville]</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="String">[a.tel]</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="String">[a.tel_office]</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="String">[a.choix]</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="String">[a.mailing]</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="String">[a.coordonnees]</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="String">[a.validation]</Data></Cell>
+   </Row>
+  </Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <PageSetup>
+    <Layout x:Orientation="Landscape"/>
+    <Header x:Margin="0.3"/>
+    <Footer x:Margin="0.3"/>
+    <PageMargins x:Bottom="0.75" x:Left="0.7" x:Right="0.7" x:Top="0.75"/>
+   </PageSetup>
+   <Unsynced/>
+   <Print>
+    <ValidPrinterInfo/>
+    <PaperSizeIndex>9</PaperSizeIndex>
+    <Scale>45</Scale>
+    <HorizontalResolution>600</HorizontalResolution>
+    <VerticalResolution>600</VerticalResolution>
+   </Print>
+   <PageBreakZoom>60</PageBreakZoom>
+   <Selected/>
+   <Panes>
+    <Pane>
+     <Number>3</Number>
+     <ActiveRow>4</ActiveRow>
+     <ActiveCol>3</ActiveCol>
+    </Pane>
+   </Panes>
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+ </Worksheet>
+ <Worksheet ss:Name="Feuil2">
+  <Table ss:ExpandedColumnCount="1" ss:ExpandedRowCount="1" x:FullColumns="1"
+   x:FullRows="1" ss:DefaultColumnWidth="60" ss:DefaultRowHeight="15">
+   <Row ss:AutoFitHeight="0"/>
+  </Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <PageSetup>
+    <Header x:Margin="0.3"/>
+    <Footer x:Margin="0.3"/>
+    <PageMargins x:Bottom="0.75" x:Left="0.7" x:Right="0.7" x:Top="0.75"/>
+   </PageSetup>
+   <Unsynced/>
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+ </Worksheet>
+ <Worksheet ss:Name="Feuil3">
+  <Table ss:ExpandedColumnCount="1" ss:ExpandedRowCount="1" x:FullColumns="1"
+   x:FullRows="1" ss:DefaultColumnWidth="60" ss:DefaultRowHeight="15">
+   <Row ss:AutoFitHeight="0"/>
+  </Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <PageSetup>
+    <Header x:Margin="0.3"/>
+    <Footer x:Margin="0.3"/>
+    <PageMargins x:Bottom="0.75" x:Left="0.7" x:Right="0.7" x:Top="0.75"/>
+   </PageSetup>
+   <Unsynced/>
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+ </Worksheet>
+</Workbook>

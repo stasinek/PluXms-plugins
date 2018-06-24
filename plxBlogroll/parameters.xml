@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<document>
+	<parameter name="blogroll" type="cdata"><![CDATA[data/configuration/blogroll.xml]]></parameter>
+	<parameter name="pub_title" type="cdata"><![CDATA[Liens]]></parameter>
+</document>

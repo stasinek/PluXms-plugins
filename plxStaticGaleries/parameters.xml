@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<document>
+	<parameter name="extensions" type="cdata"><![CDATA[jpg,JPG,png,PNG,gif,GIF,bmp,BMP]]></parameter>
+	<parameter name="sort" type="cdata"><![CDATA[sort]]></parameter>
+	<parameter name="separateur" type="cdata"><![CDATA[ - ]]></parameter>
+</document>

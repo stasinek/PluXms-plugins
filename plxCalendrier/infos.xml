@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+	<title><![CDATA[plnCalendrier]]></title>
+	<author><![CDATA[Gari]]></author>
+	<version>2.0.1</version>
+	<date>27/02/2016</date>
+	<site></site>
+	<description><![CDATA[Permet d'afficher un calendrier d'événements. Nécessite le plugin technique plnStaticPages. Testé pour pluXml 5.4]]></description>
+</document>

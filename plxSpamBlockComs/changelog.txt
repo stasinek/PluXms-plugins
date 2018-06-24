@@ -1,0 +1,9 @@
+## Version 1.0.1 (14/10/2017) ##
+BUG correction de l'adresse d'accès au fichier de style (tabs) merci  à Th0m@s
+BUG ajout des icones updates manquants merci à Th0m@s
+BUG correction appel de variables langue merci à Th0m@s
+[+] AdminCommentsPrepend redondance des même header's location : remplacer par une variable de déclanchement ($plxAdminSpamAction) merci à Th0m@s
+
+## Version 1.0.0 (12/10/2017) ##
+[+] Introduction d'un système de vérification de mise à jour disponnible
+version initiale

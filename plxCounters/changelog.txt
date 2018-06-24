@@ -1,0 +1,27 @@
+## Version 1.0.6 (17/06/2017)
+[+] Introduction d'un système de vérification de mise à jour disponnible
+
+## Version 1.0.5 (19/05/2017) ##
+[+] Compatibilité PluXml 5.6
+
+## Version 1.0.4 (26/07/2016)
+[BUG] Durée d'une session pour Total des pages vues, pages vues aujourd'hui (Merci Stéphane)
+[+] Possibilité de changer la durée de la session pour le comptage Visiteur
+[+] Possibilité de changer la durée de la session pour le comptage Total des pages vues, pages vues aujourd'hui
+
+## Version 1.0.3 (08/07/2016)
+[BUG] Erreur lors de la création du répertoire config
+[BUG] Mauvais calcul dans le nombre de page vue par jour
+[+] Possibilité de désactivée la création de log par jour
+[+] Compatibilité PHP7
+
+## Version 1.0.2 (25/06/2016) ##
+Refonte complète du code
+
+## Version 1.0.1 (16/06/2016) ##
+[+] Ajout Total articles
+[+] Ajout Total commentaires
+
+## Version 1.0 (12/06/2016) ##
+version initiale
+

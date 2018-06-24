@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+	<title><![CDATA[ToolbarEditor]]></title>
+	<author><![CDATA[nIQnutn]]></author>
+	<version>0.2</version>
+	<date>28/10/2015</date>
+	<site>http://blog.niqnutn.com</site>
+	<description><![CDATA[Ajouter des boutons personnalisés à plxtoolbar]]></description>
+	<requirements>plxtoolbar</requirements>
+	<repository>http://blog.niqnutn.com/plugins/repository/index.php</repository>
+</document>

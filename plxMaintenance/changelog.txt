@@ -1,0 +1,20 @@
+## Version 1.0.5 (04/10/2017) ##
+[+] Compatibilité avec le plugin CKEditor de Stéphane F. - http://pluxopolis.net
+
+## Version 1.0.4 (27/08/2017) ##
+[+] item "Mode maintenance: Activé" dans la barre menu en rouge lorsque celui-ci est activé
+BUG: Correction CSS
+
+## Version 1.0.3 (14/08/2017) ##
+[+] Ajout d'un lien vers l'administration
+
+## Version 1.0.2 (08/08/2017) ##
+[+] Ajout d'un item "maintenance" dans la barre de menu à gauche
+
+## Version 1.0.1 (03/08/2017) ##
+BUG Non déclaration variable $html
+BUG Pb déclaration d'encodage UTF-8
+
+## Version 1.0.0 (31/07/2017) ##
+version initiale
+

@@ -1,0 +1,62 @@
+.plxFontAwesome code {
+    padding: 2px 4px;
+    color: #C7254E;
+    background-color: #F9F2F4;
+    border-radius: 4px;
+}
+
+.plxFontAwesome pre code {
+    display: block;
+    padding: 9.5px;
+    color: #333;
+    background-color: #F5F5F5;
+    border: 1px solid #EEE;
+    border-radius: 4px;
+}
+
+.plxFontAwesome .na {
+    color: #4F9FCF;
+}
+.plxFontAwesome .nt {
+    color: #2F6F9F;
+}
+.plxFontAwesome .s {
+    color: #D44950;
+}
+
+
+
+
+.plxFontAwesome .alert {
+    padding: 15px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+background-color: #F1F9F7;
+border-color: #E0F1E9;
+color: #1D9D74;
+margin-bottom: 20px;
+}
+
+.plxFontAwesome .list-group-item {
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+    margin-bottom: -1px;
+    background-color: #FFF;
+    border: 1px solid #DDD;
+}
+
+.plxFontAwesome .page-header {
+    padding-bottom: 9px;
+    margin: 40px 0px 20px;
+    border-bottom: 1px solid #EEE;
+}
+.plxFontAwesome h2 {
+
+    font-size: 30px;
+font-weight: bold;
+}
+.plxFontAwesome h3 {
+
+    font-size: 25px;
+}

@@ -1,0 +1,8 @@
+upload tiny + responsivefilemanager
+
+remplace tiny et ajoute les langues
+ajoute plugin youtube responsivefilemanager
+remplace filemanager sur le root et remplace la config.php (recopie le haut de la nouvelle)
+
+
+

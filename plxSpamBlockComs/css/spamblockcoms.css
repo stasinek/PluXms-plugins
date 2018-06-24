@@ -1,0 +1,36 @@
+/**
+ * Plugin for Pluxml
+ * @author	DPFPIC
+ * Site : http://dpfpic.com
+ * Licence GNU_GPL
+ **/
+
+.action{
+white-space:nowrap;
+min-width:182px;
+}
+.action br{display:none;}
+@media (max-width: 1023px) {
+.action br{display:inherit;}
+.action {min-width:118px;}
+}
+.icone {
+padding-right: 12rem;;
+}
+.txt {
+padding-right: 2rem;;
+}
+.action tr {
+border-bottom: 0px solid;
+}
+form.inline-div label{
+width: 450px ;
+}
+.blackList{
+width:220px;height:180px;
+}
+.whiteList{
+width:220px;
+height:180px;
+}
+

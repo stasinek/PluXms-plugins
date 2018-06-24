@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+	<title><![CDATA[SpamBlockComs]]></title>
+	<author><![CDATA[DPFPIC]]></author>
+	<version>1.0.1</version>
+	<date>14/10/2017</date>
+	<site>http://dpfpic.com</site>
+	<description><![CDATA[Gestion des SPAMS pour les commentaires (WhiteList, BlackList).]]></description>
+</document>

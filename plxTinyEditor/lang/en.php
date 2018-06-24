@@ -1,0 +1,31 @@
+<?php
+$LANG = array(
+	'L_TINYEDITOR_words'			=> 'words',
+	'L_TINYEDITOR_cancel'			=> 'Cancel',
+	'L_TINYEDITOR_submit'			=> 'Submit',
+	'L_TINYEDITOR_popupWarning'		=> 'Fail to open a popup window',
+	'L_TINYEDITOR_insertMedia'		=> 'Insert the media',
+	'L_TINYEDITOR_big_smile'		=> 'Big smile',
+	'L_TINYEDITOR_mad'				=> 'You\'re mad',
+	'L_TINYEDITOR_bold'				=> 'Bold',
+	'L_TINYEDITOR_italic'			=> 'Italic',
+	'L_TINYEDITOR_underline'		=> 'Underline',
+	'L_TINYEDITOR_strikethrough'	=> 'Strike the selection',
+	'L_TINYEDITOR_forecolor'		=> 'Text color',
+	'L_TINYEDITOR_backcolor'		=> 'Background color',
+	'L_TINYEDITOR_link'				=> 'Link',
+	'L_TINYEDITOR_unlink'			=> 'Remove the link',
+	'L_TINYEDITOR_removeformat'		=> 'Clear format',
+	'L_TINYEDITOR_justifyleft'		=> 'Justify on left side',
+	'L_TINYEDITOR_justifycenter'	=> 'Center',
+	'L_TINYEDITOR_justifyright'		=> 'Justify on right side',
+	'L_TINYEDITOR_insertorderedlist'=>'Numbered list',
+	'L_TINYEDITOR_insertunorderedlist'=>'Classic list',
+	'L_TINYEDITOR_subscript'		=> 'Subscript',
+	'L_TINYEDITOR_superscript'		=> 'Superscript',
+	'L_TINYEDITOR_html'				=> 'Show the source code',
+	'L_TINYEDITOR_fullscreen'		=> 'Full screen',
+	'L_TINYEDITOR_musttextmode'		=> 'Switch in text mode for saving',
+	'L_TINYEDITOR_disabledCmd'		=> 'Unabled in HTML mode'
+);
+?>

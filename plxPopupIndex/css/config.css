@@ -1,0 +1,49 @@
+/**
+ * Plugin for Pluxml
+ * @author	DPFPIC
+ * Site : http://dpfpic.com
+ * Licence GNU_GPL
+ **/
+
+form.inline-form label {
+	width: 300px ;
+}
+ 
+/* Gestion des onglets */
+.tab {
+	display:inline-block;
+	margin-left:3px;
+    margin-right:3px;
+	margin-bottom:10px;
+    cursor:pointer;
+	background: #FFFFFF;
+	border: 2px solid #bbbbbb;
+	padding: 8px;
+	border-radius: 15px 15px 0px 0px;
+	-moz-border-radius: 15px 15px 0px 0px;
+	-webkit-border-radius: 15px 15px 0px 0px;
+}
+
+.tab_1 {
+	background:#FFFFFF;
+    border-bottom:0px solid #bbbbbb;
+}
+
+.tab_0 {
+	background:#EEEEEE;
+	border-bottom:2px solid #bbbbbb;
+}
+
+.content_tab {
+	display:none;
+}
+
+/* update plugin */
+#update {
+	width:400px;
+	text-align:center;
+}
+
+#update .color {
+	color:#FF0000;
+}

@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<document>
+	<title><![CDATA[PluXML Email backup]]></title>
+	<author><![CDATA[François POTEAU]]></author>
+	<version>1.4</version>
+	<date>03/09/2016</date>
+	<site>https://github.com/frapfrap</site>
+	<description><![CDATA[Save the content of your blog and send the archive by email]]></description>
+	<requirements></requirements>
+</document>

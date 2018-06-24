@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<document>
+	<title><![CDATA[QuickSearch]]></title>
+	<author><![CDATA[i M@N]]></author>
+	<version>1.2</version>
+	<date>12/04/2013</date>
+	<site>http://imanweb.free.fr/PluXML/</site>
+	<description><![CDATA[Ajoute le plugin jQuery QuickSearch dans l'administration. Nécessite le plugin jQuery : http://wiki.pluxml.org/index.php?page=Plugins+officiels]]></description>
+	<requirements></requirements>
+</document>

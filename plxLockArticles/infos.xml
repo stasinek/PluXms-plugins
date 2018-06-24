@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+	<title><![CDATA[lockArticles]]></title>
+	<author><![CDATA[Rockyhorror]]></author>
+	<version>1.7</version>
+	<date>23/11/2016</date>
+	<site>http://thepoulpe.net</site>
+	<description><![CDATA[Ajout d'un mot de passe aux articles, categories et pages statiques]]></description>
+	<requirements></requirements>
+</document>

@@ -1,0 +1,30 @@
+input[type="color"]			{	width:40px;}
+
+.plnCalendrierAdmin h3		{ 	font-size:1.5em; font-style:italic}
+.plnCalendrierAdmin table	{	text-align:center;border-collapse:collapse;margin:1em 0;border:none;}
+.plnCalendrierAdmin table td,
+.plnCalendrierAdmin table th	{	border:none;text-align:center;padding:2px}
+
+
+
+div.plnCalendrierExample		{	margin:0;
+									border-collapse:collapse;
+									border:none;
+									border:1px solid #679;
+									padding:0 4px;
+									border-radius:5px;
+								}
+ 
+#plnCalendrierEvenements .select-style					{ 	width:100%;background-color:white;}
+
+#plnCalendrierAide p 			{	margin-bottom:5px;}
+
+a.plnCalendrierDetruire			{ 	background-color: transparent;
+									padding:0 0 0 16px;
+									margin:0 0 0 2px;
+									cursor:default;
+									width:16px;
+  									background: url("./plnCalendrier/images/16px-Crystal_Clear_action_stop.png") no-repeat 0 0;
+  								}
+
+#form_plxcalendrier h3			{	margin:10px 0;font-size:1.3em;color:#AA3;}

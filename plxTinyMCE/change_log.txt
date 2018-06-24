@@ -1,0 +1,41 @@
+﻿**** v 3.3 ****
+- fix warning : redefine get_aprofil() function
+**** v 3.2 ****
+- mod filemanager 9.10.1
+- mod tiny 4.3.11
+- fix youtube traduction
+**** v 3.1 ****
+- mod filemanager 9.9.5
+- add plugin fontawesome fonctionne pas
+- ...
+**** v 3.0 ****
+- bug fix preview issue
+**** v 2.9 ****
+- bug fix fullscreen issue for pluxml 5.4
+**** v 2.8 ****
+- bug fix image abs and rel for pluxml 5.4
+**** v 2.7 ****
+- bug fis edition plugin $check .= $this->getParam('pluginedit')==1 ? '' : '|plugin';
+**** v 2.6 ****
+- add fullscreen plugin
+**** v 2.5 ****
+- add tinymce v. 4.1.9 - responsive file manager v. 9.8.1
+- fix youtube language
+**** v 2.4 ****
+- add plugin system
+**** v 2.3.3 ****
+- add filemanager 2.3.5
+**** v 2.3.2 ****
+- change traduction
+- hidden root fied in config
+**** v 2.3.1 ****
+- add new version for youtube
+**** v 2.3. ****
+- add language for tiny and filemanager
+**** v 2.2. ****
+- add style_format_content
+**** v 2.1. ****
+- add aviary parametres
+**** v 2.0. ****
+- tinymce version version 4.0.11
+- responsive file manager version 9.3.0
