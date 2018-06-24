@@ -2,13 +2,14 @@
  * plxEditor
  *
  * @package PLX
- * @author	Stephane F
+ * @author	Stephane F + Stanislaw Stasiak
  **/
 PLXEDITOR={};
 
 function E$(id){return document.getElementById(id)}
 
 PLXEDITOR.editor=function() {
+	var codeopened = 0;
 
 	function create(editorName, textareaId){
 		this.path = {
@@ -67,21 +68,20 @@ PLXEDITOR.editor=function() {
 		//E$(this.textareaId+"-iframe").style.height = this.frame.document.body.scrollHeight + "px";
 	},
 	create.prototype.getEditorHtml=function() {
-
 		var toolbar = '\
-	<div id="'+this.textareaId+'-toolbar-icons" class="show">\
-	<span class="icon-list-numbered" onclick="'+this.editor+'.execCommand(\'insertorderedlist\')" title="'+lang.L_TOOLBAR_OL+'"></span>\
-	<span class="icon-list2" onclick="'+this.editor+'.execCommand(\'insertunorderedlist\')" title="'+lang.L_TOOLBAR_UL+'"></span>\
-	<span class="icon-pagebreak" onclick="'+this.editor+'.execCommand(\'inserthtml\', \'<hr />\')" title="'+lang.L_TOOLBAR_HR+'"></span>\
-	<span id="'+this.textareaId+'-smilies" class="icon-happy" onclick="'+this.editor+'.execCommand(\'smilies\')" title="'+lang.L_TOOLBAR_SMILIES+'"></span>\
-	<span class="icon-images" onclick="mediasManager.openPopup(\''+this.editor+'\', false, \'PLXEDITOR_fallback\')" title="'+lang.L_TOOLBAR_MEDIAS+'"></span>\
-	<span id="'+this.textareaId+'-youtube" class="icon-youtube" onclick="'+this.editor+'.execCommand(\'youtube\')" title="'+lang.L_TOOLBAR_YOUTUBE+'">'+lang.L_TOOLBAR_YOUTUBE+'&nbsp</span>\
-	<span class="icon-terminal" onclick="'+this.editor+'.execCommand(\'code\')" title="'+lang.L_TOOLBAR_CODE+'">'+lang.L_TOOLBAR_CODE+'&nbsp</span>\
-	<span id="'+this.textareaId+'-linker" class="icon-link" onclick="'+this.editor+'.execCommand(\'link\')" title="'+lang.L_TOOLBAR_LINK+'">'+lang.L_TOOLBAR_LINK+'&nbsp</span>\
-	<span id="'+this.textareaId+'-html" class="icon-embed2" onclick="'+this.editor+'.execCommand(\'html\')" title="'+lang.L_TOOLBAR_HTML+'"style="float:right;">'+lang.L_TOOLBAR_HTML+'&nbsp</span>\
-	<span id="'+this.textareaId+'-fullscreen" class="icon-expand" onclick="'+this.editor+'.execCommand(\'fullscreen\')" title="'+lang.L_TOOLBAR_FULLSCREEN+'" style="float:right;">'+lang.L_TOOLBAR_FULLSCREEN+'&nbsp</span>\
-	<br>\
-	<select onchange="'+this.editor+'.execCommand(\'formatblock\', this.value);this.selectedIndex=0;"data-tag="style">\
+	<div  onselectstart="return false;" id="'+this.textareaId+'-toolbar-icons" class="show">\
+	<span onselectstart="return false;" class="icon-list-numbered" onclick="'+this.editor+'.execCommand(\'insertorderedlist\')" title="'+lang.L_TOOLBAR_OL+'"></span>\
+	<span onselectstart="return false;" class="icon-list2" onclick="'+this.editor+'.execCommand(\'insertunorderedlist\')" title="'+lang.L_TOOLBAR_UL+'"></span>\
+	<span onselectstart="return false;" class="icon-quotes-right" onclick="'+this.editor+'.execCommand(\'formatBlock\', \'<blockquote>\')" title="'+lang.L_TOOLBAR_QUOTE+'"></span>\
+	<span onselectstart="return false;" class="icon-pagebreak" onclick="'+this.editor+'.execCommand(\'inserthtml\', \'<hr />\')" title="'+lang.L_TOOLBAR_HR+'"></span>\
+	<span onselectstart="return false;" id="'+this.textareaId+'-smilies" class="icon-happy" onclick="'+this.editor+'.execCommand(\'smilies\')" title="'+lang.L_TOOLBAR_SMILIES+'"></span>\
+	<span onselectstart="return false;" class="icon-image" onclick="mediasManager.openPopup(\''+this.editor+'\', false, \'PLXEDITOR_fallback\')" title="'+lang.L_TOOLBAR_MEDIAS+'"></span>\
+	<span onselectstart="return false;" id="'+this.textareaId+'-youtube" class="icon-youtube" onclick="'+this.editor+'.execCommand(\'youtube\')" title="'+lang.L_TOOLBAR_YOUTUBE+'"></span>\
+	<span onselectstart="return false;" id="'+this.textareaId+'-linker" class="icon-link" onclick="'+this.editor+'.execCommand(\'link\')" title="'+lang.L_TOOLBAR_LINK+'"></span>\
+	<span onselectstart="return false;" id="'+this.textareaId+'-fullscreen" class="icon-expand" onclick="'+this.editor+'.execCommand(\'fullscreen\')" title="'+lang.L_TOOLBAR_FULLSCREEN+'" style="float:right;">'+lang.L_TOOLBAR_FULLSCREEN+'&nbsp</span>\
+	<span onselectstart="return false;" id="'+this.textareaId+'-html" class="icon-embed2" onclick="'+this.editor+'.execCommand(\'html\')" title="'+lang.L_TOOLBAR_HTML+'"style="float:right;">'+lang.L_TOOLBAR_HTML+'&nbsp</span>\
+	</br>\
+	<select onselectstart="return false;" onchange="'+this.editor+'.execCommand(\'formatblock\', this.value);this.selectedIndex=0;"data-tag="style">\
 		<option value="">STYLE</option>\
 		<option value="<h1>">H1</option>\
 		<option value="<h2>">H2</option>\
@@ -99,16 +99,16 @@ PLXEDITOR.editor=function() {
 		<option value="justifyright">&#xe913 '+lang.L_TOOLBAR_P_RIGHT+'</option>\
 		<option value="justifyFull">&#xe914 '+lang.L_TOOLBAR_P_JUSTIFY+'</option>\
 	</select>\
-	<span class="icon-bold" onclick="'+this.editor+'.execCommand(\'bold\')" title="'+lang.L_TOOLBAR_BOLD+'"></span>\
-	<span class="icon-italic" onclick="'+this.editor+'.execCommand(\'italic\')" title="'+lang.L_TOOLBAR_ITALIC+'"></span>\
-	<span class="icon-underline" onclick="'+this.editor+'.execCommand(\'underline\')" title="'+lang.L_TOOLBAR_UNDERLINE+'"></span>\
-	<span class="icon-strikethrough" onclick="'+this.editor+'.execCommand(\'strikethrough\')" title="'+lang.L_TOOLBAR_STRIKE+'"></span>\
-	<span id="'+this.textareaId+'-forecolor" class="icon-adjust" onclick="'+this.editor+'.execCommand(\'forecolor\')" title="'+lang.L_TOOLBAR_FORECOLOR+'"></span>\
-	<span id="'+this.textareaId+'-backcolor" class="icon-tint" onclick="'+this.editor+'.execCommand(\'backcolor\')" title="'+lang.L_TOOLBAR_BACKCOLOR+'"></span>\
-	<span class="icon-superscript" onclick="'+this.editor+'.execCommand(\'superscript\')" title="'+lang.L_TOOLBAR_SUPERSCRIPT+'"></span>\
-	<span class="icon-subscript" onclick="'+this.editor+'.execCommand(\'subscript\')" title="'+lang.L_TOOLBAR_SUBSCRIPT+'"></span>\
-	<span class="icon-quotes-right" onclick="'+this.editor+'.execCommand(\'formatBlock\', \'<blockquote>\')" title="'+lang.L_TOOLBAR_QUOTE+'"></span>\
-	<span class="icon-pilcrow" onclick="'+this.editor+'.execCommand(\'inserthtml\', \'<br />\')" title="'+lang.L_TOOLBAR_BR+'"></span>\
+	<span onselectstart="return false;" class="icon-bold" onclick="'+this.editor+'.execCommand(\'bold\')" title="'+lang.L_TOOLBAR_BOLD+'"></span>\
+	<span onselectstart="return false;" class="icon-italic" onclick="'+this.editor+'.execCommand(\'italic\')" title="'+lang.L_TOOLBAR_ITALIC+'"></span>\
+	<span onselectstart="return false;" class="icon-underline" onclick="'+this.editor+'.execCommand(\'underline\')" title="'+lang.L_TOOLBAR_UNDERLINE+'"></span>\
+	<span onselectstart="return false;" class="icon-strikethrough" onclick="'+this.editor+'.execCommand(\'strikethrough\')" title="'+lang.L_TOOLBAR_STRIKE+'"></span>\
+	<span onselectstart="return false;" class="icon-superscript" onclick="'+this.editor+'.execCommand(\'superscript\')" title="'+lang.L_TOOLBAR_SUPERSCRIPT+'"></span>\
+	<span onselectstart="return false;" class="icon-subscript" onclick="'+this.editor+'.execCommand(\'subscript\')" title="'+lang.L_TOOLBAR_SUBSCRIPT+'"></span>\
+	<span onselectstart="return false;" id="'+this.textareaId+'-forecolor" class="icon-adjust" onclick="'+this.editor+'.execCommand(\'forecolor\')" title="'+lang.L_TOOLBAR_FORECOLOR+'"></span>\
+	<span onselectstart="return false;" id="'+this.textareaId+'-backcolor" class="icon-tint" onclick="'+this.editor+'.execCommand(\'backcolor\')" title="'+lang.L_TOOLBAR_BACKCOLOR+'"></span>\
+	<span onselectstart="return false;" class="icon-terminal" onclick="'+this.editor+'.execCommand(\'code\')" title="'+lang.L_TOOLBAR_CODE+'">'+lang.L_TOOLBAR_CODE+'&nbsp</span>\
+	<span onselectstart="return false;" class="icon-pilcrow" onclick="'+this.editor+'.execCommand(\'inserthtml\', \'<br />\')" title="'+lang.L_TOOLBAR_BR+'" style="float:right;"></span>\
 	</div>\
 	';
 		var html = '';
@@ -192,7 +192,12 @@ PLXEDITOR.editor=function() {
 			this.pasteHTML(value);
 		} else if (cmd == "code" && !value) {
 			sel = this.getselection();
-			this.frame.document.execCommand('inserthtml', false, '<code>'+sel+'</code>');
+			if ((typeof sel) != "undefined") {	
+				this.frame.document.execCommand('inserthtml', false, '<code>'+sel+'</code>');
+			} else {
+				this.frame.document.execCommand('inserthtml', false, '<code>&nbsp</code>'); 
+		this.toggleSource();
+				}
 		} else if (cmd == "youtube" && !value) {
 			sel = this.getselection();
 			new PLXEDITOR.youtube.create(this.editor, this.textareaId+'-youtube', this.trim(sel));
@@ -476,8 +481,8 @@ PLXEDITOR.linker=function() {
 		table += '<tr><td>Titre du lien :</td><td><input type="text" value="'+this.value+'" id="txtTitle" /></td></tr>';
 		table += '<tr><td>class :</td><td><input type="text" value="" id="txtClass" /></td></tr>';
 		table += '<tr><td>rel :</td><td><input type="text" value="" id="txtRel" /></td></tr>';
-		table += '<tr><td colspan="2" style="test-align:center;"><input style="float:right; display:inline-block;" type="submit" value="Ok" onclick="PLXEDITOR.linker.setLink('+this.editor+')" />&nbsp;\
-		<input style="float:right; display:inline-block;" type="submit" name="btnCancel" id="btnCancel" value="Annuler" onclick="PLXEDITOR.dialog.close(\'linker\')" /></td></tr>';
+		table += '<tr><td colspan="2" style="test-align:center;"><input style="display:inline-block;" type="submit" value="Ok" onclick="PLXEDITOR.linker.setLink('+this.editor+')" />&nbsp;\
+		<input style="margin-left:10px; display:inline-block;" type="submit" name="btnCancel" id="btnCancel" value="Annuler" onclick="PLXEDITOR.dialog.close(\'linker\')" /></td></tr>';
 		table += '</table>';
 		return table;
 	};
@@ -523,12 +528,12 @@ PLXEDITOR.youtube=function() {
 	},
 	create.prototype.panel=function() {
 		var table = '<table class="popup" border="0" cellspacing="0" cellpadding="0">';
-		table += '<tr><td>Lien :</td><td><input type="text" value="http://" id="txtHref" /></td></tr>';
+		table += '<tr><td>Lien :</td><td><input type="text" value="http://www.youtube.com/embed/" id="txtHref" /></td></tr>';
 		table += '<tr><td>Titre du lien :</td><td><input type="text" value="'+this.value+'" id="txtTitle" /></td></tr>';
 		table += '<tr><td>class :</td><td><input type="text" value="" id="txtClass" /></td></tr>';
 		table += '<tr><td>rel :</td><td><input type="text" value="" id="txtRel" /></td></tr>';
-		table += '<tr><td colspan="2"><input style="display:inline-block; margin-right:10px" type="submit" value="Ok" onclick="PLXEDITOR.youtube.setLink('+this.editor+')" />&nbsp;\
-		<input style="display:inline-block; margin-right:10px;" type="submit" name="btnCancel" id="btnCancel" value="Annuler" onclick="PLXEDITOR.dialog.close(\'youtube\')" /></td></tr>';
+		table += '<tr><td colspan="2"><input style="display:inline-block;" type="submit" value="Ok" onclick="PLXEDITOR.youtube.setLink('+this.editor+')" />&nbsp;\
+		<input style="display:inline-block; margin-left:10px;" type="submit" name="btnCancel" id="btnCancel" value="Annuler" onclick="PLXEDITOR.dialog.close(\'youtube\')" /></td></tr>';
 		table += '</table>';
 		return table;
 	};
@@ -541,25 +546,23 @@ PLXEDITOR.youtube=function() {
 			var sClass = (E$('txtClass') ? (E$('txtClass').value!=''? ' class="'+E$('txtClass').value+'"':'') : '');
 			var sRel = (E$('txtRel') ? (E$('txtRel').value!=''? ' rel="'+E$('txtRel').value+'"':'') : '');
 			if(sTtitle=='' || PLXEDITOR.youtube.isUrl(sHref)==false) return;
-			editor.execCommand('inserthtml', '<a href="'+sHref+'" title="'+sTtitle+'"'+sClass+sRel+'>'+sTtitle+'</a> ');
+			PLXEDITOR.youtube.pasteYoutubeUrl(sHref);
 			PLXEDITOR.dialog.close('youtube');
 		},
-		isUrl:function(s) {
+		isUrl:function(url) {
 			var regexp = /(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/
-			return regexp.test(s);
+			return regexp.test(url);
+		},
+		pasteYoutubeUrl:function(url) {
+			if(url===null) return;
+			var regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]{11,11}).*/;
+				var match = url.match(regExp);
+				if (match) if (match.length >= 2) {
+					var videoId = match[2];
+					var result = '<div class="frame youtube"><iframe src="https://www.youtube.com/embed/'+videoId+'" width="560" height="315" allowfullscreen></iframe></div>';
+					this.frame.document.execCommand('inserthtml', false, result);
+			}
 		}
-		//	create.prototype.checkAdress=function(){
-//		if(url!==null) {
-//				var regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]{11,11}).*/;
-//				var match = url.match(regExp);
-//				if (match) if (match.length >= 2) {
-//					var videoId = match[2];
-//					var s = '<div class="frame youtube"><iframe src="https://www.youtube.com/embed/'+videoId+'" width="560" height="315" allowfullscreen></iframe></div>';
-//					this.frame.document.execCommand('inserthtml', false, s);
-//			}
-//		}
-//	};
-
 	}
 }();
 
@@ -601,7 +604,7 @@ PLXEDITOR.cpicker=function(){
 		for(var y=0; y < colors.length; y++) {
 			table += '<tr>';
 			for(var x=0; x < colors[y].length; x++) {
-				table += '<td><a class="color" style="color: #' + colors[y][x] + '; background-color: #' + colors[y][x] + ';font-size: 10px;" title="' + colors[y][x] + '" href="javascript:'+this.editor+'.execCommand(\''+this.action+'\', \'#' + colors[y][x] + '\');PLXEDITOR.dialog.close(\'colorpicker\');">&nbsp;</a></td>';
+				table += '<td><a class="color" style="color: #' + colors[y][x] + '; background-color: #' + colors[y][x] + '" title="' + colors[y][x] + '" href="javascript:'+this.editor+'.execCommand(\''+this.action+'\', \'#' + colors[y][x] + '\');PLXEDITOR.dialog.close(\'colorpicker\');">&nbsp</a></td>';
 			}
 			table += '</tr>';
 		}

@@ -1,0 +1,5 @@
+## Version 1.2 (04/06/2015) ##
+[+] Compatibilité PluXml 5.4
+
+## Version 1.0 (08/12/2011) ##
+Version initiale

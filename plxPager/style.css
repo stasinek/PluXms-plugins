@@ -1,0 +1,10 @@
+.p_exemple span {
+	margin: 3px 3px;
+}
+.p_page, .p_prev, .p_first, .p_last, .p_next , .p_current {
+	border: 1px #DDDDDD solid;
+		padding: 3px 5px;
+}
+.p_current {
+	color:red;
+}

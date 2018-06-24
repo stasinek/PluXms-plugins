@@ -1,0 +1,87 @@
+﻿version 0.8.1 (10/04/2017)
+BUG tableau PLX_MYMULTILINGUE non géré avec php 5.x+
+BUG Suppression fichier plugin update impossible (droit fichier)
+
+version 0.8 (27/03/2017)
+[+] Compatibilité PluCSS 1.2
+[+] Gestion des dépendances entre articles rédigés dans des langues différentes
+[+] Gestion des dépendances entre les pages statiques rédigées dans des langues différentes
+[+] Amélioration de la gestion des liens lors de la bascule des langues
+[+] Langue occitane (contribution Quentin)
+[+] Langue affichée dans les urls sauf pour la langue par défaut
+[+] Message d'information pour activer la réécriture d'url à l'activation du plugin
+[+] (ajout) Configuration plugin > Utiliser un thème différent pour chaque langue
+[+] (ajout) Configuration plugin > Préserver l'affichage de l'interface d'administration avec la langue du profil utilisateur connecté
+[-] (suppr) Configuration plugin > Bascule sur l'article, catégorie ou page statique avec le même identifiant lors du changement de langue.
+[-] (suppr) cookie plxMyMultiLingue pour la sauvegarde de la langue du site visité
+BUG Pas d'affichage des drapeaux coté visiteurs si PluXml installé dans un dossier
+BUG Warning à la création d'une page statique si paramètre "Page d'accueil" non renseigné
+
+version 0.7.4 (09/11/2016)
+BUG Mauvais chemin vers le dossier des articles sur l'écran: Administration > Configuration avancée
+
+version 0.7.3 (25/10/2016)
+Mise à jour traduction occitane (contribution Quent-in)
+BUG Non prise en compte de langue dans les liens Voir les pages statiques à partir de l'administration
+
+version 0.7.2 (29/02/2016)
+BUG langue du thème non chargée si appel à partir d'un lien sans passer par les drapeaux
+
+version 0.7.1 (04/02/2016)
+BUG mauvaise redirection apres envoi d'un commentaire
+BUG mauvaise redirection à partir de la liste déroulante de sélection de la langue.
+
+version 0.7 (25/01/2016)
+[+] Affichage des langues sous forme de liste déroulante (paramétrage à partir de l'écran de configuration du plugin)
+BUG Non prise en compte de langue dans le sitemap
+
+version 0.6 (28/05/2015)
+[+] Compatibilité PluXml 5.4
+[+] Ajout drapeau occitan
+[+] Ajout en automatique dans la partie <head> balise du type: <link rel="alternate" hreflang="en" href=”http://monsite.com/en/" />
+[+] Ajout de la langue dans le lien de la page d'accueil dans la liste des pages statiques (fct: plxShow::staticList)
+[-] Suppression gestion dossier Documents
+BUG Warning sur langue occitan non déclarée
+BUG Mauvaise page statique d'accueil en focntion de la langue sélectionnée
+
+version 0.5 (30/04/2014)
+[+] Choix affichage drapeaux ou libellés
+[+] Gestion du titre, de la description, des metas description et keywords du site en fonction de la langue
+[+] Bascule sur l'article, catégorie ou page statique avec le même identifiant lors du changement de langue.
+[+] Traductions du plugin: de, es, it, nl, pl, pt, po, ru
+[+] Conversion des images des drapeaux au format png (taille globale des fichiers réduites de 161Ko à 8.5Ko)
+BUG Mauvais liens des pages statiques
+
+version 0.4.4 (21/02/2014)
+[+] Dossier images ou documents pour chaque langue (paramétrable dans la configuration du plugin)
+BUG Pas de prise en compte de la langue à partir des flux rss
+
+version 0.4.3 (20/02/2014)
+[+] Compatibilité PluXml 5.3
+
+version 0.4.2 (09/09/2013)
+BUG: Langues non prise en compte dans le sitemap
+
+version 0.4.1 (13/06/2013)
+[+] Compatibilité PluXml 5.2
+
+version 0.4 (09/02/2013)
++ Paramétrage de l'ordre d'affichage des drapeaux
+BUG Mauvaise gestion du cookie pour la sélection de la langue coté visiteur
+
+version 0.3 (09/02/2013)
++ Gestion de la langue dans les urls pour éviter le duplicate content
++ Gestion de la langue dans les flux rss (requiert les modifications dans le fichier class.plx.feed.php)
++ Gestion de la langue dans le sitemap (requiert les modifications dans le fichier sitemap.php)
++ Un sitemap différent par langue
++ sitemapindex pour indiquer aux moteurs l'url des sitemaps pour chaque langue
+BUG Administration: Mauvais affichage des chemins des dossiers sur l'écran Paramètres > Configuration avancées
+BUG Administration: mauvais affichage des drapeaux si aucune langue sélectionnée
+BUG Validation xhtml
+
+version 0.2 (06/02/2013)
++ Sélection des langues à utiliser à partir de l'écran de configuration du plugin
++ Affichage des langues sous forme de drapeaux
++ Chargement de la langue du thème coté visiteur en fonction de la langue sélectionnée sous forme de drapeau
+
+version 0.1 (15/12/2012)

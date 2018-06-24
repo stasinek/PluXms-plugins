@@ -20,3 +20,11 @@ b {
 	color:#CCCCCC;
 	display:block;
 }
+
+code {
+    font-family: monospace;
+	background-color: #eee;
+	line-height:15px;
+    height:15px;
+    vertical-align:middle;
+}

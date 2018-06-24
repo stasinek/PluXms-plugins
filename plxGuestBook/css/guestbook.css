@@ -1,0 +1,65 @@
+/**
+ * Plugin plxGuestBook
+ * @author	DPFPIC
+ * Site : http://dpfpic.com
+ * Licence GNU_GPL
+ **/
+
+#form_contact {
+	margin: 20px 0 20px 0;
+}
+
+#guestbook table, th, td {
+	border: 0px solid #999;
+	width: 100%;
+}
+
+.email {
+	color: #0082b0;
+	font-weight:bold;
+	text-decoration: none;
+}
+
+.contact_error {
+	margin: 20px 20px 20px 20px;
+	padding: 5px 15px 5px 15px;
+	border: 1px solid;
+	font-weight:bold;
+	color:red !important;
+	background-color: #ffcfcf;
+	border-color: #df8f8f;
+	text-align:center;
+}
+
+.newgb {
+	text-align:center;
+}
+
+.contact_success {
+	margin: 20px 20px 20px 20px;
+	padding: 5px 15px 5px 15px;
+	border: 1px solid;
+	font-weight:bold;
+	color:green !important;
+	background-color: #a9f0b4;
+	border-color: #99cc99;
+	text-align:center;
+}
+
+.note {
+	background-color: #C0C0C0;
+	padding: 5px 5px;
+	text-align: center;
+}
+
+.rep {
+	background-color: #F2F2F2;
+	padding: 10px 5px 10px 5px;
+	text-align: left;
+}
+
+#guestbook hr {
+	height: 0px;
+	border: 1px solid #ccc;
+	width: 98%;
+}

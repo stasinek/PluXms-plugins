@@ -1,0 +1,18 @@
+﻿## Version 1.2.3 (11/03/2016) ##
+BUG Erreur pagination au délà de la page 9 (contribution gegeweb)
+
+## Version 1.2.2 (13/05/2015) ##
+[+] Compatibilité PluXml 5.4
+
+## Version 1.2.1 (28/08/2014) ##
+[+] Ajout de rel="prev" et rel="next" dans les liens précédent et suivant (contribution Etienne R.)
+[+] Ajout traduction en occitant (contribution Rubén)
+
+## Version 1.2 (04/08/2013) ##
+BUG Mauvais url de pagination avec la réécriture d'url
+
+## Version 1.1 (15/02/2013) ##
+BUG Suppression du duplicate content pour l'url de la page 1
+
+## Version 1.0 (17/04/2012) ##
+version initiale

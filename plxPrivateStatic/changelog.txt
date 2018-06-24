@@ -1,0 +1,11 @@
+## Version 1.2 (19/03/2013) ##
+[+] Ajout paramètre pour activer/désactiver la protection
+[+] Ajout contenu public (visible uniquement si mot de passe demandé)
+[+] Format du titre de la page statique protégée = nom de la page - titre du site
+BUG Mauvaise url dans la redirection après saisie du mot de passe
+
+## Version 1.1 (05/04/2012) ##
+BUG Pas de demande de mot de passe avec les thèmes pour mobile
+
+## Version 1.0 (30/11/2011) ##
+version initiale

@@ -1,0 +1,33 @@
+﻿## Version 1.0.9 (11/12/2017) ##
+[+] Ajout d'un texte au dessus de "poster un message" (Remarque de Freesby) 
+
+## Version 1.0.8 (21/06/2017) ##
+BUG: Correction de la feuille de style CSS
+
+## Version 1.0.7 (17/06/2017) ##
+[+] Introduction d'un système de vérification de mise à jour disponnible
+
+## Version 1.0.6 (25/05/2017) ##
+[+] Ajout de la fonction onActivate() pour la protection du dossier de configuration "gbook"
+
+## Version 1.0.5 (19/05/2017) ##
+[+] Compatibilité PluXml 5.6
+BUG mauvaise variable pour le champs "site" dans le formulaire
+BUG Correction dans langue anglaise
+
+## Version 1.0.4 (23/03/2017) ##
+BUG: Compatibilité avec le plugin MyCapchaImage de Stéphane F. http://pluxopolis.net (Merci à Jol5926)
+BUG: Erreur dans le fichier admin - Compatibilité PluXml 5.5
+
+## Version 1.0.3 (17/06/2016) ##
+[+] Compatibilité PluXml 5.5
+[+] Déplacement du dossier gbook (anciennement data) dans data/configuration/plugins
+
+## Version 1.0.2 (06/09/2015)
+[+] Compatibilité PluXml 5.4
+
+## Version 1.0.1 (18/05/2014) ##
+[+] Traduction en anglais (Merci Katryne)
+
+## Version 1.0 (12/05/2014) ##
+version initiale

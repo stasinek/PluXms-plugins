@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<document>
+	<title><![CDATA[MyPrivateStatic]]></title>
+	<author><![CDATA[Stephane F.]]></author>
+	<version>1.2</version>
+	<date>19/03/2013</date>
+	<site>http://pluxopolis.net/</site>
+	<description><![CDATA[Protection de l'accès aux pages statiques par mot de passe]]></description>
+	<requirements></requirements>
+</document>
