@@ -5,7 +5,7 @@
 plxToken::validateFormToken($_POST);
 
 if(!empty($_POST)) {
-	$plxPlugin->setParam('kind', $_POST['kind'], 'numeric');
+	//$plxPlugin->setParam('kind', $_POST['kind'], 'numeric');
 	$plxPlugin->setParam('static', $_POST['static'], 'numeric');
 	$plxPlugin->setParam('height', $_POST['height'], 'string');
 	$plxPlugin->setParam('folder', trim(ltrim($_POST['folder'], '/')), 'string');
@@ -22,10 +22,10 @@ form.inline-form label {
 </style>
 <form class="inline-form" id="form_plxEditor" action="parametres_plugin.php?p=plxEditor" method="post">
 	<fieldset>
-		<p>
+		<?php/*<p>
 			<label for="id_kind"><?php echo $plxPlugin->lang('L_EDITOR') ?>&nbsp;:</label>
 			<?php plxUtils::printSelect('kind',array('1'=>'CKEditor v4 HTML','0'=>'PLXEditor v1.1 HTML'), $plxPlugin->getParam('kind'));?>
-		</p>
+		</p>*/?>
 		<p>
 			<label for="id_static"><?php echo $plxPlugin->lang('L_STATIC') ?>&nbsp;:</label>
 			<?php plxUtils::printSelect('static',array('1'=>L_YES,'0'=>L_NO), $plxPlugin->getParam('static'));?>

@@ -8,9 +8,9 @@
 class plxEditor extends plxPlugin {
 
 	public $valid_path = false;
-	private $kind_array = array(0 => "plxeditor", 1 => "ckeditor");
-	const PLX_EDITOR = 0;
-	const CKE_EDITOR = 1;
+	//rivate $kind_array = array(0 => "plxeditor", 1 => "ckeditor");
+	//const PLX_EDITOR = 0;
+	//const CKE_EDITOR = 1;
 	/**
 	 * Constructeur de la classe
 	 *
@@ -38,11 +38,11 @@ class plxEditor extends plxPlugin {
 
 		# déclaration pour ajouter l'éditeur
 		$static = $this->getParam('static')==1 ? '' : '|statique';
-		$editor = $this->getParam('kind');
+		//$editor = $this->getParam('kind');
 		# Déclarations des hooks
 		if(!preg_match('/(parametres_edittpl|comment'.$static.')/', basename($_SERVER['SCRIPT_NAME']))) {
-			if ($editor==plxEditor::PLX_EDITOR)
-			{				
+			//if ($editor==plxEditor::PLX_EDITOR)
+			//{				
 				$this->addHook('AdminTopEndHead', 'plxAdminTopEndHead');
 				$this->addHook('AdminFootEndBody', 'plxAdminFootEndBody');
 				$this->addHook('AdminArticlePrepend', 'AdminArticlePrepend'); # conversion des liens pour le preview d'un article
@@ -51,8 +51,8 @@ class plxEditor extends plxPlugin {
 				$this->addHook('AdminStaticTop', 'AdminStaticTop');
 				$this->addHook('AdminArticlePreview', 'AdminArticlePreview');
 				$this->addHook('ThemeEndHead', 'ThemeEndHead');
-			}
-			if ($editor==plxEditor::CKE_EDITOR) 
+			//}
+			/*if ($editor==plxEditor::CKE_EDITOR) 
 				{
 				$this->addHook('AdminTopEndHead', 'ckAdminTopEndHead');
 				$this->addHook('AdminFootEndBody', 'ckAdminFootEndBody');
@@ -63,6 +63,7 @@ class plxEditor extends plxPlugin {
 				$this->addHook('AdminArticlePreview', 'AdminArticlePreview');
 				$this->addHook('ThemeEndHead', 'ThemeEndHead');
 				}
+			*/
 			}
 	}
 	#----------
@@ -181,7 +182,7 @@ class plxEditor extends plxPlugin {
 	 * @return	stdio
 	 * @author	Stanislaw Stasiak
 	 **/
-	public function ckAdminTopEndHead() {
+	/*public function ckAdminTopEndHead() {
 		echo '<?php $plxAdmin->aConf["default_lang"] ?>';
 		echo '<link rel="stylesheet" type="text/css" href="'.$this->plugPath.'ckEditor/main.css" media="screen" />'."\n";
 		echo '<link rel="stylesheet" type="text/css" href="'.$this->plugPath.'ckEditor/skins/neo/neo.css" media="screen" />'."\n";
@@ -193,13 +194,14 @@ class plxEditor extends plxPlugin {
 			echo "<script src=\"".$js."\"></script>\n";
 		?>';
 		echo '<script src="'.PLX_PLUGINS.'plxEditor/ckEditor/main.js"></script>'."\n";
-	}
+	}*/
 	/**
 	 * Méthode du hook AdminFootEndBody
 	 *
 	 * @return	stdio
 	 * @author	Stanislaw Stasiak
 	 **/
+	 /*
 	public function ckAdminFootEndBody() {
 		echo '
 		<script>
@@ -209,7 +211,7 @@ class plxEditor extends plxPlugin {
 			initEditor();
 		</script>
 		';
-	}
+	}*/
 	/**
 	 * Méthode du hook ThemeEndHead
 	 *
