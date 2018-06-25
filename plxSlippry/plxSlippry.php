@@ -29,7 +29,7 @@ class plxSlippry extends plxPlugin {
 		if($this->slippry->aSlides) {
 			$this->addHook('ThemeEndHead', 'ThemeEndHead');
 			$this->addHook('ThemeEndBody', 'ThemeEndBody');
-			$this->addHook('MySlippry', 'MySlippry');
+			$this->addHook('Slippry', 'Slippry');
 		}
 
 	}
@@ -37,7 +37,7 @@ class plxSlippry extends plxPlugin {
 	public function AdminMediasTop() {
 
 		echo '<?php
-		$arr = array("MySlippry" => array("slippry_add" => "Ajouter au diaporama"));
+		$arr = array("Slippry" => array("slippry_add" => "Ajouter au diaporama"));
 		$selectionList = array_merge($selectionList, $arr);
 		?>';
 
@@ -53,7 +53,7 @@ class plxSlippry extends plxPlugin {
 
 	}
 
-	public function MySlippry() {
+	public function Slippry() {
 		$s = "";
 		foreach($this->slippry->aSlides as $i => $slide) {
 			if($slide['active']) {

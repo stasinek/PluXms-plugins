@@ -55,7 +55,7 @@ class HTML2PDF_myPdf extends TCPDF
         $this->jpeg_quality = 90;
 
         // prepare the automatic footer
-        $this->SetMyFooter();
+        $this->SetFooter();
 
         $this->cMargin = 0;
     }
@@ -69,7 +69,7 @@ class HTML2PDF_myPdf extends TCPDF
      * @param boolean $form display a warning abour forms
      * @access public
      */
-    public function SetMyFooter($page = false, $date = false, $hour = false, $form = false)
+    public function SetFooter($page = false, $date = false, $hour = false, $form = false)
     {
         $page    = ($page ? true : false);
         $date    = ($date ? true : false);
@@ -114,8 +114,8 @@ class HTML2PDF_myPdf extends TCPDF
                 '[[date_h]]'  => date('H'),
                 '[[date_i]]'  => date('i'),
                 '[[date_s]]'  => date('s'),
-                '[[page_cu]]' => $this->getMyNumPage(),
-                '[[page_nb]]' => $this->getMyAliasNbPages(),
+                '[[page_cu]]' => $this->getNumPage(),
+                '[[page_nb]]' => $this->getAliasNbPages(),
             );
             $txt = str_replace(array_keys($toReplace), array_values($toReplace), $txt);
 
@@ -1322,7 +1322,7 @@ class HTML2PDF_myPdf extends TCPDF
      * @return string;
      * @see TCPDF::getAliasNbPages(), TCPDF::getPageGroupAlias()
      */
-    public function getMyAliasNbPages()
+    public function getAliasNbPages()
     {
         if ($this->_myLastPageGroupNb==0) {
             return $this->getAliasNbPages();
@@ -1343,7 +1343,7 @@ class HTML2PDF_myPdf extends TCPDF
      * @param  integer $page
      * @return integer;
      */
-    public function getMyNumPage($page=null)
+    public function getNumPage($page=null)
     {
         if ($page===null) {
             $page = $this->page;
@@ -1375,7 +1375,7 @@ class HTML2PDF_myPdf extends TCPDF
      * @access public
      * @return integer $_myLastPageGroup;
      */
-    public function getMyLastPageGroup()
+    public function getLastPageGroup()
     {
         return $this->_myLastPageGroup;
     }
@@ -1386,7 +1386,7 @@ class HTML2PDF_myPdf extends TCPDF
      * @access public
      * @param integer $myLastPageGroup;
      */
-    public function setMyLastPageGroup($myLastPageGroup)
+    public function setLastPageGroup($myLastPageGroup)
     {
         $this->_myLastPageGroup = $myLastPageGroup;
     }
@@ -1397,7 +1397,7 @@ class HTML2PDF_myPdf extends TCPDF
      * @access public
      * @return integer $_myLastPageGroupNb;
      */
-    public function getMyLastPageGroupNb()
+    public function getLastPageGroupNb()
     {
         return $this->_myLastPageGroupNb;
     }
@@ -1408,7 +1408,7 @@ class HTML2PDF_myPdf extends TCPDF
      * @access public
      * @param integer $myLastPageGroupNb;
      */
-    public function setMyLastPageGroupNb($myLastPageGroupNb)
+    public function setLastPageGroupNb($myLastPageGroupNb)
     {
         $this->_myLastPageGroupNb = $myLastPageGroupNb;
     }

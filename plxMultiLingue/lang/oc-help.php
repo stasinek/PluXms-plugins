@@ -2,7 +2,7 @@
 Per afichar las bandièras per seleccionar una lenga, modificatz lo fichièr sidebar.php de vòstre tèma e ajustatz la linha seguenta :
 <br /><br />
 <pre style="font-size:1.1em;margin-left:20px">
-&lt;?php eval($plxShow->callHook('MyMultiLingue')) ?>
+&lt;?php eval($plxShow->callHook('MultiLingue')) ?>
 </pre>
 </p>
 
@@ -10,7 +10,7 @@ Per afichar las bandièras per seleccionar una lenga, modificatz lo fichièr sid
 Per afichar los articles dependants redigits dins una autra lenga, ajustatz dins lo fichièr article.php de vòstre tèma la linha seguenta :
 <br /><br />
 <pre style="font-size:1.1em;margin-left:20px">
-&lt;?php eval($plxShow->callHook('MyMultiLingue', 'artlinks')) ?>
+&lt;?php eval($plxShow->callHook('MultiLingue', 'artlinks')) ?>
 </pre>
 </p>
 
@@ -18,7 +18,7 @@ Per afichar los articles dependants redigits dins una autra lenga, ajustatz dins
 Per afichar las paginas estaticas dependants redigits dins una autra lenga, ajustatz dins lo fichièr static.php de vòstre tèma la linha seguenta :
 <br /><br />
 <pre style="font-size:1.1em;margin-left:20px">
-&lt;?php eval($plxShow->callHook('MyMultiLingue', staticlinks')) ?>
+&lt;?php eval($plxShow->callHook('MultiLingue', staticlinks')) ?>
 </pre>
 </p>
 

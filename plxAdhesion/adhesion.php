@@ -429,7 +429,7 @@ class adhesion extends plxPlugin {
 		if(\$this->plxMotor->mode=='myaccount') {
 						\$array = array();
 						\$array[\$this->plxMotor->cible] = array(
-			'name'		=> '".$this->getParam('mnuMyAccount')."',
+			'name'		=> '".$this->getParam('mnuAccount')."',
 			'menu'		=> '',
 			'url'		=> 'myaccount.html',
 			'readable'	=> 1,
@@ -2124,7 +2124,7 @@ class adhesion extends plxPlugin {
 	 * @return string la clé associée au compte
 	 * @author Cyril MAGUIRE
 	 */
-	public function retrieveMyPass($email) {
+	public function retrievePass($email) {
 		foreach ($this->plxRecord_adherents->result as $key => $compte) {
 			if ($compte['mail'] == $email) {
 				$m = array(
@@ -2156,7 +2156,7 @@ class adhesion extends plxPlugin {
 	 * @return bool
 	 * @author Cyril MAGUIRE
 	 */
-	public function editMyAccount($compte,$ad) {
+	public function editAccount($compte,$ad) {
 
 		$id = $this->adherentsList[$ad];
 
@@ -2524,7 +2524,7 @@ END;
 
 			//Mot de passe oublié, on renvoie la clé si l'email correspond
 			if(isset($_POST['forgetmypass']) ) {
-				if($this->retrieveMyPass(plxUtils::strCheck($_POST['email']) )) {
+				if($this->retrievePass(plxUtils::strCheck($_POST['email']) )) {
 					$_SESSION['retrievePass'] = '<p id="password_success">'.$this->getLang('L_EMAIL_PASS_OK').'</p>';
 					header('Location:'.$plxMotor->urlRewrite() );
 					exit();

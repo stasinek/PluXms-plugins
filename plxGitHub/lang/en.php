@@ -2,7 +2,7 @@
 
 $LANG = array(
 
-'L_PAGE_TITLE'				=> 'MyGitHub',
+'L_PAGE_TITLE'				=> 'GitHub',
 
 # config.php
 'L_MENU_DISPLAY'			=> 'Display menu in the menubar',

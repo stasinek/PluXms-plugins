@@ -162,7 +162,7 @@ class plxMultiLingue extends plxPlugin {
 			$this->addHook('SitemapEnd', 'SitemapEnd');
 
 			# hook utilisateur à mettre dans le thème
-			$this->addHook('MyMultiLingue', 'MyMultiLingue');
+			$this->addHook('MultiLingue', 'MultiLingue');
 
 		}
 	}
@@ -712,7 +712,7 @@ class plxMultiLingue extends plxPlugin {
 		# message d'information utilisateur si la réécriture d'url n'est pas activée
 		$string = '
 		if($plxAdmin->aConf["urlrewriting"]!="1") {
-			echo "<p class=\"warning\">Plugin MyMultiLingue<br />'.$this->getLang("L_ERR_URL_REWRITING").'</p>";
+			echo "<p class=\"warning\">Plugin MultiLingue<br />'.$this->getLang("L_ERR_URL_REWRITING").'</p>";
 			plxMsg::Display();
 		}';
 		echo '<?php '.$string.' ?>';
@@ -1093,7 +1093,7 @@ class plxMultiLingue extends plxPlugin {
 	 * return	stdio
 	 * @author	Stephane F
 	 **/
-	public function MyMultiLingue($param) {
+	public function MultiLingue($param) {
 
 		# Affichage des drapeaux
 		if($param=="") {

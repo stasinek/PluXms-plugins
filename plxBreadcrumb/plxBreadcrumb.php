@@ -19,7 +19,7 @@ class plxBreadcrumb extends plxPlugin {
 		# appel du constructeur de la classe plxPlugin (obligatoire)
 		parent::__construct($default_lang);
 
-		$this->addHook('MyBreadcrumb', 'MyBreadcrumb');
+		$this->addHook('Breadcrumb', 'Breadcrumb');
 	}
 
 	public static function formatLink($href, $name, $link=false, $title='', $class='') {
@@ -33,7 +33,7 @@ class plxBreadcrumb extends plxPlugin {
 
 	}
 
-	public function MyBreadcrumb() {
+	public function Breadcrumb() {
 		echo '
 		<?php
 			# pages

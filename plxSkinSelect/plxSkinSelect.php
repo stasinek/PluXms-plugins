@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin MySkinSelect
+ * Plugin SkinSelect
  *
  * @package	PLX
  * @author 	Stephane F
@@ -9,7 +9,7 @@
  * Ajouter dans le fichier sidebar.php les lignes suivantes pour afficher le sélecteur de thèmes
  *
  *		<h3>Th&egrave;mes</h3>
- *		<?php eval($plxShow->callHook('MySkinSelect')) ?>
+ *		<?php eval($plxShow->callHook('SkinSelect')) ?>
  *
  **/
 class plxSkinSelect extends plxPlugin {
@@ -30,7 +30,7 @@ class plxSkinSelect extends plxPlugin {
 
 		# Déclarations des hooks
 		$this->addHook('Index', 'Index');
-		$this->addHook('MySkinSelect', 'MySkinSelect');
+		$this->addHook('SkinSelect', 'SkinSelect');
 
 	}
 
@@ -75,7 +75,7 @@ class plxSkinSelect extends plxPlugin {
 	 * @author	Stephane F.
 	 *
 	 **/
-	public function MySkinSelect() {
+	public function SkinSelect() {
 
 		# Récuperation de la liste des thèmes
 		$this->getSkins();

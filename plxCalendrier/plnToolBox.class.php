@@ -70,7 +70,7 @@ class plnToolBox_v1
 					return false;
 
 				// Si ce plugin ne remplit lui-même pas ses pré-requis, on dit false
-				//if(method_exists($plugin,'areMyPreRequisitesMet') and !$plugin::areMyPreRequisitesMet())
+				//if(method_exists($plugin,'arePreRequisitesMet') and !$plugin::arePreRequisitesMet())
 				//	return false;
         	} 
         	// Si on est arrivé là, c'est que tout va bien

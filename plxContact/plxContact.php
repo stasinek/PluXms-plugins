@@ -146,7 +146,7 @@ class plxContact extends plxPlugin {
 
 		$string = '
 		if($plxAdmin->plxPlugins->aPlugins["plxContact"]->getParam("email")=="") {
-			echo "<p class=\"warning\">Plugin MyContact<br />'.$this->getLang("L_ERR_EMAIL").'</p>";
+			echo "<p class=\"warning\">Plugin Contact<br />'.$this->getLang("L_ERR_EMAIL").'</p>";
 			plxMsg::Display();
 		}';
 		echo '<?php '.$string.' ?>';

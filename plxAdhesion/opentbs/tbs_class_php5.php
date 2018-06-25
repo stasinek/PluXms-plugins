@@ -118,7 +118,7 @@ public function DataPrepare(&$SrcId,&$TBS) {
 		$this->Type = 9; $this->SubType = 2;
 	} elseif ($SrcId instanceof IteratorAggregate) {
 		$this->Type = 9; $this->SubType = 3;
-	} elseif ($SrcId instanceof MySQLi) {
+	} elseif ($SrcId instanceof SQLi) {
 		$this->Type = 10;
 	} elseif ($SrcId instanceof PDO) {
 		$this->Type = 11;
@@ -266,13 +266,13 @@ public function DataOpen(&$Query,$QryPrms=false) {
 			$this->RecSaving = false;
 		}
 		break;
-	case 6: // MySQL
+	case 6: // SQL
 		switch ($this->SubType) {
 		case 0: $this->RecSet = @mysql_query($Query,$this->SrcId); break;
 		case 1: $this->RecSet = $this->SrcId; break;
 		case 2: $this->RecSet = @mysql_query($Query); break;
 		}
-		if ($this->RecSet===false) $this->DataAlert('MySql error message when opening the query: '.mysql_error());
+		if ($this->RecSet===false) $this->DataAlert('Sql error message when opening the query: '.mysql_error());
 		break;
 	case 1: // Num
 		$this->RecSet = true;
@@ -341,9 +341,9 @@ public function DataOpen(&$Query,$QryPrms=false) {
 		}
 		$this->RecSet->rewind();
 		break;
-	case 10: // MySQLi
+	case 10: // SQLi
 		$this->RecSet = $this->SrcId->query($Query);
-		if ($this->RecSet===false) $this->DataAlert('MySQLi error message when opening the query:'.$this->SrcId->error);
+		if ($this->RecSet===false) $this->DataAlert('SQLi error message when opening the query:'.$this->SrcId->error);
 		break;
 	case 11: // PDO
 		$this->RecSet = $this->SrcId->prepare($Query);
@@ -413,7 +413,7 @@ public function DataFetch() {
 	}
 
 	switch ($this->Type) {
-	case 6: // MySQL
+	case 6: // SQL
 		$this->CurrRec = mysql_fetch_assoc($this->RecSet);
 		break;
 	case 1: // Num
@@ -461,7 +461,7 @@ public function DataFetch() {
 			$this->CurrRec = false;
 		}
 		break;
-	case 10: // MySQLi
+	case 10: // SQLi
 		$this->CurrRec = $this->RecSet->fetch_assoc();
 		if (is_null($this->CurrRec)) $this->CurrRec = false;
 		break;
@@ -493,7 +493,7 @@ public function DataClose() {
 	case 4: call_user_func_array($this->FctClose,array(&$this->RecSet)); break;
 	case 5: $this->SrcId->tbsdb_close($this->RecSet); break;
 	case 7: pg_free_result($this->RecSet); break;
-	case 10: $this->RecSet->free(); break; // MySQLi
+	case 10: $this->RecSet->free(); break; // SQLi
 	//case 11: $this->RecSet->closeCursor(); break; // PDO
 	}
 	if ($this->RecSaving) {

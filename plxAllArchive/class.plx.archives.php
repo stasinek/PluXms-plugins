@@ -27,7 +27,7 @@ class plxArchives {
 		$this->sortby = $this->plxPlugin->getParam('sortby');
 		$this->url = $this->plxPlugin->getParam('url')=='' ? 'allarchive' : $this->plxPlugin->getParam('url');
 
-		# si appel à partir du hook MyAllArchive
+		# si appel à partir du hook AllArchive
 		if($this->plxMotor->get AND preg_match('/^'.$this->url.'\/(asc|desc)_(by_year|by_category|by_author|by_title)/',$this->plxMotor->get,$capture)) {
 			$this->sort=$capture[1];
 			$this->sortby=$capture[2];

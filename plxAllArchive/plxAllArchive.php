@@ -43,7 +43,7 @@ class plxAllArchive extends plxPlugin {
 			$this->addHook('plxShowStaticListEnd', 'plxShowStaticListEnd');
 			$this->addHook('plxShowPageTitle', 'plxShowPageTitle');
 			$this->addHook('SitemapStatics', 'SitemapStatics');
-			$this->addHook('MyAllArchive', 'MyAllArchive');
+			$this->addHook('AllArchive', 'AllArchive');
 		}
 
 	}
@@ -71,7 +71,7 @@ class plxAllArchive extends plxPlugin {
 		echo '<?php
 		$file = PLX_PLUGINS."'.$this->plug['name'].'/lang/".$plxAdmin->aConf["default_lang"].".php";
 		if(!file_exists($file)) {
-			echo "<p class=\"warning\">Plugin MyAllArchive<br />".sprintf("'.$this->getLang('L_LANG_UNAVAILABLE').'", $file)."</p>";
+			echo "<p class=\"warning\">Plugin AllArchive<br />".sprintf("'.$this->getLang('L_LANG_UNAVAILABLE').'", $file)."</p>";
 			plxMsg::Display();
 		}
 		?>';
@@ -201,7 +201,7 @@ class plxAllArchive extends plxPlugin {
 	 * @return	stdio
 	 * @author	Stephane F
 	 **/
-	public function MyAllArchive($params='') {
+	public function AllArchive($params='') {
 
 		$default_format = '<a href=\"#archives_url\" class=\"#archives_status\" title=\"#archives_name\">#archives_name</a>';
 

@@ -9909,13 +9909,13 @@ if (!class_exists('TCPDF', false)) {
 			if ($border_style) {
 				$this->SetLineStyle($border_style);
 			}
-			$MyArc = 4 / 3 * (sqrt(2) - 1);
+			$Arc = 4 / 3 * (sqrt(2) - 1);
 			$this->_outPoint($x + $rx, $y);
 			$xc = $x + $w - $rx;
 			$yc = $y + $ry;
 			$this->_outLine($xc, $y);
 			if ($round_corner[0]) {
-				$this->_outCurve($xc + ($rx * $MyArc), $yc - $ry, $xc + $rx, $yc - ($ry * $MyArc), $xc + $rx, $yc);
+				$this->_outCurve($xc + ($rx * $Arc), $yc - $ry, $xc + $rx, $yc - ($ry * $Arc), $xc + $rx, $yc);
 			} else {
 				$this->_outLine($x + $w, $y);
 			}
@@ -9923,7 +9923,7 @@ if (!class_exists('TCPDF', false)) {
 			$yc = $y + $h - $ry;
 			$this->_outLine($x + $w, $yc);
 			if ($round_corner[1]) {
-				$this->_outCurve($xc + $rx, $yc + ($ry * $MyArc), $xc + ($rx * $MyArc), $yc + $ry, $xc, $yc + $ry);
+				$this->_outCurve($xc + $rx, $yc + ($ry * $Arc), $xc + ($rx * $Arc), $yc + $ry, $xc, $yc + $ry);
 			} else {
 				$this->_outLine($x + $w, $y + $h);
 			}
@@ -9931,7 +9931,7 @@ if (!class_exists('TCPDF', false)) {
 			$yc = $y + $h - $ry;
 			$this->_outLine($xc, $y + $h);
 			if ($round_corner[2]) {
-				$this->_outCurve($xc - ($rx * $MyArc), $yc + $ry, $xc - $rx, $yc + ($ry * $MyArc), $xc - $rx, $yc);
+				$this->_outCurve($xc - ($rx * $Arc), $yc + $ry, $xc - $rx, $yc + ($ry * $Arc), $xc - $rx, $yc);
 			} else {
 				$this->_outLine($x, $y + $h);
 			}
@@ -9939,7 +9939,7 @@ if (!class_exists('TCPDF', false)) {
 			$yc = $y + $ry;
 			$this->_outLine($x, $yc);
 			if ($round_corner[3]) {
-				$this->_outCurve($xc - $rx, $yc - ($ry * $MyArc), $xc - ($rx * $MyArc), $yc - $ry, $xc, $yc - $ry);
+				$this->_outCurve($xc - $rx, $yc - ($ry * $Arc), $xc - ($rx * $Arc), $yc - $ry, $xc, $yc - $ry);
 			} else {
 				$this->_outLine($x, $y);
 				$this->_outLine($x + $rx, $y);

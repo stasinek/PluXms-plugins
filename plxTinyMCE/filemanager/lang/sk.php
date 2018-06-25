@@ -41,7 +41,7 @@ return array(
 	'Upload_base' => 'Klasické nahratie súborov',
 	'Upload_java' => 'Nahrať súbory cez JAVA (veľké súbory)',
 	'Upload_java_help' => "Ak sa vám nezobrazí Java Applet uistite sa, že máte nainštalovanú Java (<a href='http://java.com/en/download/'>stiahnuť</a>) a skontrolujte blokovanie cez bránu Firewall.",
-	'Upload_base_help' => "Myšou presuňte súbory alebo kliknite na plochu a vyberte súbory. Keď je nahrávanie dokončené, kliknite na tlačidlo 'Späť na zoznam súborov'.",
+	'Upload_base_help' => "šou presuňte súbory alebo kliknite na plochu a vyberte súbory. Keď je nahrávanie dokončené, kliknite na tlačidlo 'Späť na zoznam súborov'.",
 	'Type_dir' => 'dir',
 	'Type' => 'Typ',
 	'Dimension' => 'Rozlíšenie',

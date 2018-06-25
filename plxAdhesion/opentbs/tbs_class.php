@@ -268,13 +268,13 @@ function DataOpen(&$Query) {
 			$this->RecSaving = false;
 		}
 		break;
-	case 6: // MySQL
+	case 6: // SQL
 		switch ($this->SubType) {
 		case 0: $this->RecSet = @mysql_query($Query,$this->SrcId); break;
 		case 1: $this->RecSet = $this->SrcId; break;
 		case 2: $this->RecSet = @mysql_query($Query); break;
 		}
-		if ($this->RecSet===false) $this->DataAlert('MySql error message when opening the query: '.mysql_error());
+		if ($this->RecSet===false) $this->DataAlert('Sql error message when opening the query: '.mysql_error());
 		break;
 	case 1: // Num
 		$this->RecSet = true;
@@ -396,7 +396,7 @@ function DataFetch() {
 	}
 
 	switch ($this->Type) {
-	case 6: // MySQL
+	case 6: // SQL
 		$this->CurrRec = mysql_fetch_assoc($this->RecSet);
 		break;
 	case 1: // Num

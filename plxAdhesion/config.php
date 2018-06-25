@@ -20,7 +20,7 @@ if(!empty($_POST)) {
 	$plxPlugin->setParam('mnuAdherer', plxUtils::strCheck(str_replace("'","’",$_POST['mnuAdherer'])), 'cdata');
 	$plxPlugin->setParam('desc_adhesion', plxUtils::cdataCheck(trim(str_replace("'","’",$_POST['desc_adhesion']))), 'cdata');
 	$plxPlugin->setParam('mnuForgetPass', plxUtils::strCheck(str_replace("'","’",$_POST['mnuForgetPass'])), 'cdata');
-	$plxPlugin->setParam('mnuMyAccount', plxUtils::strCheck(str_replace("'","’",$_POST['mnuMyAccount'])), 'cdata');
+	$plxPlugin->setParam('mnuAccount', plxUtils::strCheck(str_replace("'","’",$_POST['mnuAccount'])), 'cdata');
 	$plxPlugin->setParam('showAnnuaire', (plxUtils::strCheck($_POST['typeAnnuaire']) == 'generaliste' ? 'non' : plxUtils::strCheck($_POST['showAnnuaire']) ), 'string');
 	$plxPlugin->setParam('mnuAnnuaire', plxUtils::strCheck(str_replace("'","’",$_POST['mnuAnnuaire'])), 'cdata');
 	$plxPlugin->setParam('typeAnnuaire', plxUtils::strCheck($_POST['typeAnnuaire']), 'string');
@@ -56,7 +56,7 @@ $mnuPos =  $plxPlugin->getParam('mnuPos')=='' ? 2 : $plxPlugin->getParam('mnuPos
 $mnuAdherer =  $plxPlugin->getParam('mnuAdherer')=='' ? $plxPlugin->getLang('L_DEFAULT_MENU_ADHERER') : $plxPlugin->getParam('mnuAdherer');
 $desc_adhesion =  $plxPlugin->getParam('desc_adhesion')=='' ? $plxPlugin->getLang('L_DEFAULT_DESC') : $plxPlugin->getParam('desc_adhesion');
 $mnuForgetPass =  $plxPlugin->getParam('mnuForgetPass')=='' ? $plxPlugin->getLang('L_DEFAULT_MENU_PASS') : $plxPlugin->getParam('mnuForgetPass');
-$mnuMyAccount =  $plxPlugin->getParam('mnuMyAccount')=='' ? $plxPlugin->getLang('L_DEFAULT_MENU_MY_ACCOUNT') : $plxPlugin->getParam('mnuMyAccount');
+$mnuAccount =  $plxPlugin->getParam('mnuAccount')=='' ? $plxPlugin->getLang('L_DEFAULT_MENU_MY_ACCOUNT') : $plxPlugin->getParam('mnuAccount');
 $showAnnuaire =  ($plxPlugin->getParam('showAnnuaire')=='' || $plxPlugin->getParam('typeAnnuaire')=='generaliste') ? 'no' : $plxPlugin->getParam('showAnnuaire');
 $mnuAnnuaire =  $plxPlugin->getParam('mnuAnnuaire')=='' ? $plxPlugin->getLang('L_DEFAULT_MENU_ANNUAIRE') : $plxPlugin->getParam('mnuAnnuaire');
 $typeAnnuaire =  $plxPlugin->getParam('typeAnnuaire')=='' ? 'generaliste' : $plxPlugin->getParam('typeAnnuaire');
@@ -118,8 +118,8 @@ if(function_exists('mail')) {
 		<div id="toggle_desc" style="display:none"><?php plxUtils::printArea('desc_adhesion',$desc_adhesion) ?></div>
 		<p class="field"><label for="id_mnuForgetPass"><?php $plxPlugin->lang('L_MENU_FORGET_PASS') ?>&nbsp;:</label></p>
 		<?php plxUtils::printInput('mnuForgetPass',$mnuForgetPass,'text') ?>
-		<p class="field"><label for="id_mnuMyAccount"><?php $plxPlugin->lang('L_MENU_MY_ACCOUNT') ?>&nbsp;:</label></p>
-		<?php plxUtils::printInput('mnuMyAccount',$mnuMyAccount,'text') ?>
+		<p class="field"><label for="id_mnuAccount"><?php $plxPlugin->lang('L_MENU_MY_ACCOUNT') ?>&nbsp;:</label></p>
+		<?php plxUtils::printInput('mnuAccount',$mnuAccount,'text') ?>
 		<p class="field"><label for="id_showAnnuaire"><?php $plxPlugin->lang('L_SHOW_MENU_ANNUAIRE') ?>&nbsp;:</label></p>
 		<?php plxUtils::printSelect('showAnnuaire',$aAnnuaire,$showAnnuaire) ?>
 		<a class="help" title="L'annuaire ne sera affiché que s'il est de type professionnel">&nbsp;</a>

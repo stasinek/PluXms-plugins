@@ -2,7 +2,7 @@
 Pour afficher les drapeaux permettant de sélectionner une langue, éditez par exemple le fichier sidebar.php de votre thème et ajoutez la ligne suivante:
 <br /><br />
 <pre style="font-size:1.1em;margin-left:20px">
-&lt;?php eval($plxShow->callHook('MyMultiLingue')) ?>
+&lt;?php eval($plxShow->callHook('MultiLingue')) ?>
 </pre>
 </p>
 
@@ -10,7 +10,7 @@ Pour afficher les drapeaux permettant de sélectionner une langue, éditez par e
 Pour afficher les articles dépendants rédigés dans une autre langue, ajoutez dans le fichier article.php de votre thème la ligne suivante:
 <br /><br />
 <pre style="font-size:1.1em;margin-left:20px">
-&lt;?php eval($plxShow->callHook('MyMultiLingue', 'artlinks')) ?>
+&lt;?php eval($plxShow->callHook('MultiLingue', 'artlinks')) ?>
 </pre>
 </p>
 
@@ -18,7 +18,7 @@ Pour afficher les articles dépendants rédigés dans une autre langue, ajoutez 
 Pour afficher les pages statiques dépendantes rédigés dans une autre langue, ajoutez dans le fichier static.php de votre thème la ligne suivante:
 <br /><br />
 <pre style="font-size:1.1em;margin-left:20px">
-&lt;?php eval($plxShow->callHook('MyMultiLingue', 'staticlinks')) ?>
+&lt;?php eval($plxShow->callHook('MultiLingue', 'staticlinks')) ?>
 </pre>
 </p>
 

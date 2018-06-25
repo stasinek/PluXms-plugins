@@ -29,7 +29,7 @@ class plxCoinSlider extends plxPlugin {
 		if($this->coinslider->aSlides) {
 			$this->addHook('ThemeEndHead', 'ThemeEndHead');
 			$this->addHook('ThemeEndBody', 'ThemeEndBody');
-			$this->addHook('MyCoinSlider', 'MyCoinSlider');
+			$this->addHook('CoinSlider', 'CoinSlider');
 		}
 
 	}
@@ -37,7 +37,7 @@ class plxCoinSlider extends plxPlugin {
 	public function AdminMediasTop() {
 
 		echo '<?php
-		$arr = array("MyCoinSlider" => array("coinslider_add" => "Ajouter au diaporama"));
+		$arr = array("CoinSlider" => array("coinslider_add" => "Ajouter au diaporama"));
 		$selectionList = array_merge($selectionList, $arr);
 		?>';
 
@@ -53,7 +53,7 @@ class plxCoinSlider extends plxPlugin {
 
 	}
 
-	public function MyCoinSlider() {
+	public function CoinSlider() {
 
 		echo "\n<div id=\"coin-slider\">\n";
 		foreach($this->coinslider->aSlides as $slide) {

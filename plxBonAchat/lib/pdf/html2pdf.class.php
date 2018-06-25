@@ -464,8 +464,8 @@ if (!defined('__CLASS_HTML2PDF__')) {
             $this->_defList = $defLIST;
 
             $this->_page = $page;
-            $this->pdf->setMyLastPageGroup($myLastPageGroup);
-            $this->pdf->setMyLastPageGroupNb($myLastPageGroupNb);
+            $this->pdf->setLastPageGroup($myLastPageGroup);
+            $this->pdf->setLastPageGroupNb($myLastPageGroupNb);
             $this->pdf->setXY(0, 0);
             $this->parsingCss->fontSet();
         }
@@ -887,7 +887,7 @@ if (!defined('__CLASS_HTML2PDF__')) {
             // if $curr => adapt the current position of the parsing
             if ($curr!==null && $sub->parsingHtml->code[$this->_parsePos]['name']=='write') {
                 $txt = $sub->parsingHtml->code[$this->_parsePos]['param']['txt'];
-                $txt = str_replace('[[page_cu]]', $sub->pdf->getMyNumPage($this->_page), $txt);
+                $txt = str_replace('[[page_cu]]', $sub->pdf->getNumPage($this->_page), $txt);
                 $sub->parsingHtml->code[$this->_parsePos]['param']['txt'] = substr($txt, $curr+1);
             } else
                 $sub->_parsePos++;
@@ -997,8 +997,8 @@ if (!defined('__CLASS_HTML2PDF__')) {
                 $marge,
                 $this->_page,
                 $this->_defList,
-                $this->pdf->getMyLastPageGroup(),
-                $this->pdf->getMyLastPageGroupNb()
+                $this->pdf->getLastPageGroup(),
+                $this->pdf->getLastPageGroupNb()
             );
         }
 
@@ -2360,7 +2360,7 @@ if (!defined('__CLASS_HTML2PDF__')) {
                     $hour    = null;
                     $form    = null;
                 }
-                $this->pdf->SetMyFooter($page, $date, $hour, $form);
+                $this->pdf->SetFooter($page, $date, $hour, $form);
             // else => we use the last page set used
             } else {
                 $this->parsingCss->save();
@@ -3267,8 +3267,8 @@ if (!defined('__CLASS_HTML2PDF__')) {
                 $this->_isAfterFloat = false;
             }
 
-            $txt = str_replace('[[page_nb]]', $this->pdf->getMyAliasNbPages(), $txt);
-            $txt = str_replace('[[page_cu]]', $this->pdf->getMyNumPage($this->_page), $txt);
+            $txt = str_replace('[[page_nb]]', $this->pdf->getAliasNbPages(), $txt);
+            $txt = str_replace('[[page_cu]]', $this->pdf->getNumPage($this->_page), $txt);
 
             if ($this->parsingCss->value['text-transform']!='none') {
                 if ($this->parsingCss->value['text-transform']=='capitalize')

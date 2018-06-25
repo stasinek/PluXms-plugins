@@ -68,7 +68,7 @@ class plxPluginDownloader extends plxPlugin {
 
 			if(!$test1 OR !$test2 OR !$test3) {
 
-				echo "<p class=\"warning\">Plugin MyPluginDownloader<br />";
+				echo "<p class=\"warning\">Plugin PluginDownloader<br />";
 				if(!$test1) echo "<br />'.$this->getLang('L_ERR_CURL').'";
 				if(!$test2) echo "<br />'.$this->getLang('L_ERR_PLX_PLUGINS').'";
 				if($test2 AND !$test3) echo "<br />'.$this->getLang('L_ERR_WRITE_ACCESS').'";

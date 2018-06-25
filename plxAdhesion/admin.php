@@ -52,7 +52,7 @@ $enteteTableau = '
 //Mot de passe oublié, on renvoie la clé si l'email correspond
 if(isset($_GET['forgetmypass']) && !empty($_GET['forgetmypass'])) {
 	$mail = str_replace('true&mail=','',base64_decode($_GET['forgetmypass']));
-	if($plxPlugin->retrieveMyPass(plxUtils::strCheck($mail) )) {
+	if($plxPlugin->retrievePass(plxUtils::strCheck($mail) )) {
 		$_SESSION['info'] = $plxPlugin->getLang('L_PASS_SENT');
 		header('Location: plugin.php?p=adhesion');
 		exit();

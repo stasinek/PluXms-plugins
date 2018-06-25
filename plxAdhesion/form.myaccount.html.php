@@ -120,7 +120,7 @@ if(!empty($_POST) && empty($wall_e)) {
 		$error[] = $plxPlugin->getLang('L_ERR_ANTISPAM');
 	if(empty($error) ) {
 		# On édite le compte de l'adhérent
-		if ($plxPlugin->editMyAccount($compte,$compte['id'])) {
+		if ($plxPlugin->editAccount($compte,$compte['id'])) {
 			//Si l'utilisateur ne souhaite plus être membre de l'asso, on envoie une notification à un admin
 			if($choix == 'stop') {
 				$content = $plxPlugin->notification($compte['nom'],$compte['prenom'],$compte['adresse1'],$compte['adresse2'],$compte['cp'],$compte['ville'],$compte['tel'],$compte['mail'],$compte['choix'],$compte['mailing']);

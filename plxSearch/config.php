@@ -68,7 +68,7 @@ if ($array = $files->query('/^static(-[a-z0-9-_]+)?.php$/')) {
 <pre style="color:#000;font-size:12px; background:#fff; padding: 10px 20px 20px 20px; border:1px solid #efefef">
 <?php
 echo (htmlspecialchars("
-<?php eval(\$plxShow->callHook('MySearchForm')) ?>
+<?php eval(\$plxShow->callHook('SearchForm')) ?>
 "));
 ?>
 </pre>
