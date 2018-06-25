@@ -4,7 +4,7 @@
 ## Version 1.0.1 (31/05/2017) ##
 BUG mauvaise variable dans le formulaire pour l'adresse email
 BUG mauvaise traduction FR dans les placeholder du formulaire
-[+] Compatibilité avec le plugin plxMyCapchaImage
+[+] Compatibilité avec le plugin plxCapchaImage
 [+] Sécurité suppémentaire pour la validation en sortant du site Paypal
 [+] Choix de la couleur du texte du bon d'achant dans la config
 [+] Choix des images pour le pied de page, recto et verso du bon d'achat

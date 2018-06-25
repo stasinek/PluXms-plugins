@@ -7,7 +7,7 @@ class slippry {
 
 	public function __construct($default_lang) {
 		if(defined('PLX_MYMULTILINGUE')) {
-			$lang = plxMyMultiLingue::_Lang();
+			$lang = plxMultiLingue::_Lang();
 			if(!empty($lang) AND defined('PLX_ADMIN')) $default_lang = $lang;
 		}
 		$this->config = PLX_ROOT.PLX_CONFIG_PATH.'plugins/slippry.config.'.$default_lang.'.xml';

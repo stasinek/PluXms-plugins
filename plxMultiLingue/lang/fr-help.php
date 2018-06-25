@@ -26,11 +26,11 @@ Pour afficher les pages statiques dépendantes rédigés dans une autre langue, 
 <strong>Important :<br />
 <ul>
 <li>
-	plxMyMultiLingue doit être le premier plugin dans la liste des plugins actifs pour assurer un bon fonctionnement<br />
-	Notamment avec le plugin plxMyBetterUrl.
+	plxMultiLingue doit être le premier plugin dans la liste des plugins actifs pour assurer un bon fonctionnement<br />
+	Notamment avec le plugin plxBetterUrl.
 </li>
 <li>
-	plxMyMultiLingue requiert l'activation de la réécriture d'url dans PluXml<br />
+	plxMultiLingue requiert l'activation de la réécriture d'url dans PluXml<br />
 	Paramètres > Configuration avancée > Activer la réécriture d'urls : Oui
 </li>
 </ul>

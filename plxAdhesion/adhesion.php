@@ -215,17 +215,17 @@ class adhesion extends plxPlugin {
 				$this->listDiff = $this->createGutumaList($listeDeDiffusion);
 			}
 		}
-		//Si les plugins lockArticles et plxMyPrivateStatic sont activés, on les désactive
+		//Si les plugins lockArticles et plxPrivateStatic sont activés, on les désactive
 		if (isset($plxAdmin->plxPlugins->aPlugins["lockArticles"])) {
 			$content['selection'] ='deactivate';
 			$content['plugName'] = array('lockArticles'=>'on');
 			$content['action']['lockArticles'] = 'on';
 			$plxAdmin->plxPlugins->saveConfig($content);
 		}
-		if (isset($plxAdmin->plxPlugins->aPlugins["plxMyPrivateStatic"])) {
+		if (isset($plxAdmin->plxPlugins->aPlugins["plxPrivateStatic"])) {
 			$content['selection'] ='deactivate';
-			$content['plugName'] = array('plxMyPrivateStatic'=>'on');
-			$content['action']['plxMyPrivateStatic'] = 'on';
+			$content['plugName'] = array('plxPrivateStatic'=>'on');
+			$content['action']['plxPrivateStatic'] = 'on';
 			$plxAdmin->plxPlugins->saveConfig($content);
 		}
 	}

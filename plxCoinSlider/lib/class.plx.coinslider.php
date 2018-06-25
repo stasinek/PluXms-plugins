@@ -7,7 +7,7 @@ class coinslider {
 
 	public function __construct() {
 
-		$lang = (isset($_COOKIE["plxMyMultiLingue"]) and !empty($_COOKIE["plxMyMultiLingue"])) ? '.'.$_COOKIE["plxMyMultiLingue"] : '';
+		$lang = (isset($_COOKIE["plxMultiLingue"]) and !empty($_COOKIE["plxMultiLingue"])) ? '.'.$_COOKIE["plxMultiLingue"] : '';
 		if(defined('PLX_CONF')) # version PluXml < 5.1.7
 			$this->config = dirname(PLX_CONF).'/coinslider.config'.$lang.'.xml';
 		else # version PluXml >= 5.1.7

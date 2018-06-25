@@ -2,7 +2,7 @@
 BUG tableau PLX_MYMULTILINGUE non géré avec php 5.x+
 
 ## Version 1.2 (30/03/2017) ##
-[+] Compatibilité avec le plugin plxMyMultiLingue pour avoir un diaporama différent par langue
+[+] Compatibilité avec le plugin plxMultiLingue pour avoir un diaporama différent par langue
 
 ## Version 1.1 (13/02/2017) ##
 BUG Compatibilité PluXml 5.6

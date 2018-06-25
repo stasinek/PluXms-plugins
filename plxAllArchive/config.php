@@ -7,10 +7,10 @@ plxToken::validateFormToken($_POST);
 # Liste des langues disponibles et prises en charge par le plugin
 $aLangs = array($plxAdmin->aConf['default_lang']);
 
-# Si le plugin plxMyMultiLingue est installé on filtre sur les langues utilisées
-# On garde par défaut le fr si aucune langue sélectionnée dans plxMyMultiLingue
+# Si le plugin plxMultiLingue est installé on filtre sur les langues utilisées
+# On garde par défaut le fr si aucune langue sélectionnée dans plxMultiLingue
 if(defined('PLX_MYMULTILINGUE')) {
-	$langs = plxMyMultiLingue::_Langs();
+	$langs = plxMultiLingue::_Langs();
 	$multiLangs = empty($langs) ? array() : explode(',', $langs);
 	$aLangs = $multiLangs;
 }
@@ -28,7 +28,7 @@ if(!empty($_POST)) {
 		$plxPlugin->setParam('mnuName_'.$lang, $_POST['mnuName_'.$lang], 'string');
 	}
 	$plxPlugin->saveParams();
-	header('Location: parametres_plugin.php?p=plxMyAllArchive');
+	header('Location: parametres_plugin.php?p=plxAllArchive');
 	exit;
 }
 
@@ -37,7 +37,7 @@ $var = array();
 $langs = array();
 foreach($aLangs as $lang) {
 	# chargement de chaque fichier de langue
-	$langs[$lang] = $plxPlugin->loadLang(PLX_PLUGINS.'plxMyAllArchive/lang/'.$lang.'.php');
+	$langs[$lang] = $plxPlugin->loadLang(PLX_PLUGINS.'plxAllArchive/lang/'.$lang.'.php');
 	$var[$lang]['mnuName'] =  $plxPlugin->getParam('mnuName_'.$lang)=='' ? $langs[$lang]['L_DEFAULT_MENU_NAME'] : $plxPlugin->getParam('mnuName_'.$lang);
 }
 # initialisation des variables communes à chaque langue
@@ -72,7 +72,7 @@ form.inline-form label {
 }
 </style>
 <div id="tabContainer">
-<form class="inline-form" id="form_plxallarchive" action="parametres_plugin.php?p=plxMyAllArchive" method="post">
+<form class="inline-form" id="form_plxallarchive" action="parametres_plugin.php?p=plxAllArchive" method="post">
 	<div class="tabs">
 		<ul>
 			<li id="tabHeader_main"><?php $plxPlugin->lang('L_MAIN') ?></li>
@@ -138,8 +138,8 @@ form.inline-form label {
 		</div>
 		<?php foreach($aLangs as $lang) : ?>
 		<div class="tabpage" id="tabpage_<?php echo $lang ?>">
-			<?php if(!file_exists(PLX_PLUGINS.'plxMyAllArchive/lang/'.$lang.'.php')) : ?>
-			<p><?php printf($plxPlugin->getLang('L_LANG_UNAVAILABLE'), PLX_PLUGINS.'plxMyAllArchive/lang/'.$lang.'.php') ?></p>
+			<?php if(!file_exists(PLX_PLUGINS.'plxAllArchive/lang/'.$lang.'.php')) : ?>
+			<p><?php printf($plxPlugin->getLang('L_LANG_UNAVAILABLE'), PLX_PLUGINS.'plxAllArchive/lang/'.$lang.'.php') ?></p>
 			<?php else : ?>
 			<fieldset>
 				<p>
@@ -159,4 +159,4 @@ form.inline-form label {
 	</fieldset>
 </form>
 </div>
-<script type="text/javascript" src="<?php echo PLX_PLUGINS."plxMyAllArchive/tabs/tabs.js" ?>"></script>
+<script type="text/javascript" src="<?php echo PLX_PLUGINS."plxAllArchive/tabs/tabs.js" ?>"></script>

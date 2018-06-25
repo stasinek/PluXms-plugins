@@ -13,7 +13,7 @@ if(!empty($_POST)) {
 	$plxPlugin->setParam('elmt4', plxUtils::getValue($_POST['elmt4']), 'numeric');
 	$plxPlugin->setParam('elmt5', plxUtils::getValue($_POST['elmt5']), 'numeric');
 	$plxPlugin->saveParams();
-	header('Location: parametres_plugin.php?p=plxMyPager');
+	header('Location: parametres_plugin.php?p=plxPager');
 	exit;
 }
 $sel=' checked="checked"';
@@ -30,12 +30,12 @@ var head = document.getElementsByTagName("head")[0];
 var css = document.createElement('link');
 css.type = "text/css";
 css.rel = "stylesheet";
-css.href = "<?php echo PLX_PLUGINS ?>plxMyPager/style.css";
+css.href = "<?php echo PLX_PLUGINS ?>plxPager/style.css";
 css.media = "screen";
 head.appendChild(css);
 </script>
 
-<form class="inline-form" id="form_plxMyPager" action="parametres_plugin.php?p=plxMyPager" method="post">
+<form class="inline-form" id="form_plxPager" action="parametres_plugin.php?p=plxPager" method="post">
 	<fieldset class="withlabel">
 		<p><?php $plxPlugin->lang('L_PAGER_CHECK_LIB') ?></p>
 		<p>

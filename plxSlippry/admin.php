@@ -7,12 +7,12 @@ plxToken::validateFormToken($_POST);
 # On édite les catégories
 if(!empty($_POST)) {
 	$plxPlugin->slippry->editSlides($_POST);
-	header('Location: plugin.php?p=plxMySlippry');
+	header('Location: plugin.php?p=plxSlippry');
 	exit;
 }
 ?>
 
-<form class="inline-form" action="plugin.php?p=plxMySlippry" method="post" id="form_plxMySlippry">
+<form class="inline-form" action="plugin.php?p=plxSlippry" method="post" id="form_plxSlippry">
 <table class="table">
 	<thead>
 		<tr>
@@ -35,7 +35,7 @@ if(!empty($_POST)) {
 			echo '<td style="vertical-align:top"><input type="checkbox" name="idSlide[]" value="'.$k.'" /><input type="hidden" name="slideNum[]" value="'.$k.'" /></td>';
 			echo '<td style="vertical-align:top">';
 			if(file_exists(PLX_ROOT.$v['url'])) {
-				echo '<img src="'.PLX_PLUGINS.'plxMySlippry/lib/mthumb.php?src='.plxUtils::getRacine().plxUtils::strCheck($v['url']).'&amp;h=100&amp;w=150&amp;zc=1" alt="" />';
+				echo '<img src="'.PLX_PLUGINS.'plxSlippry/lib/mthumb.php?src='.plxUtils::getRacine().plxUtils::strCheck($v['url']).'&amp;h=100&amp;w=150&amp;zc=1" alt="" />';
 			}
 			echo '&nbsp;</td><td>';
 			echo $plxPlugin->getLang('L_URL_IMAGE').' '.$k.' :<br />';

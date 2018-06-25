@@ -2,7 +2,7 @@
 <?php
 
 $plxMotor = plxMotor::getInstance();
-$plxPlugin=$plxMotor->plxPlugins->getInstance('plxMyPrivateStatic');
+$plxPlugin=$plxMotor->plxPlugins->getInstance('plxPrivateStatic');
 
 $error=false;
 
@@ -15,7 +15,7 @@ if(!empty($_POST)) {
 		exit;
 	}
 }
-$filename = PLX_ROOT.$plxMotor->aConf["racine_statiques"].$plxMotor->idStat.".plxMyPrivateStatic.php";
+$filename = PLX_ROOT.$plxMotor->aConf["racine_statiques"].$plxMotor->idStat.".plxPrivateStatic.php";
 if(file_exists($filename))
 	require $filename;
 ?>

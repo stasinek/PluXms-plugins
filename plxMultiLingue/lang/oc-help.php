@@ -26,11 +26,11 @@ Per afichar las paginas estaticas dependants redigits dins una autra lenga, ajus
 <strong>Important :<br />
 <ul>
 <li>
-	plxMyMultiLingue deu èsser la primièra extension de la lista de las extensions per assegurar lo bon foncionament<br />
-	Notamment avec le plugin plxMyBetterUrl.
+	plxMultiLingue deu èsser la primièra extension de la lista de las extensions per assegurar lo bon foncionament<br />
+	Notamment avec le plugin plxBetterUrl.
 </li>
 <li>
-	plxMyMultiLingue necessita l'activacion de la reescritura de las urls dins PluXml<br />
+	plxMultiLingue necessita l'activacion de la reescritura de las urls dins PluXml<br />
 	Paramètres > Configuracion avançada > Activar la reescritura de las urls : Òc
 </li>
 </ul>

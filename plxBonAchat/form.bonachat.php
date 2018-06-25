@@ -74,7 +74,7 @@ if(!empty($_POST)) {
 	$_SESSION['check_recipient_email']=$check_recipient_email=plxUtils::unSlash($_POST['check_recipient_email']);
 	if ($check_recipient_email==1) { $check_rc_email=$plxPlugin->getLang('L_BA_YES'); } else { $check_rc_email=$plxPlugin->getLang('L_BA_NO');} 
 	
-	# pour compatibilité avec le plugin plxMyCapchaImage
+	# pour compatibilité avec le plugin plxCapchaImage
 	if(strlen($_SESSION['capcha'])<=10)
 		$_SESSION['capcha']=sha1($_SESSION['capcha']);
 

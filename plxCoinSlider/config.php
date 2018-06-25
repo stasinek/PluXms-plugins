@@ -19,7 +19,7 @@ if(!empty($_POST)) {
 	$plxPlugin->setParam('links', $_POST['links'], 'numeric');
 	$plxPlugin->setParam('hoverPause', $_POST['hoverPause'], 'numeric');
 	$plxPlugin->saveParams();
-	header('Location: parametres_plugin.php?p=plxMyCoinSlider');
+	header('Location: parametres_plugin.php?p=plxCoinSlider');
 	exit;
 }
 $parms = array();
@@ -42,7 +42,7 @@ form.inline-form label {
 	width: 300px;
 }
 </style>
-<form class="inline-form" action="parametres_plugin.php?p=plxMyCoinSlider" method="post" id="form_plxMyCoinSlider">
+<form class="inline-form" action="parametres_plugin.php?p=plxCoinSlider" method="post" id="form_plxCoinSlider">
 	<fieldset>
 		<p>
 			<label for="id_jquery"><?php $plxPlugin->lang('L_JQUERY') ?></label>

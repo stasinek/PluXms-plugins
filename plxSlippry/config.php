@@ -11,7 +11,7 @@ if(!empty($_POST)) {
 	$plxPlugin->setParam('maxwidth', $_POST['maxwidth'], 'numeric');	
 	$plxPlugin->setParam('openwin', $_POST['openwin'], 'numeric');		
 	$plxPlugin->saveParams();
-	header('Location: parametres_plugin.php?p=plxMySlippry');
+	header('Location: parametres_plugin.php?p=plxSlippry');
 	exit;
 }
 $parms = array();
@@ -26,7 +26,7 @@ form.inline-form label {
 	width: 300px;
 }
 </style>
-<form class="inline-form" action="parametres_plugin.php?p=plxMySlippry" method="post" id="form_plxMySlippry">
+<form class="inline-form" action="parametres_plugin.php?p=plxSlippry" method="post" id="form_plxSlippry">
 	<fieldset>
 		<p>
 			<label for="id_jquery"><?php $plxPlugin->lang('L_JQUERY') ?></label>

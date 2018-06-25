@@ -100,7 +100,7 @@ if(function_exists('mail')) {
 	echo '<p style="color:#ff0000"><strong>'.$plxPlugin->getLang('L_MAIL_NOT_AVAILABLE').'</strong></p>';
 }
 ?>
-<form id="form_plxmycontact" action="parametres_plugin.php?p=adhesion" method="post">
+<form id="form_plxcontact" action="parametres_plugin.php?p=adhesion" method="post">
 	<fieldset>
 		<p class="field"><label for="adherents"><?php echo $plxPlugin->getLang('L_CONFIG_ROOT_PATH') ?>&nbsp;:</label></p>
 		<?php plxUtils::printInput('adherents', $plxPlugin->getParam('adherents'), 'text'); ?>

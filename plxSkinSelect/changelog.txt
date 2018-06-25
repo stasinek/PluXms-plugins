@@ -1,0 +1,18 @@
+## version 1.1.2 (05/11/2012) ##
+BUG Mauvais nom du cookie
+
+## version 1.1.1 (04/09/2012) ##
+[+] Changement du nom du cookie
+
+## version 1.1 (21/06/2012) ##
+[+] Redirection sur la page en cours de visualisation
+BUG Pas de changement de thème si réécriture d'url activée
+
+## version 1.0.2 (20/10/2011) ##
+BUG Mauvais encodage du fichier plxSkinSelect.php
+
+## version 1.0.1 (20/10/2011) ##
+BUG Mémorisation du thème sélectionné
+
+## version 1.0 (20/10/2011) ##
+version initiale

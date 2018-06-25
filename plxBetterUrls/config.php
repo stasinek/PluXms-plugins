@@ -15,7 +15,7 @@ if(!empty($_POST)) {
 		$plxPlugin->setParam('format_static', plxUtils::title2url($_POST['format_static']), 'string');
 		$plxPlugin->saveParams();
 	}
-	header('Location: parametres_plugin.php?p=plxMyBetterUrls');
+	header('Location: parametres_plugin.php?p=plxBetterUrls');
 	exit;
 }
 
@@ -23,7 +23,7 @@ $format_article = $plxPlugin->getParam('format_article');
 $format_category = $plxPlugin->getParam('format_category');
 $format_static = $plxPlugin->getParam('format_static');
 ?>
-<form id="form_config_plugin" action="parametres_plugin.php?p=plxMyBetterUrls" method="post">
+<form id="form_config_plugin" action="parametres_plugin.php?p=plxBetterUrls" method="post">
 	<fieldset>
 		<p class="field"><label for="id_ext_url"><?php $plxPlugin->lang('L_URLS_EXTENSION') ?>&nbsp;:</label></p>
 		<input onkeyup="upd_spans(this.value)" type="text" id="id_ext_url" name="ext_url" size="10" maxlength="11" value="<?php echo $plxPlugin->getParam('ext_url') ?>" />&nbsp;ex: <strong>.htm</strong>, .html, .php

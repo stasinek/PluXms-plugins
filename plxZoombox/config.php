@@ -14,7 +14,7 @@ if(!empty($_POST)) {
 	$plxPlugin->setParam('gallery', $_POST['gallery'], 'string');
 	$plxPlugin->setParam('autoplay', $_POST['autoplay'], 'string');
 	$plxPlugin->saveParams();
-	header('Location: parametres_plugin.php?p=plxMyZoombox');
+	header('Location: parametres_plugin.php?p=plxZoombox');
 	exit;
 }
 $theme = $plxPlugin->getParam('theme')!='' ? $plxPlugin->getParam('theme') : 'zoombox';
@@ -31,7 +31,7 @@ form.inline-label label {
 	width: 300px;
 }
 </style>
-<form class="inline-form inline-label" action="parametres_plugin.php?p=plxMyZoombox" method="post" id="form_plxMyZoombox">
+<form class="inline-form inline-label" action="parametres_plugin.php?p=plxZoombox" method="post" id="form_plxZoombox">
 	<fieldset>
 		<p>
 			<label for="id_theme"><?php $plxPlugin->lang('L_THEME') ?></label>

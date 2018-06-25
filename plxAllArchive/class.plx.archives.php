@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin plxMyAllArchive
+ * Plugin plxAllArchive
  *
  * @author	Stephane F
  **/
@@ -21,7 +21,7 @@ class plxArchives {
 	 **/
 	public function __construct() {
 		$this->plxMotor = plxMotor::getInstance();
-		$this->plxPlugin = $this->plxMotor->plxPlugins->aPlugins['plxMyAllArchive'];
+		$this->plxPlugin = $this->plxMotor->plxPlugins->aPlugins['plxAllArchive'];
 		$this->excludeCats = explode(',',$this->plxPlugin->getParam('exclude'));
 		$this->sort = $this->plxPlugin->getParam('sort');
 		$this->sortby = $this->plxPlugin->getParam('sortby');

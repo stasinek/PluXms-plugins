@@ -1,4 +1,4 @@
-# plxMyCoinSlider
+# plxCoinSlider
 PluXml plugin: Diaporama
 
 UNSUPPORTED

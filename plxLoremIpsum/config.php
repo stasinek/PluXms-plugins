@@ -23,7 +23,7 @@ if(!empty($_POST)) {
 	}
 
 	# redirection sur la page de configuration du plugin
-	header('Location: parametres_plugin.php?p=plxMyLoremIpsum');
+	header('Location: parametres_plugin.php?p=plxLoremIpsum');
 	exit;
 }
 
@@ -38,7 +38,7 @@ form.inline-form label {
 	width: 300px;
 }
 </style>
-<form class="inline-form" action="parametres_plugin.php?p=plxMyLoremIpsum" method="post" id="form_loremipsum">
+<form class="inline-form" action="parametres_plugin.php?p=plxLoremIpsum" method="post" id="form_loremipsum">
 	<fieldset>
 		<p>
 			<label for="id_nbart">Nombre d'articles &agrave; cr&eacute;er</label>

@@ -27,7 +27,7 @@ $captcha = $plxPlugin->getParam('captcha')=='' ? '1' : $plxPlugin->getParam('cap
 
 # Gestion des erreurs
 if(!empty($_POST) AND (!empty($_POST['submit']) AND $_POST['btn_ok2']=='add')) {
-	# pour compatibilité avec le plugin plxMyCapchaImage
+	# pour compatibilité avec le plugin plxCapchaImage
 	if(strlen($_SESSION['capcha'])<=10)
 		$_SESSION['capcha']=sha1($_SESSION['capcha']);
 	$author = plxUtils::unSlash($_POST['author']);

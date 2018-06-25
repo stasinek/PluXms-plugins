@@ -11,7 +11,7 @@ if(!empty($_POST)) {
 	$plxPlugin->saveParams();
 
 	# redirection sur la page de configuration du plugin
-	header('Location: parametres_plugin.php?p=plxMyAkismet');
+	header('Location: parametres_plugin.php?p=plxAkismet');
 	exit;
 }
 
@@ -21,7 +21,7 @@ $api_key = empty($params['api_key']) ? '' : $params['api_key']['value'];
 
 ?>
 
-<form class="inline-form" action="parametres_plugin.php?p=plxMyAkismet" method="post" id="form_plxMyAkismet">
+<form class="inline-form" action="parametres_plugin.php?p=plxAkismet" method="post" id="form_plxAkismet">
 	<fieldset>
 		<p>
 			<label for="api_key">Akismet API key :</label>

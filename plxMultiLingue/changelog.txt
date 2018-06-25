@@ -13,7 +13,7 @@ version 0.8 (27/03/2017)
 [+] (ajout) Configuration plugin > Utiliser un thème différent pour chaque langue
 [+] (ajout) Configuration plugin > Préserver l'affichage de l'interface d'administration avec la langue du profil utilisateur connecté
 [-] (suppr) Configuration plugin > Bascule sur l'article, catégorie ou page statique avec le même identifiant lors du changement de langue.
-[-] (suppr) cookie plxMyMultiLingue pour la sauvegarde de la langue du site visité
+[-] (suppr) cookie plxMultiLingue pour la sauvegarde de la langue du site visité
 BUG Pas d'affichage des drapeaux coté visiteurs si PluXml installé dans un dossier
 BUG Warning à la création d'une page statique si paramètre "Page d'accueil" non renseigné
 

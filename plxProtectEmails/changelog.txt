@@ -1,0 +1,5 @@
+## Version 1.1 (09/07/2015) ##
+[+] Protection des emails dans la méthode plxShow:staticInclude() 
+
+## Version 1.0 (16/12/2014) ##
+version initiale

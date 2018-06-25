@@ -1,0 +1,12 @@
+## version 1.1.2 (13/05/2015) ##
+Compatibilité PluXml 5.4
+
+## version 1.1.1 (03/07/2013) ##
+BUG: Fichiers sisyphus non trouvé car mauvais nom de répertoire du plugin
+
+## version 1.1 (07/12/2011) ##
+BUG Mauvaise redirection sur l'écran de configuration
+BUG Mauvais encodage fichier plxRescueData.php
+
+## version 1.0 (06/12/2011) ##
+version initiale

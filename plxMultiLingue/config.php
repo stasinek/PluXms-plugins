@@ -43,8 +43,8 @@ if(!empty($_POST)) {
 	unset($_SESSION['medias']);
 	unset($_SESSION['folder']);
 	unset($_SESSION['currentfolder']);
-	unset($_SESSION["plxMyMultiLingue"]);
-	header('Location: parametres_plugin.php?p=plxMyMultiLingue');
+	unset($_SESSION["plxMultiLingue"]);
+	header('Location: parametres_plugin.php?p=plxMultiLingue');
 	exit;
 }
 
@@ -63,7 +63,7 @@ $lang_medias_folder = $plxPlugin->getParam('lang_medias_folder')=='' ? 0 : $plxP
 $lang_style = $plxPlugin->getParam('lang_style')=='' ? 0 : $plxPlugin->getParam('lang_style');
 ?>
 <p><?php $plxPlugin->lang('L_FLAGS') ?></p>
-<form action="parametres_plugin.php?p=plxMyMultiLingue" method="post" id="form_langs">
+<form action="parametres_plugin.php?p=plxMultiLingue" method="post" id="form_langs">
 	<table class="table" style="width:150px">
 		<thead>
 			<tr>
@@ -89,7 +89,7 @@ $lang_style = $plxPlugin->getParam('lang_style')=='' ? 0 : $plxPlugin->getParam(
 				else
 					$label = $Labels[$flag];
 				echo '<td><input size="10" maxlength="30" type="input" id="label_'.$flag.'" name="label['.$flag.']" value="'.plxUtils::strCheck($label).'" /></td>';
-				echo '<td><img src="'.PLX_PLUGINS.'plxMyMultiLingue/img/'.$flag.'.png" alt="'.$flag.'" style="width:25px" /></td>';
+				echo '<td><img src="'.PLX_PLUGINS.'plxMultiLingue/img/'.$flag.'.png" alt="'.$flag.'" style="width:25px" /></td>';
 				echo '<td><input size="2" maxlength="2" type="input" id="order_'.$flag.'" name="order['.$flag.']" value="'.$order.'" /></td>';
 				echo '</tr>';
 			}

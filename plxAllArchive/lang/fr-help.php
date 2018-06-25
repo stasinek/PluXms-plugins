@@ -1,5 +1,5 @@
 <?php
-$plxPlugin = $plxAdmin->plxPlugins->getInstance('plxMyAllArchive');
+$plxPlugin = $plxAdmin->plxPlugins->getInstance('plxAllArchive');
 ?>
 <br />
 <strong><?php $plxPlugin->lang('L_HELP1') ?> :</strong><br /><br />

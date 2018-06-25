@@ -7,14 +7,14 @@ plxToken::validateFormToken($_POST);
 if(!empty($_POST)) {
 	$plxPlugin->setParam('nbwords', $_POST['nbwords'], 'numeric');
 	$plxPlugin->saveParams();
-	header('Location: parametres_plugin.php?p=plxMyAutoMetaDescription');
+	header('Location: parametres_plugin.php?p=plxAutoMetaDescription');
 	exit;
 }
 $nbwords = $plxPlugin->getParam('nbwords')!='' ? $plxPlugin->getParam('nbwords') : 30;
 
 ?>
 
-<form action="parametres_plugin.php?p=plxMyAutoMetaDescription" method="post" id="form_plxMyAutoMetaDescription">
+<form action="parametres_plugin.php?p=plxAutoMetaDescription" method="post" id="form_plxAutoMetaDescription">
 	<fieldset>
 		<?php $plxPlugin->lang('L_NBWORDS_HELP') ?>
 		<p class="field"><label for="id_nbwords"><?php $plxPlugin->lang('L_NBWORDS') ?></label></p>

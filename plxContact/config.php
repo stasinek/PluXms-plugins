@@ -17,7 +17,7 @@ if(!empty($_POST)) {
 	$plxPlugin->setParam('template', $_POST['template'], 'string');
 	$plxPlugin->setParam('captcha', $_POST['captcha'], 'numeric');
 	$plxPlugin->saveParams();
-	header('Location: parametres_plugin.php?p=plxMyContact');
+	header('Location: parametres_plugin.php?p=plxContact');
 	exit;
 }
 $mnuDisplay =  $plxPlugin->getParam('mnuDisplay')=='' ? 1 : $plxPlugin->getParam('mnuDisplay');
@@ -50,7 +50,7 @@ if(function_exists('mail')) {
 }
 ?>
 <br />
-<form id="form_plxmycontact" action="parametres_plugin.php?p=plxMyContact" method="post">
+<form id="form_plxcontact" action="parametres_plugin.php?p=plxContact" method="post">
 	<fieldset>
 		<p class="field"><label for="id_mnuDisplay"><?php echo $plxPlugin->lang('L_MENU_DISPLAY') ?>&nbsp;:</label></p>
 		<?php plxUtils::printSelect('mnuDisplay',array('1'=>L_YES,'0'=>L_NO),$mnuDisplay); ?>

@@ -11,7 +11,7 @@ BUG: Effet de bord sur le changement de la taille maxi du champ capcha limitant 
 [+] Modification de la taille et du nombre maximum de caractères autorisés dans la zone de saisie du capcha
 
 ## Version 1.1 (07/07/2015) ##
-{+] Changement de nom du plugin: plxMyCapchaImage à la place de plxcapchaimage
+{+] Changement de nom du plugin: plxCapchaImage à la place de plxcapchaimage
 [+] Prise en compte de la saisie du capcha en minuscule uniquement
 [+] Nouveaux fonds d'image
 BUG: Capcha inactif dans certaine configuration
