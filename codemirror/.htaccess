@@ -1,5 +1,0 @@
-<IfModule mod_expires.c>
-	ExpiresActive on
-	ExpiresDefault "access plus 4 hours"
-	FileETag None
-</IfModule>

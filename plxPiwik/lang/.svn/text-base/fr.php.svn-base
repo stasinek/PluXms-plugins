@@ -1,0 +1,10 @@
+<?php
+
+$LANG = array(
+
+'L_TITLE'				=>	'Plugin de test',
+'L_DESCRIPTION'			=>	'Description du plugin de test'
+
+);
+
+?>

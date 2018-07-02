@@ -1,0 +1,29 @@
+## Version 1.0.6 (26/10/2017) ##
+BUG Correction de la balise title dans le href de PayPal
+BUG Correction appel du site PayPal en fonction de la langue du site
+BUG Correction images manquantes pour la partie mise à jour
+
+## Version 1.0.5 (17/06/2017) ##
+[+] Introduction d'un système de vérification de mise à jour disponnible
+
+## Version 1.0.4 (19/05/2017) ##
+[+] Compatibilité PluXml 5.6
+
+## Version 1.0.3 (21/10/2016) ##
+[+] Fichier de langue traduit en anglais - Merci Stéphane
+[+] Affichage des boutons en fonction de langues - Merci Stéphane
+BUG Correction de l'erreur 404 (cf commentaire laissé sur le site) - Merci Stéphane
+BUG Correction des 2 coquilles dans le fichier de langue en fr - Merci Stéphane
+
+## Version 1.0.2 (08/07/2016) ##
+BUG correction des liens des boutons images
+
+## Version 1.0.1 (02/07/2016) ##
+[+] Choix du type de compte (production ou de test)
+[+] Choix de l'alignement du bouton : gauche, droit, centrer
+[+] Possibilité d'ouvrir PayPal dans une nouvelle fenêtre
+[+] Possibilité de programmer une page du site comme retour
+[+] Compatibilité PHP7
+
+## Version 1.0.0 (30/06/2016) ##
+Version initiale

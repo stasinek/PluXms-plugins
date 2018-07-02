@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+	<title><![CDATA[zoombox 2.0]]></title>
+	<author><![CDATA[Grafikart (scripts) / Cyril Maguire (plugin)]]></author>
+	<version>1.3</version>
+	<date>16/02/2012</date>
+	<site>http://www.grafikart.fr/zoombox</site>
+	<description><![CDATA[Zoombox is an easy to use jQuery modul that allows you to display images, html content and multi media content with a "lightbox" that floats over your web page.]]></description>
+</document>

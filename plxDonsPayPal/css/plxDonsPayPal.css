@@ -1,0 +1,28 @@
+/**
+ * Plugin for Pluxml
+ * @author	DPFPIC
+ * Site : http://dpfpic.com
+ * Licence GNU_GPL
+ **/
+ 
+#donspaypal {
+	margin-top: 12px;
+	text-align: center;
+}
+
+#indonspaypal {
+  margin: 0 auto;
+}
+#donspaypal .img_input {
+	margin: 5px 0;
+    border: 0;
+    background: none;
+    color: transparent;
+	background-repeat: no-repeat;
+	background-position: center; 
+
+}
+
+#donspaypal .txt {
+	/*color: #4f4e4c;*/
+}

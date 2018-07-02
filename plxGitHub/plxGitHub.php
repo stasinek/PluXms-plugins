@@ -4,7 +4,6 @@
  *
  **/
 class plxGitHub extends plxPlugin {
-
 	/**
 	 * Constructeur de la classe jquery
 	 *
@@ -28,7 +27,6 @@ class plxGitHub extends plxPlugin {
 		$this->addHook('ThemeEndHead', 'ThemeEndHead');
 		$this->addHook('ThemeEndBody', 'ThemeEndBody');
 		$this->addHook('SitemapStatics', 'SitemapStatics');
-
 	}
 
 	/**
@@ -88,7 +86,7 @@ class plxGitHub extends plxPlugin {
 		# ajout du menu pour accèder à la page de github
 		if($this->getParam('mnuDisplay')) {
 			echo "<?php \$class = \$this->plxMotor->mode=='github'?'active':'noactive'; ?>";
-			echo "<?php array_splice(\$menus, ".($this->getParam('mnuPos')-1).", 0, '<li><a class=\"static '.\$class.'\" href=\"'.\$this->plxMotor->urlRewrite('?github').'\">".$this->getParam('mnuName')."</a></li>'); ?>";
+			echo "<?php array_splice(\$menus, ".($this->getParam('mnuPos')-1).", 0, '<li><a class=\"menu-item static '.\$class.'\" href=\"'.\$this->plxMotor->urlRewrite('?github').'\">".$this->getParam('mnuName')."</a></li>'); ?>";
 		}
 
 	}
@@ -101,9 +99,11 @@ class plxGitHub extends plxPlugin {
 	 **/
 	public function ThemeEndHead() {
 		if($this->getParam('jquery')=='' OR $this->getParam('jquery')=='1')
+		if ($this->plxMotor->mode=="github") {
 		echo '<script type="text/javascript" src="'.PLX_PLUGINS.'plxGitHub/js/jquery.min.js"></script>'."\n";
 		echo '<script type="text/javascript" src="'.PLX_PLUGINS.'plxGitHub/js/repo.min.js"></script>'."\n";
 		echo '<style type="text/css">#repo ul {margin: 0 !important}</style>'."\n";
+		}
 	}
 
 	/**
