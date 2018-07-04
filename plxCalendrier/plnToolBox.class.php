@@ -125,7 +125,7 @@ class plnToolBox_v1
 	##############################################################################################
 	static function getMotorInstance()
 	{
-		return class_exists('plxAdmin') ? plxAdmin::getInstance() : plxMotor::getInstance();
+		return class_exists('Admin') ? plxAdmin::getInstance() : plxMotor::getInstance();
 	}
 
 	##############################################################################################

@@ -1,0 +1,37 @@
+
+svg { margin: 0; background-color: #faffff; }
+text { font: 12px 'Noto Sans', Arial, 'Sans-Serif'; stroke: none; }
+#grid text { fill: #2316ec; }
+#grid-v, #grid-h { stroke: #c0dee9; stroke-width: 1; stroke-dasharray: 10 2 2 2; }
+#grid-v0, #grid-h0 { stroke: #2316ec; }
+#graphs path { fill: none; }
+#graphs use,
+#not-in-use use { stroke-width: 2; }
+#graphs text { font-size: 16px; font-weight: bold; }
+#graphs g[data-name].active path { stroke-width: 4; }
+#graphs g[data-name].active text { font-size: 125%; }
+#graphs g[data-name] path:hover { stroke-width: 6; }
+
+#graphs g[data-name] text,
+#graphs g[data-name] path,
+#graphs g[data-name] g.legend,
+[id^="#mark"] { cursor: pointer; }
+
+/* https://www.w3schools.com/colors/colors_trends.asp - Windows Metro UI Colors */
+.graph-00 { stroke: #99b433; fill: #99b433; } /* Light Green */
+.graph-01 { stroke: #ff0097; fill: #ff0097; } /* Magenta */
+.graph-02 { stroke: #9f00a7; fill: #9f00a7; } /* Light Purple */
+.graph-03 { stroke: #e3a21a; fill: #e3a21a; } /* Orange */
+.graph-04 { stroke: #1e7145; fill: #1e7145; } /* Dark Green */
+.graph-05 { stroke: #ee1111; fill: #ee1111; } /* Red */
+.graph-06 { stroke: #7e3878; fill: #7e3878; } /* Purple */
+.graph-07 { stroke: #603cba; fill: #603cba; } /* Dark Purple */
+.graph-08 { stroke: #00a300; fill: #00a300; } /* Green */
+.graph-09 { stroke: #1d1d1d; fill: #1d1d1d; } /* Darken */
+.graph-10 { stroke: #b91d47; fill: #b91d47; } /* Dark Red */
+.graph-11 { stroke: #2d89ef; fill: #2d89ef; } /* Blue */
+.graph-12 { stroke: #2b5797; fill: #2b5797; } /* Dark Blue */
+.graph-13 { stroke: #ffc40d; fill: #ffc40d; } /* Yellow */
+.graph-14 { stroke: #da532c; fill: #da532c; } /* Dark Orange */
+.graph-15 { stroke: #00aba9; fill: #00aba9; } /* Teal */
+.graph-16 { stroke: #eff4ff; fill: #eff4ff; } /* Light Blue */

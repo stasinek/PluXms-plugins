@@ -28,10 +28,10 @@ class plxCaroufredsel extends plxPlugin {
 		$this->addHook('AdminArticleInitData', 'AdminArticleInitData');
 		$this->addHook('AdminArticlePostData', 'AdminArticlePostData');
 		$this->addHook('AdminArticleParseData', 'AdminArticleParseData');
-		$this->addHook('plxAdminEditArticle', 'plxAdminEditArticle');
+		$this->addHook('AdminEditArticle', 'AdminEditArticle');
 		$this->addHook('AdminTopBottom', 'AdminTopBottom');
 		$this->addHook('AdminFootEndBody', 'AdminFootEndBody');
-		$this->addHook('plxAdminEditArticleXml', 'plxAdminEditArticleXml');
+		$this->addHook('AdminEditArticleXml', 'AdminEditArticleXml');
 		$this->addHook('ThemeEndHead', 'ThemeEndHead');
 		$this->addHook('ThemeEndHead', 'caroufredselCss');
 		$this->addHook('caroufredselContent', 'caroufredselContent');
@@ -44,9 +44,9 @@ class plxCaroufredsel extends plxPlugin {
 		#Pour les pages statiques
 		$this->addHook('AdminStatic', 'AdminStatic');
 		$this->addHook('AdminStaticTop', 'AdminStaticTop');
-		$this->addHook('plxAdminEditStatiquesXml', 'plxAdminEditStatiquesXml');
-		$this->addHook('plxAdminEditStatique', 'plxAdminEditStatique');
-		$this->addHook('plxAdminEditStatiquesUpdate', 'plxAdminEditStatiquesUpdate');
+		$this->addHook('AdminEditStatiquesXml', 'AdminEditStatiquesXml');
+		$this->addHook('AdminEditStatique', 'AdminEditStatique');
+		$this->addHook('AdminEditStatiquesUpdate', 'AdminEditStatiquesUpdate');
 		$this->addHook('plxMotorGetStatiques', 'plxMotorGetStatiques');
 		$this->addHook('caroufredselStaticContent', 'caroufredselStaticContent');
 		$this->addHook('caroufredselStatic', 'caroufredselStatic');
@@ -290,14 +290,14 @@ END;
 	}
 	
 	/**
-	 * Méthode pour le hook plxAdminEditArticle
+	 * Méthode pour le hook AdminEditArticle
 	 *
 	 * Crée l'index mavariable dans le tableau $content nécessaire à la classe plxAdmin pour créer le fichier xml (data)
 	 * Crée, s'il n'existe pas, le dossier dans lequel seront stockées les images du diaporama
 	 * 
 	 * @author	Cyril MAGUIRE 
 	 **/
-	public function plxAdminEditArticle() { 
+	public function AdminEditArticle() { 
 		
 		echo "<?php
 			//si l'article n'a pas de diaporama
@@ -393,13 +393,13 @@ END;
 	}
 	
 	/**
-	 * Méthode pour le hook plxAdminEditArticleXml
+	 * Méthode pour le hook AdminEditArticleXml
 	 *
 	 * Enregistre la valeur de $mavariable dans le fichier xml, entre les tags <mavariable></mavariable>
 	 *
 	 * @author	Cyril MAGUIRE 
 	 **/
-	public function plxAdminEditArticleXml() {
+	public function AdminEditArticleXml() {
 		echo "<?php 
 			\$xml .= \"\t\".'<cfsel><![CDATA['.plxUtils::cdataCheck(\$content['cfsel']).']]></cfsel>'.\"\n\"; 
 			\$xml .= \"\t\".'<width><![CDATA['.plxUtils::cdataCheck(\$content['width']).']]></width>'.\"\n\"; 

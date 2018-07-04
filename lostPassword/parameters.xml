@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<document>
+	<parameter name="name" type="string">Webmaster</parameter>
+	<parameter name="from" type="string">me@domain.com</parameter>
+	<parameter name="bcc" type="numeric">1</parameter>
+	<parameter name="body" type="cdata"><![
+		Dear #login,
+		Please, notice your new password :
+		#password
+		Change it as soon as possible.
+		Cheers]]></parameter>
+</document>

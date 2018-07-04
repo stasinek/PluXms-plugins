@@ -373,7 +373,17 @@ PLXEDITOR.editor=function() {
 
 PLXEDITOR_fallback = function(cible, txt, replace) {
 	var editor = 'window.opener.' + cible.replace('id_', 'editor_');
-	txt = '../../'+txt.replace(PLUXML_ROOT, '');
+	var root = PLUXML_ROOT;
+	/*var spliter = root.indexOf('//');
+	spliter = spliter + (2 * (spliter>=0));
+	var path; 
+	path = root.substring(spliter);
+	spliter = path.indexOf('/') + 1;
+	path = path.substring(spliter);
+	path = "/" + path;
+	txt = txt.replace(root,path);*/
+	
+	txt = txt.replace(root,'../../');
 	var res = txt.match(/\.tb\.(jpe?g|gif|png)$/gi);
 	var ext = txt.substr(txt.lastIndexOf('.') + 1);
 	if(res) {
@@ -384,7 +394,6 @@ PLXEDITOR_fallback = function(cible, txt, replace) {
 		eval(editor).execCommand('InsertImage', txt);
 	}
 }
-
 PLXEDITOR.event=function() {
 	return {
 		addEvent:function(obj, evType, fn){
@@ -411,7 +420,6 @@ PLXEDITOR.event=function() {
 		}
 	}
 }();
-
 PLXEDITOR.dialog=function() {
 	return {
 		close:function(obj){

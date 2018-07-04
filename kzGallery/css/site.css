@@ -1,0 +1,12 @@
+div[data-gallery] {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+div[data-gallery] a {
+	display: block;
+	margin: 0;
+}
+div[data-gallery] figure {
+	text-align: center;
+}

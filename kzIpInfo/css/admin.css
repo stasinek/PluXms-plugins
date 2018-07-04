@@ -1,0 +1,22 @@
+div.in-action-bar.ipinfo-logo {
+	top: 1rem;
+	right: 1.5rem;
+	width: 90px;
+	margin-top: 0;
+}
+div.in-action-bar.ipinfo-logo a {
+	display : block;
+}
+div.in-action-bar.ipinfo-logo a:hover img {
+	background-color: #fff;
+}
+#comments-table td.ip-address img.flag {
+	display: block;
+	margin-bottom: 0.5rem;
+}
+/* --------- comment.php --------------- */
+#form_comment li[data-ip] span.kz-flag {
+	display: inline-block;
+	vertical-align: bottom;
+	margin: 0 0.8rem 0 2rem;
+}

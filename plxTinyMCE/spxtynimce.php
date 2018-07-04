@@ -68,13 +68,13 @@ class spxtynimce extends plxPlugin {
 				
 				# pour les articles
 				if(!isset($_POST['new_category'])) {
-					$this->addHook('plxAdminEditArticle', 'Abs2Rel');
+					$this->addHook('AdminEditArticle', 'Abs2Rel');
 					$this->addHook('AdminArticleTop', 'Rel2Abs');
 					
 					$this->addHook('AdminArticlePreview', 'Abs2RelPreview');
 					
 					# pour les pages statiques
-					$this->addHook('plxAdminEditStatique', 'Abs2Rel');
+					$this->addHook('AdminEditStatique', 'Abs2Rel');
 					$this->addHook('AdminStaticTop', 'Rel2Abs');
 				}
 				

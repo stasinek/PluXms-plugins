@@ -40,7 +40,7 @@ class artGalerie extends plxPlugin {
 		$this->addHook('ArtgalerieDisplay','ArtgalerieDisplay');
 		$this->addHook('ThemeEndHead', 'ThemeEndHead');
 		$this->addHook('AdminArticleSidebar', 'AdminArticleSidebar');
-		$this->addHook('plxAdminEditArticleXml', 'plxAdminEditArticleXml');
+		$this->addHook('AdminEditArticleXml', 'AdminEditArticleXml');
 		$this->addHook('plxMotorParseArticle', 'plxMotorParseArticle');
 		$this->addHook('staticGalerieShow', 'staticGalerieShow');
 		$this->addHook('plxToolbarCustomsButtons', 'artGalerieButton');
@@ -50,9 +50,9 @@ class artGalerie extends plxPlugin {
 		$this->addHook('AdminArticleInitData', 'AdminArticleInitData');
 		$this->addHook('plxShowStaticContent', 'plxShowStaticContent');
 		$this->addHook('AdminStatic', 'AdminStatic');
-		$this->addHook('plxAdminEditStatiquesXml', 'plxAdminEditStatiquesXml');
-		$this->addHook('plxAdminEditStatique', 'plxAdminEditStatique');
-		$this->addHook('plxAdminEditStatiquesUpdate', 'plxAdminEditStatiquesUpdate');
+		$this->addHook('AdminEditStatiquesXml', 'AdminEditStatiquesXml');
+		$this->addHook('AdminEditStatique', 'AdminEditStatique');
+		$this->addHook('AdminEditStatiquesUpdate', 'AdminEditStatiquesUpdate');
 		$this->addHook('plxMotorGetStatiques', 'plxMotorGetStatiques');
 		$this->addHook('plxMotorDemarrageEnd', 'plxMotorDemarrageEnd');
 		$this->addHook('plxFeedRssArticlesXml', 'plxFeedRssArticlesXml');
@@ -108,7 +108,7 @@ class artGalerie extends plxPlugin {
 				</div>';
 	}
 
-	public function plxAdminEditArticleXml(){
+	public function AdminEditArticleXml(){
 		echo "<?php \$xml .= '\t'.'<galerie><![CDATA['.plxUtils::cdataCheck(trim(\$content['galerie'])).']]></galerie>'.'\n'; ?>";
 	}
 

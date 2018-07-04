@@ -43,14 +43,15 @@ class plxEditor extends plxPlugin {
 		if(!preg_match('/(parametres_edittpl|comment'.$static.')/', basename($_SERVER['SCRIPT_NAME']))) {
 			//if ($editor==plxEditor::PLX_EDITOR)
 			//{				
-				$this->addHook('AdminTopEndHead', 'plxAdminTopEndHead');
-				$this->addHook('AdminFootEndBody', 'plxAdminFootEndBody');
+				$this->addHook('AdminTopEndHead', 'AdminTopEndHead');
+				$this->addHook('AdminFootEndBody', 'AdminFootEndBody');
 				$this->addHook('AdminArticlePrepend', 'AdminArticlePrepend'); # conversion des liens pour le preview d'un article
-				$this->addHook('plxAdminEditArticle', 'plxAdminEditArticle');
 				$this->addHook('AdminArticleTop', 'AdminArticleTop');
 				$this->addHook('AdminStaticTop', 'AdminStaticTop');
 				$this->addHook('AdminArticlePreview', 'AdminArticlePreview');
 				$this->addHook('ThemeEndHead', 'ThemeEndHead');
+				$this->addHook('AdminEditArticle', 'AdminEditArticle');
+//				$this->addHook('plxMotorDemarrageBegin','plxMotorDemarrageBegin');
 			//}
 			/*if ($editor==plxEditor::CKE_EDITOR) 
 				{
@@ -92,14 +93,14 @@ class plxEditor extends plxPlugin {
 	 * @return	stdio
 	 * @author	Stephane F
 	 **/
-	public function plxAdminEditArticle() {
-		echo '<?php $content["chapo"] = str_replace("../../".$this->aConf["medias"], $this->aConf["medias"], $content["chapo"]); ?>';
-		echo '<?php $content["content"] = str_replace("../../".$this->aConf["medias"], $this->aConf["medias"], $content["content"]); ?>';
+	public function AdminEditArticle() {
+		echo '<?php $content["chapo"] = str_replace(\'\"../../\'.$plxAdmin->aConf["medias"],\'\"\'.$plxAdmin->aConf["medias"], $content["chapo"]); ?>';
 		echo '<?php $content["chapo"] = str_replace("../../".$this->aConf["racine_plugins"], $this->aConf["racine_plugins"], $content["chapo"]); ?>';
-		echo '<?php $content["content"] = str_replace("../../".$this->aConf["racine_plugins"], $this->aConf["racine_plugins"], $content["content"]); ?>';
 		echo '<?php $content["chapo"] = str_replace(plxUtils::getRacine(), "", $content["chapo"]); ?>';
+		echo '<?php $content["content"] = str_replace(\'\"../../\'.$plxAdmin->aConf["medias"],\'\"\'.$plxAdmin->aConf["medias"], $content["content"]); ?>';
+		echo '<?php $content["content"] = str_replace("../../".$this->aConf["racine_plugins"], $this->aConf["racine_plugins"], $content["content"]); ?>';
 		echo '<?php $content["content"] = str_replace(plxUtils::getRacine(), "", $content["content"]); ?>';
-	}
+		}
 	/**
 	 * Méthode qui convertit les liens relatifs en liens absolus
 	 *
@@ -107,12 +108,13 @@ class plxEditor extends plxPlugin {
 	 * @author	Stephane F
 	 **/
 	public function AdminArticlePreview() {
-		echo '<?php $art["chapo"] = str_replace("../../".$plxAdmin->aConf["medias"], $plxAdmin->aConf["medias"], $art["chapo"]); ?>';
-		echo '<?php $art["content"] = str_replace("../../".$plxAdmin->aConf["medias"], $plxAdmin->aConf["medias"], $art["content"]); ?>';
+		echo '<?php $art["chapo"] = str_replace(\'\"../../\'.$plxAdmin->aConf["medias"],\'\"\'.$plxAdmin->aConf["medias"], $art["chapo"]); ?>';
 		echo '<?php $art["chapo"] = str_replace("../../".$plxAdmin->aConf["racine_plugins"], $plxAdmin->aConf["racine_plugins"], $art["chapo"]); ?>';
-		echo '<?php $art["content"] = str_replace("../../".$plxAdmin->aConf["racine_plugins"], $plxAdmin->aConf["racine_plugins"], $art["content"]); ?>';
 		echo '<?php $art["chapo"] = str_replace(plxUtils::getRacine(), "", $art["chapo"]); ?>';
+		echo '<?php $art["content"] = str_replace(\'\"../../\'.$plxAdmin->aConf["medias"],\'\"\'.$plxAdmin->aConf["medias"], $art["content"]); ?>';
+		echo '<?php $art["content"] = str_replace("../../".$plxAdmin->aConf["racine_plugins"], $plxAdmin->aConf["racine_plugins"], $art["content"]); ?>';
 		echo '<?php $art["content"] = str_replace(plxUtils::getRacine(), "", $art["content"]); ?>';
+				echo '<?php echo "<script>alert(\"test\");</script>"; ?>';
 	}
 
 	/**
@@ -122,10 +124,10 @@ class plxEditor extends plxPlugin {
 	 * @author	Stephane F
 	 **/
 	public function AdminArticleTop() {
+		echo '<?php $chapo = str_replace(\'\"\'.$plxAdmin->aConf["medias"],\'\"../../\'.$plxAdmin->aConf["medias"], $chapo); ?>';
 		echo '<?php $chapo = str_replace($plxAdmin->aConf["racine_plugins"], "../../".$plxAdmin->aConf["racine_plugins"], $chapo); ?>';
+		echo '<?php $content = str_replace(\'\"\'.$plxAdmin->aConf["medias"], \'\"../../\'.$plxAdmin->aConf["medias"], $content); ?>';
 		echo '<?php $content = str_replace($plxAdmin->aConf["racine_plugins"], "../../".$plxAdmin->aConf["racine_plugins"], $content); ?>';
-		echo '<?php $chapo = str_replace($plxAdmin->aConf["medias"], "../../".$plxAdmin->aConf["medias"], $chapo); ?>';
-		echo '<?php $content = str_replace($plxAdmin->aConf["medias"], "../../".$plxAdmin->aConf["medias"], $content); ?>';
 	}
 
 	/**
@@ -136,7 +138,7 @@ class plxEditor extends plxPlugin {
 	 **/
 	public function AdminStaticTop() {
 		echo '<?php $content = str_replace($plxAdmin->aConf["racine_plugins"], "../../".$plxAdmin->aConf["racine_plugins"], $content); ?>';
-		echo '<?php $content = str_replace($plxAdmin->aConf["medias"], "../../".$plxAdmin->aConf["medias"], $content); ?>';
+		echo '<?php $content = str_replace(\'\"\'.$plxAdmin->aConf["medias"],\'\"../../\'.$plxAdmin->aConf["medias"], $content); ?>';
 	}
 
 	#----------
@@ -147,7 +149,7 @@ class plxEditor extends plxPlugin {
 	 * @return	stdio
 	 * @author	Stephane F
 	 **/
-	public function plxAdminTopEndHead() {
+	public function AdminTopEndHead() {
 		echo '<?php $plxAdmin->aConf["default_lang"] ?>';
 		echo '<link rel="stylesheet" type="text/css" href="'.$this->plugPath.'plxEditor/plxEditor.css" media="screen" />'."\n";
 		echo '<link rel="stylesheet" type="text/css" href="'.$this->plugPath.'plxEditor/css/viewsource.css" media="screen" />'."\n";
@@ -165,7 +167,7 @@ class plxEditor extends plxPlugin {
 	 * @return	stdio
 	 * @author	Stephane F
 	 **/
-	public function plxAdminFootEndBody() {
+	public function AdminFootEndBody() {
 		echo '
 		<script>
 			PLUXML_ROOT = "<?php echo $plxAdmin->racine ?>";

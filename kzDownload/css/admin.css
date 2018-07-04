@@ -1,0 +1,148 @@
+/* hack against PluXml */
+#kzDownload-form .in-action-bar {
+	z-index: 9990;
+}
+@media (min-width: 48rem) {
+	#kzDownload-form .in-action-bar button {
+		position: absolute;
+		right: calc(25% + 2.5rem);
+	}
+}
+@media (min-width: 64rem) {
+	#kzDownload-form .in-action-bar button {
+		right: calc(16.6666% + 2.5rem);
+	}
+}
+#kzDownload-table caption {
+	font-size: 150%;
+	font-weight: bold;
+	text-align: center;
+}
+
+#kzDownload-table th:not(.number) {
+	text-align: center !important;
+}
+#kzDownload-table th.number {
+	min-width: 8rem;
+	text-align: right !important;
+}
+#kzDownload-table thead input[type="button"] {
+	font-weight: normal;
+}
+#kzDownload-table tbody tr:nth-of-type(2n+1) {
+	background-color: #f0f0f0;
+}
+#kzDownload-table thead tr:hover {
+	background-color: inherit;
+}
+#kzDownload-table tbody tr:hover {
+	background-color: #555;
+	color: #fff;
+}
+#kzDownload-table tbody td {
+	text-align: right;
+	padding-right: 1.5rem;
+}
+#kzDownload-table tbody td:nth-of-type(1),
+#kzDownload-table tbody td:nth-of-type(3),
+#kzDownload-table tbody td:last-of-type {
+	text-align: center;
+	padding: 0;
+}
+#kzDownload-table tbody td:nth-of-type(2) {
+	text-align: initial;
+	padding: 0 0.5rem 0 0;
+}
+
+/* ================= help ==================== */
+.kzDownload-help {
+	max-width: 76rem;
+}
+.kzDownload-help p {
+	text-align: justify;
+}
+.kzDownload-help pre {
+    background-color: #444;
+    color: #fd0;
+    padding: 0.3rem 0 0.3rem 1rem;
+    overflow-x: auto;
+}
+.kzDownload-warning {
+	color: red;
+	font-weight: bold;
+}
+/* ================= Chart =================== */
+#kzDownload-overlay {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #444e;
+	z-index: 9999;
+}
+body.kzdownload-graph #kzDownload-form {
+	display: none;
+}
+body.kzdownload-graph #kzDownload-overlay {
+	display: block;
+}
+#kzDownload-overlay button {
+	position: absolute;
+	top: 1rem;
+	right: 1rem;
+}
+#kzDownload-chart {
+	margin-top: 50vh;
+	transform: translateY(-50%);
+	padding: 0 0.5rem;
+}
+/* special for Iphone X */
+#kzDownload-chart svg {
+	max-height: 98vh;
+}
+
+#kzDownload-chart svg { margin: 0; background-color: #faffff; }
+#kzDownload-chart text { font: 12px 'Noto Sans', Arial, 'Sans-Serif'; fill: #2316ec; stroke: none; }
+#grid-v, #grid-h { stroke: #c0dee9; stroke-width: 1; stroke-dasharray: 10 2 2 2; }
+#grid-v0, #grid-h0 { stroke: #444; stroke-width: 2; }
+#graphs { stroke-width: 2; fill: none; }
+#graphs text { font-size: 16px; font-weight: bold; }
+#graphs text { font-size: 16px; font-weight: bold; }
+#graphs g[data-name].active path { stroke-width: 6; }
+#graphs g[data-name].active text { font-size: 125%; }
+#graphs g[data-name] text { cursor: pointer; }
+#graphs g[data-name] path:hover { stroke-width: 6; cursor: pointer; }
+#graphs g[data-name] g.legend { cursor: pointer; fill: #444; }
+
+/*
+ * https://www.w3schools.com/colors/colors_trends.asp
+ * Windows Metro UI Colors
+ * */
+#graphs path { stroke: var(--color); }
+#graphs text { fill: var(--color); }
+#kzDownload-chart use[href^="#mark"] { fill: var(--color); stroke: var(--color); stroke-width: 2; cursor: pointer; }
+#kzDownload-chart .graph-00 { --color: #99b433; } /* Light Green */
+#kzDownload-chart .graph-01 { --color: #ff0097; } /* Magenta */
+#kzDownload-chart .graph-02 { --color: #9f00a7; } /* Light Purple */
+#kzDownload-chart .graph-03 { --color: #e3a21a; } /* Orange */
+#kzDownload-chart .graph-04 { --color: #1e7145; } /* Dark Green */
+#kzDownload-chart .graph-05 { --color: #ee1111; } /* Red */
+#kzDownload-chart .graph-06 { --color: #7e3878; } /* Purple */
+#kzDownload-chart .graph-07 { --color: #603cba; } /* Dark Purple */
+#kzDownload-chart .graph-08 { --color: #00a300; } /* Green */
+#kzDownload-chart .graph-09 { --color: #1d1d1d; } /* Darken */
+#kzDownload-chart .graph-10 { --color: #b91d47; } /* Dark Red */
+#kzDownload-chart .graph-11 { --color: #2d89ef; } /* Blue */
+#kzDownload-chart .graph-12 { --color: #2b5797; } /* Dark Blue */
+#kzDownload-chart .graph-13 { --color: #ffc40d; } /* Yellow */
+#kzDownload-chart .graph-14 { --color: #da532c; } /* Dark Orange */
+#kzDownload-chart .graph-15 { --color: #00aba9; } /* Teal */
+#kzDownload-chart .graph-16 { --color: #eff4ff; } /* Light Blue */
+
+@media screen and (min-width: 64rem) {
+	#kzDownload-chart {
+		padding: 0 1.5rem;
+	}
+}

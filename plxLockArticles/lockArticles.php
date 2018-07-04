@@ -32,7 +32,7 @@ class lockArticles extends plxPlugin {
 		$this->addHook('plxMotorDemarrageEnd', 'plxMotorDemarrageEnd');
 		$this->addHook('plxFeedConstructLoadPlugins', 'plxFeedConstructLoadPlugins');
 		$this->addHook('AdminArticleSidebar','AdminArticleSidebar');
-		$this->addHook('plxAdminEditArticleXml','plxAdminEditArticleXml');
+		$this->addHook('AdminEditArticleXml','AdminEditArticleXml');
 		$this->addHook('plxMotorParseArticle','plxMotorParseArticle');		
 		$this->addHook('plxShowConstruct', 'plxShowConstruct');				
 		$this->addHook('showIconIfLock','showIconIfLock');
@@ -41,10 +41,10 @@ class lockArticles extends plxPlugin {
 		$this->addHook('plxFeedPreChauffageEnd','plxFeedPreChauffageEnd');
 		$this->addHook('plxFeedDemarrageEnd','plxFeedDemarrageEnd');
 		$this->addHook('AdminCategory','AdminCategory');
-		$this->addHook('plxAdminEditCategoriesUpdate','plxAdminEditCategoriesUpdate');
-		$this->addHook('plxAdminEditCategoriesNew','plxAdminEditCategoriesNew');
-		$this->addHook('plxAdminEditCategoriesXml','plxAdminEditCategoriesXml');
-		$this->addHook('plxAdminEditCategorie','plxAdminEditCategorie');
+		$this->addHook('AdminEditCategoriesUpdate','AdminEditCategoriesUpdate');
+		$this->addHook('AdminEditCategoriesNew','AdminEditCategoriesNew');
+		$this->addHook('AdminEditCategoriesXml','AdminEditCategoriesXml');
+		$this->addHook('AdminEditCategorie','AdminEditCategorie');
 		$this->addHook('plxMotorGetCategories','plxMotorGetCategories');
 		$this->addHook('AdminCategoriesTop','AdminCategoriesTop');
 		$this->addHook('AdminCategoriesFoot','AdminCategoriesFoot');
@@ -52,9 +52,9 @@ class lockArticles extends plxPlugin {
 		$this->addHook('AdminArticleParseData', 'AdminArticleParseData');
 		$this->addHook('AdminArticleInitData', 'AdminArticleInitData');
 		$this->addHook('AdminStatic', 'AdminStatic');
-		$this->addHook('plxAdminEditStatiquesXml', 'plxAdminEditStatiquesXml');
-		$this->addHook('plxAdminEditStatiquesUpdate', 'plxAdminEditStatiquesUpdate');
-		$this->addHook('plxAdminEditStatique', 'plxAdminEditStatique');
+		$this->addHook('AdminEditStatiquesXml', 'AdminEditStatiquesXml');
+		$this->addHook('AdminEditStatiquesUpdate', 'AdminEditStatiquesUpdate');
+		$this->addHook('AdminEditStatique', 'AdminEditStatique');
 		$this->addHook('plxMotorGetStatiques', 'plxMotorGetStatiques');
 		$this->addHook('AdminStaticsTop', 'AdminStaticsTop');
 		$this->addHook('AdminStaticsFoot', 'AdminStaticsFoot');
@@ -220,7 +220,7 @@ class lockArticles extends plxPlugin {
 	 * @author Rockyhorror
 	 * 
 	 */ 
-	public function plxAdminEditArticleXml(){
+	public function AdminEditArticleXml(){
 		
 		echo '<?php
 		if(isset($content["resetpassword"])) {

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document>
+	<title><![CDATA[kzIpInfo]]></title>
+	<author><![CDATA[J.P. Pourrez]]></author>
+	<version>1.1.0</version>
+	<date>23/01/2018</date>
+	<site>http://kazimentou.fr</site>
+	<description><![CDATA[Interroge le site https://ipinfo.io pour fournir des indications géographiques à partir d'une adresse IP. Utilise principalement du javascript. Donc aucune exigence côté serveur. Gére un cache pour les adresses IP. Tous les drapeaux sont rassemblés dans un sprite.]]></description>
+</document>

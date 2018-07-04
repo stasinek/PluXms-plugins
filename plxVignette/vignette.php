@@ -28,7 +28,7 @@ class vignette extends plxPlugin {
 		$this->addHook('AdminArticlePreview', 'AdminArticlePreview');
 		$this->addHook('AdminTopEndHead', 'AdminTopEndHead');
 		$this->addHook('AdminArticleSidebar', 'AdminArticleSidebar');
-		$this->addHook('plxAdminEditArticleXml', 'plxAdminEditArticleXml');
+		$this->addHook('AdminEditArticleXml', 'AdminEditArticleXml');
 		$this->addHook('plxMotorParseArticle', 'plxMotorParseArticle');
 		$this->addHook('showVignette', 'showVignette');
 		$this->addHook('vignetteArtList', 'vignetteArtList');
@@ -122,7 +122,7 @@ END;
 
         }
 
-	public function plxAdminEditArticleXml(){
+	public function AdminEditArticleXml(){
 		echo "<?php \$xml .= '\t'.'<vignette><![CDATA['.plxUtils::cdataCheck(trim(\$content['vignette'])).']]></vignette>'.'\n'; ?>";
 	}
 

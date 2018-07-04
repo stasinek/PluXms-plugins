@@ -65,7 +65,7 @@ class adhesion extends plxPlugin {
 
 			# Déclarations des hooks pour sécuriser les articles
 			$this->addHook('AdminArticleSidebar','AdminArticleSidebar');
-			$this->addHook('plxAdminEditArticleXml','plxAdminEditArticleXml');
+			$this->addHook('AdminEditArticleXml','AdminEditArticleXml');
 			$this->addHook('plxMotorParseArticle','plxMotorParseArticle');
 			$this->addHook('plxMotorPreChauffageEnd', 'plxMotorPreChauffageEnd');
 			$this->addHook('plxMotorDemarrageEnd', 'plxMotorDemarrageEnd');
@@ -75,9 +75,9 @@ class adhesion extends plxPlugin {
 			$this->addHook('plxFeedPreChauffageEnd','plxFeedPreChauffageEnd');
 			$this->addHook('plxFeedDemarrageEnd','plxFeedDemarrageEnd');
 			$this->addHook('AdminCategory','AdminCategory');
-			$this->addHook('plxAdminEditCategoriesUpdate','plxAdminEditCategoriesUpdate');
-			$this->addHook('plxAdminEditCategoriesXml','plxAdminEditCategoriesXml');
-			$this->addHook('plxAdminEditCategorie','plxAdminEditCategorie');
+			$this->addHook('AdminEditCategoriesUpdate','AdminEditCategoriesUpdate');
+			$this->addHook('AdminEditCategoriesXml','AdminEditCategoriesXml');
+			$this->addHook('AdminEditCategorie','AdminEditCategorie');
 			$this->addHook('plxMotorGetCategories','plxMotorGetCategories');
 			$this->addHook('loginLogout','loginLogout');
 			$this->addHook('AdminCategoriesTop','AdminCategoriesTop');
@@ -85,8 +85,8 @@ class adhesion extends plxPlugin {
 
 			# déclaration des hooks pour sécuriser les pages statiques
 			$this->addHook('AdminStatic', 'AdminStatic');
-			$this->addHook('plxAdminEditStatique', 'plxAdminEditStatique');
-			$this->addHook('plxAdminEditStatiquesXml', 'plxAdminEditStatiquesXml');
+			$this->addHook('AdminEditStatique', 'AdminEditStatique');
+			$this->addHook('AdminEditStatiquesXml', 'AdminEditStatiquesXml');
 			$this->addHook('plxMotorGetStatiques', 'plxMotorGetStatiques');
 			$this->addHook('AdminStaticsTop', 'AdminStaticsTop');
 	        $this->addHook('AdminStaticsFoot', 'AdminStaticsFoot');
@@ -2351,7 +2351,7 @@ class adhesion extends plxPlugin {
 
         }
 
-	public function plxAdminEditArticleXml(){
+	public function AdminEditArticleXml(){
 		echo "<?php \$xml .= '\t'.'<password><![CDATA['.plxUtils::cdataCheck(trim(\$content['password'])).']]></password>'.'\n'; ?>";
 	}
 

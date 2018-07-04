@@ -111,11 +111,11 @@ class plxMultiLingue extends plxPlugin {
 		if(defined('PLX_ADMIN')) {
 
 			# core/lib/class.plx.admin.php
-			$this->addHook('plxAdminEditConfiguration', 'plxAdminEditConfiguration');
-			$this->addHook('plxAdminEditStatiquesUpdate', 'plxAdminEditStatiquesUpdate');
-			$this->addHook('plxAdminEditStatiquesXml', 'plxAdminEditStatiquesXml');
-			$this->addHook('plxAdminEditArticleXml', 'plxAdminEditArticleXml');
-			$this->addHook('plxAdminEditStatique', 'plxAdminEditStatique');
+			$this->addHook('AdminEditConfiguration', 'AdminEditConfiguration');
+			$this->addHook('AdminEditStatiquesUpdate', 'AdminEditStatiquesUpdate');
+			$this->addHook('AdminEditStatiquesXml', 'AdminEditStatiquesXml');
+			$this->addHook('AdminEditArticleXml', 'AdminEditArticleXml');
+			$this->addHook('AdminEditStatique', 'AdminEditStatique');
 
 			# core/admin/top.php
 			$this->addHook('AdminTopEndHead', 'AdminTopEndHead');
@@ -613,7 +613,7 @@ class plxMultiLingue extends plxPlugin {
 	 *
 	 * @author	Stephane F
 	 **/
-	public function plxAdminEditArticleXml() {
+	public function AdminEditArticleXml() {
 
 		if(isset($_POST['deplng'])) {
 			foreach($_POST['deplng'] as $lang => $ident) {

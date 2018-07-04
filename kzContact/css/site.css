@@ -1,0 +1,99 @@
+form.kz-contact textarea {
+	width: 100%;
+	height: 300px;
+	font-size: 100%;
+	padding: 10px;
+	color: black;
+	resize: vertical;
+}
+/*
+form.kz-contact_submit div:last-of-type input {
+    margin: 2em 1em;
+    padding: 10px;
+	text-align: center;
+}
+form.kz-contact p label[for="id_content"] {
+	display: block;
+	text-align: initial;
+	text-indent: 0;
+}
+form.kz-contact_submit {
+	display: flex;
+	justify-content: space-between;
+	text-align: center;
+}
+form.kz-contact_submit div {
+	width: 48%;
+}
+form.kz-contact_submit #id_rep {
+	text-align: center;
+}
+form.kz-contact > p:first-of-type {
+	text-align: center;
+}
+form.kz-contact .contact_error {
+	color: red;
+	text-align: center;
+	text-indent: 0;
+}
+form.kz-contact .success {
+	padding: 1em;
+	margin: 1em 10%;
+	font-size: 125%;
+}
+form.kz-contact .success + p {
+	text-align: center;
+}
+form.kz-contact .success + p input {
+	padding: 10px 20px;
+}
+* */
+@media screen and (min-width: 48rem) {
+	form.kz-contact {
+		--labelw: 15rem;
+		max-width: 64rem;
+	}
+	form.kz-contact fieldset {
+		padding: 0.3rem 0.5rem;
+		border-radius: 1rem;
+	}
+	form.kz-contact fieldset:not(:first-of-type){
+		margin-top: 0.5rem;
+	}
+	form.kz-contact div:not(.in-action-bar):not(:first-of-type) {
+		margin-top: 0.3rem;
+	}
+	form.kz-contact label {
+		width: var(--labelw);
+		text-align: right;
+	}
+	form.kz-contact div.large label {
+		display: block;
+		width: 100%;
+		text-align: initial;
+	}
+	form.kz-contact div.large input {
+		width: 100%;
+	}
+	form.kz-contact input[type="number"] {
+		width: 5rem;
+	}
+	form.kz-contact input[name="title_htmltag"],
+	form.kz-contact input[type="email"][multiple] {
+		width: calc(100% - var(--labelw));
+	}
+	form.kz-contact textarea {
+		width: 100%;
+		resize: vertical;
+	}
+	form.kz-contact select {
+		margin: 0;
+	}
+	form.kz-contact div.kz-contact-footer {
+		display: flex;
+		justify-content: space-between;
+	}
+	form.kz-contact #captcha-bloc + div input {
+		margin-top: 2rem;
+	}
+}

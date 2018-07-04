@@ -1,0 +1,6 @@
+#comment input[type="checkbox"] {
+	vertical-align: middle;
+}
+#comment input[type="checkbox"]:disabled + label {
+	color: #888;
+}

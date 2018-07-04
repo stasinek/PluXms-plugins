@@ -24,9 +24,9 @@ class plxPrivateStatic extends plxPlugin {
         # déclaration des hooks
 		$this->addHook('AdminStatic', 'AdminStatic');
 		$this->addHook('AdminStaticsPrepend', 'AdminStaticsPrepend');
-		$this->addHook('plxAdminEditStatique', 'plxAdminEditStatique');
-		$this->addHook('plxAdminEditStatiquesUpdate', 'plxAdminEditStatiquesUpdate');
-		$this->addHook('plxAdminEditStatiquesXml', 'plxAdminEditStatiquesXml');
+		$this->addHook('AdminEditStatique', 'AdminEditStatique');
+		$this->addHook('AdminEditStatiquesUpdate', 'AdminEditStatiquesUpdate');
+		$this->addHook('AdminEditStatiquesXml', 'AdminEditStatiquesXml');
 		$this->addHook('plxMotorGetStatiques', 'plxMotorGetStatiques');
 		$this->addHook('AdminStaticsTop', 'AdminStaticsTop');
         $this->addHook('AdminStaticsFoot', 'AdminStaticsFoot');

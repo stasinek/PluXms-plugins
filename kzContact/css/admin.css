@@ -1,0 +1,42 @@
+form.kz-contact {
+	--labelw: 24rem;
+	max-width: 64rem;
+}
+form.kz-contact fieldset {
+	padding: 0.3rem 0.5rem;
+	border: solid 1px #9ab0de;
+	border-radius: 1rem;
+	background-color: #ebf0f5;
+}
+form.kz-contact fieldset:not(:first-of-type){
+	margin-top: 0.5rem;
+}
+form.kz-contact div:not(.in-action-bar):not(:first-of-type) {
+	margin-top: 0.3rem;
+}
+form.kz-contact label {
+	width: var(--labelw);
+	text-align: right;
+}
+form.kz-contact div.large label {
+	display: block;
+	width: 100%;
+	text-align: initial;
+}
+form.kz-contact div.large input {
+	width: 100%;
+}
+form.kz-contact input[type="number"] {
+	width: 5rem;
+}
+form.kz-contact input[name="title_htmltag"],
+form.kz-contact input[type="email"][multiple] {
+	width: calc(100% - var(--labelw) - 1rem);
+}
+form.kz-contact textarea {
+	width: 100%;
+	resize: vertical;
+}
+form.kz-contact select {
+	margin: 0;
+}

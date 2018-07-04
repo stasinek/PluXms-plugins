@@ -1,0 +1,33 @@
+#form_kzMailCommentAlert div:not(.in-action-bar) {
+    margin: 0.3rem 0;
+}
+#form_kzMailCommentAlert div:not(.small-full) label {
+	position: absolute;
+	margin-left:2.5rem;
+}
+#form_kzMailCommentAlert div.small-full label {
+	display: inline-block;
+	width: 100%;
+}
+#form_kzMailCommentAlert div.small-full input[type="email"] {
+	width: 100%;
+	max-width: 30rem;
+}
+#form_kzMailCommentAlert + div {
+	margin-top: 1rem;
+}
+#form_kzMailCommentAlert input[type="number"] {
+	width: 6rem;
+	text-align: right;
+	padding-right: 0;
+}
+@media (min-width: 34rem) {
+	#form_kzMailCommentAlert.normal div label {
+		position: static !important;
+		display: inline-block;
+		width: 25rem;
+		text-align: right;
+		margin-left: 0;
+		margin-right: 0.8rem;
+	}
+}

@@ -1,0 +1,27 @@
+#form_twitter {
+	margin-top: 2px;
+	width: 700px;
+	padding: 2px;
+	background-color: AliceBlue;
+	border-radius: 10px;
+	border: 1px solid LightSteelBlue;
+}
+
+#form_twitter p {
+	margin: 5px 0;
+}
+
+#form_twitter label {
+	display: inline-block;
+	width: 160px;
+	text-align: right;
+	padding-right: 5px;
+}
+
+#pre_twitter {
+	background-color: WhiteSmoke;
+	width: 700px;
+	height: 500px;
+	overflow: auto;
+	padding: 0.2em;
+}

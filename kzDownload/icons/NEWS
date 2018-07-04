@@ -1,0 +1,35 @@
+### mate-icon-theme-faenza 1.20.0
+
+  * change license to GPL 3
+
+### mate-icon-theme-faenza 1.19.0
+
+  * Fix to use MATE logo for dark theme
+
+### mate-icon-theme-faenza 1.18.0
+
+  * Bump version
+
+### mate-icon-theme-faenza 1.16.0
+
+  * Added link to spotify icon
+
+### mate-icon-theme-faenza 1.14.0
+
+  * Bump version
+
+### mate-icon-theme-faenza 1.12.0
+
+  * Removed duplicate icons in matefaenzagray
+
+### mate-icon-theme-faenza 1.10.0
+  
+  * Create tarball without make dist to avoid symlink issue
+
+### mate-icon-theme-faenza 1.8 and earlier
+
+  * Created Mate-Faena-Gray that mixes some MATE-Faenza and MATE-Faenza-Dark icons
+  * Added in Faenza 1.3 icons that were not in the 1.2 base icon set
+  * Started work on dark varient of MATE Faenza.
+  * Renamed MATE Faenza to MATE-Faenza so MATE-Faenza-Dark can inherit it.
+  * Added matefaenzadark folder and dark icons and index.theme
