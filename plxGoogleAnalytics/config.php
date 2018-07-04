@@ -1,7 +1,6 @@
 <?php if(!defined('PLX_ROOT')) exit; ?>
 
 <?php
-
 # Control du token du formulaire
 plxToken::validateFormToken($_POST);
 
@@ -11,7 +10,6 @@ if(!empty($_POST)) {
 	header('Location: parametres_plugin.php?p=plxGoogleAnalytics');
 	exit;
 }
-
 ?>
 <style>
 form.inline-form label {
@@ -23,7 +21,7 @@ form.inline-form label {
 		<p>
 			<label for="accountId"><?php $plxPlugin->lang('L_ACCOUNT_ID'); ?> : </label>
 			<input type="text" name="accountId" value="<?php echo plxUtils::strCheck($plxPlugin->getParam('accountId')) ?>" />
-			&nbsp;ex:&nbsp;XX-XXXXXXXX-X
+			&nbsp;ex:&nbsp;UA-12345678-1
 		</p>
 		<p class="in-action-bar">   
 			<?php echo plxToken::getTokenPostMethod() ?>

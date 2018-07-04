@@ -13,7 +13,7 @@ if (!defined('PLX_ROOT')) exit;
 		return plxMsg::Info(L_ARTICLE_MODIFY_SUCCESSFUL);
  * */
 
-class twitter extends plxPlugin {
+class plxTwitter extends plxPlugin {
 
 	public $default_values = array();
 

@@ -1,7 +1,7 @@
 <?php if(!defined('PLX_ROOT')) exit;
 
 global $plxShow;
-$StaticGaleries = $plxShow->plxMotor->plxPlugins->getInstance('staticgaleries');
+$StaticGaleries = $plxShow->plxMotor->plxPlugins->getInstance('plxStaticGaleries');
 $url = explode('/', plxUtils::getGets());
 
 ?>
@@ -108,7 +108,7 @@ if($StaticGaleries->aGaleries[$url[2]]['prive'] == 1 and empty($_SESSION['static
 ?>
 			<span class="listFile">
 				<a href="<?php echo plxUtils::getGets().'/'.$v['name'] ?>" title="<?php echo plxUtils::strCheck($v['name']) ?>">
-					<img src="plugins/staticgaleries/folders.png" alt="<?php echo plxUtils::strCheck($v['name']) ?>" />
+					<img src="plugins/plxStaticGaleries/folders.png" alt="<?php echo plxUtils::strCheck($v['name']) ?>" />
 				</a>
 <?php
 				if($StaticGaleries->aGaleries[$url[2]]['displayName'] == 1) {

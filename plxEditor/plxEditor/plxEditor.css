@@ -29,10 +29,10 @@
 }
 .wysiwyg-fullscreen .plxeditor-footer {
 	padding-left: 7px;
-	border-bottom: 1px solid #efefef;
+	border-bottom: 2px solid #efefef;
 }
 .wysiwyg-fullscreen .plxeditor-toolbar {
-	border-bottom: 1px solid #efefef;
+	border-bottom: 2px solid #efefef;
 }
 .plxeditor .resizable {
 	resize: vertical;   /* Options: horizontal, vertical, both */
@@ -73,7 +73,7 @@
 	z-index: -1;
 	min-height: 100%;
 	overflow: hidden;
-	padding: 100px 10px;
+	padding: 110px 10px;
 	display: block;
 }
 @media (max-width: 767px) {

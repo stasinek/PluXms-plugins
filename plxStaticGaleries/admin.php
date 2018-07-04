@@ -1,7 +1,7 @@
 <?php if(!defined('PLX_ROOT')) exit;
 
 $plxMotor = plxMotor::getInstance();
-$StaticGaleries = $plxMotor->plxPlugins->getInstance('staticgaleries');
+$StaticGaleries = $plxMotor->plxPlugins->getInstance('plxStaticGaleries');
 
 # Control du token du formulaire
 plxToken::validateFormToken($_POST);
@@ -10,43 +10,43 @@ plxToken::validateFormToken($_POST);
 if($_POST['edit']) {
 	if(empty($_POST['root_dir'])) {
 		plxMsg::Error($plxPlugin->getLang('L_CREATE_GALERIE_ERR').' : '.$plxPlugin->getLang('L_ERR_ROOT_DIR'));
-		header('Location: plugin.php?p=staticgaleries&galerie='.$_POST['id']);
+		header('Location: plugin.php?p=plxStaticGaleries&galerie='.$_POST['id']);
 		exit;
 	} elseif(empty($_POST['extensions'])) {
 		plxMsg::Error($plxPlugin->getLang('L_CREATE_GALERIE_ERR').' : '.$plxPlugin->getLang('L_ERR_EXTENSIONS'));
-		header('Location: plugin.php?p=staticgaleries&galerie='.$_POST['id']);
+		header('Location: plugin.php?p=plxStaticGaleries&galerie='.$_POST['id']);
 		exit;
 	} elseif(empty($_POST['menu_name'])) {
 		plxMsg::Error($plxPlugin->getLang('L_CREATE_GALERIE_ERR').' : '.$plxPlugin->getLang('L_ERR_TITLE_GALERIE'));
-		header('Location: plugin.php?p=staticgaleries&galerie='.$_POST['id']);
+		header('Location: plugin.php?p=plxStaticGaleries&galerie='.$_POST['id']);
 		exit;
 	} elseif(empty($_POST['menu_position'])) {
 		plxMsg::Error($plxPlugin->getLang('L_CREATE_GALERIE_ERR').' : '.$plxPlugin->getLang('L_ERR_POSITION'));
-		header('Location: plugin.php?p=staticgaleries&galerie='.$_POST['id']);
+		header('Location: plugin.php?p=plxStaticGaleries&galerie='.$_POST['id']);
 		exit;
 	} elseif($_POST['prive'] == 1 AND empty($_POST['password'])) {
 		plxMsg::Error($plxPlugin->getLang('L_CREATE_GALERIE_ERR').' : '.$plxPlugin->getLang('L_ERR_EMPTY_PASSWORD'));	
-		header('Location: plugin.php?p=staticgaleries&galerie='.$_POST['id']);
+		header('Location: plugin.php?p=plxStaticGaleries&galerie='.$_POST['id']);
 		exit;
 	} elseif($_POST['first'] == 1 AND !empty($_POST['parent'])) {
 		plxMsg::Error($plxPlugin->getLang('L_CREATE_GALERIE_ERR').' : '.$plxPlugin->getLang('L_ERR_FIRST_GALERIE'));
-		header('Location: plugin.php?p=staticgaleries&galerie='.$_POST['id']);
+		header('Location: plugin.php?p=plxStaticGaleries&galerie='.$_POST['id']);
 		exit;
 	} else {
 		$StaticGaleries->editGalerie($_POST);
-		header('Location: plugin.php?p=staticgaleries');
+		header('Location: plugin.php?p=plxStaticGaleries');
 		exit;
 	}
 } elseif($_POST['add']) {
 	// Création ou modification des galeries
 	$StaticGaleries->editGaleries($_POST);
-	header('Location: plugin.php?p=staticgaleries');
+	header('Location: plugin.php?p=plxStaticGaleries');
 	exit;
 }
 ?>
 
 <h2><?php echo $plxPlugin->getInfo('title') ?></h2>
-<form action="plugin.php?p=staticgaleries" method="post" id="form_galeries">
+<form action="plugin.php?p=plxStaticGaleries" method="post" id="form_galeries">
 	<table class="table">
 		<thead>
 			<tr>
@@ -80,7 +80,7 @@ if($_POST['edit']) {
 					echo '</td><td>';
 					plxUtils::printSelect($k.'_menu', array('1'=>L_DISPLAY,'0'=>L_HIDE), $v['menu']);
 					echo '</td><td>';
-					echo '<a href="plugin.php?p=staticgaleries&galerie='.$k.'" title="Editer">Editer</a>';
+					echo '<a href="plugin.php?p=plxStaticGaleries&galerie='.$k.'" title="Editer">Editer</a>';
 					echo '</td></tr>';
 				}	
 			}
@@ -151,7 +151,7 @@ if($_POST['edit']) {
 					$aTemplates[$v] = $v;
 			}
 ?>
-<form action="plugin.php?p=staticgaleries" method="post">
+<form action="plugin.php?p=plxStaticGaleries" method="post">
 	<fieldset class="withlabel">
 		<p>* obligatoire</p>
 		<?php plxUtils::printInput('id', $id, 'hidden'); ?>
@@ -236,7 +236,7 @@ if($_POST['edit']) {
 <?php
 		} else { # Sinon, on redirige
 			plxMsg::Error(L_CAT_UNKNOWN);
-			header('Location: plugin.php?p=staticgaleries&galerie='.$id);
+			header('Location: plugin.php?p=plxStaticGaleries&galerie='.$id);
 			exit;
 		}
 	}

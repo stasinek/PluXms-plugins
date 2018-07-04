@@ -447,8 +447,8 @@ class artGalerie extends plxPlugin {
 			$showThumbDesc = isset($this->aGalParametres['thumbdesc'])?$this->aGalParametres['thumbdesc']: 0;
 			foreach($files as $idx => $filename) {
 				$basename = str_replace('.tb', '', $filename);
-				$galerie[$idx]['thumb'] = $plxShow->plxMotor->urlrewrite($galerie_path.'/'.$filename);
-				$galerie[$idx]['file'] = $plxShow->plxMotor->urlrewrite($galerie_path.'/'.$basename);
+				$galerie[$idx]['thumb'] = $plxShow->plxMotor->urlRewrite($galerie_path.'/'.$filename);
+				$galerie[$idx]['file'] = $plxShow->plxMotor->urlRewrite($galerie_path.'/'.$basename);
 				$galerie[$idx]['alt'] = substr($basename, 0,strrpos($basename,'.'));
 				$galerie[$idx]['title'] = isset($this->aGalerie[$filename]) ? $this->aGalerie[$filename] :$galerie[$idx]['alt'];
 			}

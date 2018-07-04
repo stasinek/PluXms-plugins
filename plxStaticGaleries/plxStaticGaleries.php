@@ -1,14 +1,14 @@
 <?php
 /**
- * Classe staticgaleries
+ * Classe plxStaticGaleries
  *
- * @package	staticgaleries
+ * @package	plxStaticGaleries
  * @date	26/12/2011
  * version  2.0
  * @author	flipflip <flipflip@blogoflip.fr>
  **/
 
-class staticgaleries extends plxPlugin {
+class plxStaticGaleries extends plxPlugin {
 
 	public $aGaleries = array();
 	private static $instance = null;
@@ -30,14 +30,14 @@ class staticgaleries extends plxPlugin {
 		$this->addHook('plxMotorPreChauffageBegin', 'plxMotorPreChauffageBegin');
 		$this->addHook('plxShowStaticListEnd', 'plxShowStaticListEnd');
 		$this->addHook('plxShowPageTitle', 'plxShowPageTitle');
-		$this->addHook('ThemeEndHead', 'staticGaleriesCss');
+		$this->addHook('ThemeEndHead', 'ThemeEndHead');
 	}
 
 	public function plxShowPageTitle() {
 		$url = explode('/', plxUtils::getGets());
 		echo '<?php
 			if($this->plxMotor->mode == "galerie") {
-				echo plxUtils::strCheck($this->plxMotor->aConf["title"])." - ".plxUtils::strCheck($this->plxMotor->plxPlugins->aPlugins["staticgaleries"]["instance"]->aGaleries["'.$url[2].'"]["menu_name"]);
+				echo plxUtils::strCheck($this->plxMotor->aConf["title"])." - ".plxUtils::strCheck($this->plxMotor->plxPlugins->aPlugins["plxStaticGaleries"]["instance"]->aGaleries["'.$url[2].'"]["menu_name"]);
 				return true;
 			}
 		?>';
@@ -47,7 +47,7 @@ class staticgaleries extends plxPlugin {
 		$string = "
 		if(\$this->get && preg_match('/^galerie\/?/',\$this->get)) {
 			\$this->mode = 'galerie';
-			\$this->cible = '../../plugins/staticgaleries/galerie';
+			\$this->cible = '../../plugins/plxStaticGaleries/galerie';
 			\$this->template = 'static.php';
 			return true;
 		}
@@ -74,7 +74,7 @@ class staticgaleries extends plxPlugin {
 	}
 
 	public function getGaleries() {
-		$filename = PLX_PLUGINS.'staticgaleries/galeries.xml';
+		$filename = PLX_PLUGINS.'plxStaticGaleries/galeries.xml';
 		if(file_exists($filename)) {
 			$data = implode('',file($filename));
 			$parser = xml_parser_create(PLX_CHARSET);
@@ -115,8 +115,8 @@ class staticgaleries extends plxPlugin {
 		}	
 	}
 
-	public function staticGaleriesCss() {
-		echo "\n"."\t".'<link rel="stylesheet" href="'.PLX_PLUGINS.'staticgaleries/staticgaleries.css" media="screen" type="text/css" />'."\n";
+	public function ThemeEndHead() {
+		echo "\n"."\t".'<link rel="stylesheet" href="'.PLX_PLUGINS.'plxStaticGaleries/plxStaticGaleries.css" media="screen" type="text/css" />'."\n";
 	}
 
 	/**
@@ -339,11 +339,11 @@ class staticgaleries extends plxPlugin {
 			$xml .= "</document>";
 
 			# On écrit le fichier
-			if(plxUtils::write($xml, PLX_PLUGINS.'staticgaleries/galeries.xml')) {
+			if(plxUtils::write($xml, PLX_PLUGINS.'plxStaticGaleries/galeries.xml')) {
 				return plxMsg::Info($this->getLang('L_CREATE_GALERIE_SUCCESSFUL'));
 			} else {
 				$this->aGaleries = $save;
-				return plxMsg::Error($this->getLang('L_CREATE_GALERIE_ERR').' '.PLX_PLUGINS.'staticgaleries/galeries.xml');
+				return plxMsg::Error($this->getLang('L_CREATE_GALERIE_ERR').' '.PLX_PLUGINS.'plxStaticGaleries/galeries.xml');
 			}
 		}	
 	}

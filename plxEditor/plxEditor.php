@@ -94,11 +94,11 @@ class plxEditor extends plxPlugin {
 	 * @author	Stephane F
 	 **/
 	public function AdminEditArticle() {
-		echo '<?php $content["chapo"] = str_replace(\'\"../../\'.$plxAdmin->aConf["medias"],\'\"\'.$plxAdmin->aConf["medias"], $content["chapo"]); ?>';
-		echo '<?php $content["chapo"] = str_replace("../../".$this->aConf["racine_plugins"], $this->aConf["racine_plugins"], $content["chapo"]); ?>';
+		echo '<?php $content["chapo"] = str_replace(PLX_ROOT.$plxAdmin->aConf["medias"],$plxAdmin->aConf["medias"], $content["chapo"]); ?>';
+		echo '<?php $content["chapo"] = str_replace(PLX_ROOT.$this->aConf["racine_plugins"], $this->aConf["racine_plugins"], $content["chapo"]); ?>';
 		echo '<?php $content["chapo"] = str_replace(plxUtils::getRacine(), "", $content["chapo"]); ?>';
-		echo '<?php $content["content"] = str_replace(\'\"../../\'.$plxAdmin->aConf["medias"],\'\"\'.$plxAdmin->aConf["medias"], $content["content"]); ?>';
-		echo '<?php $content["content"] = str_replace("../../".$this->aConf["racine_plugins"], $this->aConf["racine_plugins"], $content["content"]); ?>';
+		echo '<?php $content["content"] = str_replace(PLX_ROOT.$plxAdmin->aConf["medias"],$plxAdmin->aConf["medias"], $content["content"]); ?>';
+		echo '<?php $content["content"] = str_replace(PLX_ROOT.$this->aConf["racine_plugins"],$this->aConf["racine_plugins"], $content["content"]); ?>';
 		echo '<?php $content["content"] = str_replace(plxUtils::getRacine(), "", $content["content"]); ?>';
 		}
 	/**
@@ -108,11 +108,11 @@ class plxEditor extends plxPlugin {
 	 * @author	Stephane F
 	 **/
 	public function AdminArticlePreview() {
-		echo '<?php $art["chapo"] = str_replace(\'\"../../\'.$plxAdmin->aConf["medias"],\'\"\'.$plxAdmin->aConf["medias"], $art["chapo"]); ?>';
-		echo '<?php $art["chapo"] = str_replace("../../".$plxAdmin->aConf["racine_plugins"], $plxAdmin->aConf["racine_plugins"], $art["chapo"]); ?>';
+		echo '<?php $art["chapo"] = str_replace(PLX_ROOT.$plxAdmin->aConf["medias"],$plxAdmin->aConf["medias"], $art["chapo"]); ?>';
+		echo '<?php $art["chapo"] = str_replace(PLX_ROOT.$plxAdmin->aConf["racine_plugins"],$plxAdmin->aConf["racine_plugins"], $art["chapo"]); ?>';
 		echo '<?php $art["chapo"] = str_replace(plxUtils::getRacine(), "", $art["chapo"]); ?>';
-		echo '<?php $art["content"] = str_replace(\'\"../../\'.$plxAdmin->aConf["medias"],\'\"\'.$plxAdmin->aConf["medias"], $art["content"]); ?>';
-		echo '<?php $art["content"] = str_replace("../../".$plxAdmin->aConf["racine_plugins"], $plxAdmin->aConf["racine_plugins"], $art["content"]); ?>';
+		echo '<?php $art["content"] = str_replace(PLX_ROOT.$plxAdmin->aConf["medias"],$plxAdmin->aConf["medias"], $art["content"]); ?>';
+		echo '<?php $art["content"] = str_replace(PLX_ROOT.$plxAdmin->aConf["racine_plugins"], $plxAdmin->aConf["racine_plugins"], $art["content"]); ?>';
 		echo '<?php $art["content"] = str_replace(plxUtils::getRacine(), "", $art["content"]); ?>';
 				echo '<?php echo "<script>alert(\"test\");</script>"; ?>';
 	}
@@ -124,9 +124,9 @@ class plxEditor extends plxPlugin {
 	 * @author	Stephane F
 	 **/
 	public function AdminArticleTop() {
-		echo '<?php $chapo = str_replace(\'\"\'.$plxAdmin->aConf["medias"],\'\"../../\'.$plxAdmin->aConf["medias"], $chapo); ?>';
+		echo '<?php $chapo = str_replace($plxAdmin->aConf["medias"],PLX_ROOT..$plxAdmin->aConf["medias"], $chapo); ?>';
 		echo '<?php $chapo = str_replace($plxAdmin->aConf["racine_plugins"], "../../".$plxAdmin->aConf["racine_plugins"], $chapo); ?>';
-		echo '<?php $content = str_replace(\'\"\'.$plxAdmin->aConf["medias"], \'\"../../\'.$plxAdmin->aConf["medias"], $content); ?>';
+		echo '<?php $content = str_replace($plxAdmin->aConf["medias"], PLX_ROOT..$plxAdmin->aConf["medias"], $content); ?>';
 		echo '<?php $content = str_replace($plxAdmin->aConf["racine_plugins"], "../../".$plxAdmin->aConf["racine_plugins"], $content); ?>';
 	}
 
@@ -138,7 +138,7 @@ class plxEditor extends plxPlugin {
 	 **/
 	public function AdminStaticTop() {
 		echo '<?php $content = str_replace($plxAdmin->aConf["racine_plugins"], "../../".$plxAdmin->aConf["racine_plugins"], $content); ?>';
-		echo '<?php $content = str_replace(\'\"\'.$plxAdmin->aConf["medias"],\'\"../../\'.$plxAdmin->aConf["medias"], $content); ?>';
+		echo '<?php $content = str_replace($plxAdmin->aConf["medias"],PLX_ROOT..$plxAdmin->aConf["medias"], $content); ?>';
 	}
 
 	#----------

@@ -6,14 +6,14 @@ if(!empty($_POST)) {
 	$plxPlugin->setParam('activeSeparateur', $_POST['activeSeparateur']);
 	$plxPlugin->setParam('separateur', $_POST['separateur'], 'cdata');
 	$plxPlugin->saveParams();
-	header('Location: parametres_plugin.php?p=staticgaleries');
+	header('Location: parametres_plugin.php?p=plxStaticGaleries');
 	exit;
 }
 ?>
 
 <h2><?php echo $plxPlugin->getInfo('title') ?></h2>
 
-<form action="parametres_plugin.php?p=staticgaleries" method="post" id="staticgaleries">
+<form action="parametres_plugin.php?p=plxStaticGaleries" method="post" id="plxStaticGaleries">
 	<fieldset class="withlabel">
 		<p><?php echo $plxPlugin->getLang('L_EXTENSIONS') ?></p>
 		<?php plxUtils::printInput('extensions', $plxPlugin->getParam('extensions'), 'text'); ?>

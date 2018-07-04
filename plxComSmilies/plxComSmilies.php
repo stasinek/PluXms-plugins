@@ -43,7 +43,6 @@ class plxComSmilies extends plxPlugin {
 		$this->addHook('plxMotorParseCommentaire', 'plxMotorParseCommentaire');
 		$this->addHook('ThemeEndHead', 'ThemeEndHead');
 		$this->addHook('IndexEnd', 'IndexEnd');
-
 	}
 
 	/**

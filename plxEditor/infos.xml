@@ -2,9 +2,9 @@
 <document>
 	<title><![CDATA[Editor]]></title>
 	<author><![CDATA[Stéphane F. + Stanislaw S.]]></author>
-	<version>1.5.4</version>
-	<date>22/03/2017</date>
-	<site>http://pluxopolis.net</site>
-	<description><![CDATA[Wysiwyg Editors bundle]]></description>
+	<version>1.5.5</version>
+	<date>3/07/2018</date>
+	<site>http://github.com/stasinek/PluXms-plugins</site>
+	<description><![CDATA[Simple WYSIWYG Editors bundle]]></description>
 	<requirements></requirements>
 </document>

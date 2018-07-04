@@ -70,18 +70,18 @@ PLXEDITOR.editor=function() {
 	create.prototype.getEditorHtml=function() {
 		var toolbar = '\
 	<div  onselectstart="return false;" id="'+this.textareaId+'-toolbar-icons" class="show">\
+	<span onselectstart="return false;" id="'+this.textareaId+'-html" class="icon-embed2" onclick="'+this.editor+'.execCommand(\'html\')" title="'+lang.L_TOOLBAR_HTML+'"style="float:left;">'+lang.L_TOOLBAR_HTML+'&nbsp</span>\
+	<span onselectstart="return false;" class="icon-terminal" onclick="'+this.editor+'.execCommand(\'code\')" title="'+lang.L_TOOLBAR_CODE+'">'+lang.L_TOOLBAR_CODE+'&nbsp</span>\
 	<span onselectstart="return false;" class="icon-list-numbered" onclick="'+this.editor+'.execCommand(\'insertorderedlist\')" title="'+lang.L_TOOLBAR_OL+'"></span>\
 	<span onselectstart="return false;" class="icon-list2" onclick="'+this.editor+'.execCommand(\'insertunorderedlist\')" title="'+lang.L_TOOLBAR_UL+'"></span>\
 	<span onselectstart="return false;" class="icon-quotes-right" onclick="'+this.editor+'.execCommand(\'formatBlock\', \'<blockquote>\')" title="'+lang.L_TOOLBAR_QUOTE+'"></span>\
-	<span onselectstart="return false;" class="icon-pagebreak" onclick="'+this.editor+'.execCommand(\'inserthtml\', \'<hr />\')" title="'+lang.L_TOOLBAR_HR+'"></span>\
 	<span onselectstart="return false;" id="'+this.textareaId+'-smilies" class="icon-happy" onclick="'+this.editor+'.execCommand(\'smilies\')" title="'+lang.L_TOOLBAR_SMILIES+'"></span>\
+	<span onselectstart="return false;" id="'+this.textareaId+'-linker" class="icon-link" onclick="'+this.editor+'.execCommand(\'link\')" title="'+lang.L_TOOLBAR_LINK+'"></span>\
 	<span onselectstart="return false;" class="icon-image" onclick="mediasManager.openPopup(\''+this.editor+'\', false, \'PLXEDITOR_fallback\')" title="'+lang.L_TOOLBAR_MEDIAS+'"></span>\
 	<span onselectstart="return false;" id="'+this.textareaId+'-youtube" class="icon-youtube" onclick="'+this.editor+'.execCommand(\'youtube\')" title="'+lang.L_TOOLBAR_YOUTUBE+'"></span>\
-	<span onselectstart="return false;" id="'+this.textareaId+'-linker" class="icon-link" onclick="'+this.editor+'.execCommand(\'link\')" title="'+lang.L_TOOLBAR_LINK+'"></span>\
 	<span onselectstart="return false;" id="'+this.textareaId+'-fullscreen" class="icon-expand" onclick="'+this.editor+'.execCommand(\'fullscreen\')" title="'+lang.L_TOOLBAR_FULLSCREEN+'" style="float:right;">'+lang.L_TOOLBAR_FULLSCREEN+'&nbsp</span>\
-	<span onselectstart="return false;" id="'+this.textareaId+'-html" class="icon-embed2" onclick="'+this.editor+'.execCommand(\'html\')" title="'+lang.L_TOOLBAR_HTML+'"style="float:right;">'+lang.L_TOOLBAR_HTML+'&nbsp</span>\
-	</br>\
-	<select onselectstart="return false;" onchange="'+this.editor+'.execCommand(\'formatblock\', this.value);this.selectedIndex=0;"data-tag="style">\
+	<hr>\
+	<select onselectstart="return false;" onchange="'+this.editor+'.execCommand(\'formatblock\', this.value);this.selectedIndex=0;" data-tag="style">\
 		<option value="">STYLE</option>\
 		<option value="<h1>">H1</option>\
 		<option value="<h2>">H2</option>\
@@ -92,13 +92,10 @@ PLXEDITOR.editor=function() {
 		<option value="<p>">P</option>\
 		<option value="<pre>">Pre</option>\
 	</select>\
-	<select onchange="'+this.editor+'.execCommand(this.value);;this.selectedIndex=0;" data-tag="align">\
-		<option value="">ALIGN</option>\
-		<option value="justifyleft">&#xe911 '+lang.L_TOOLBAR_P_LEFT+'</option>\
-		<option value="justifycenter">&#xe912 '+lang.L_TOOLBAR_P_CENTER+'</option>\
-		<option value="justifyright">&#xe913 '+lang.L_TOOLBAR_P_RIGHT+'</option>\
-		<option value="justifyFull">&#xe914 '+lang.L_TOOLBAR_P_JUSTIFY+'</option>\
-	</select>\
+	<span onclick="'+this.editor+'.execCommand(\'justifyleft\');;this.selectedIndex=0;" class="icon-paragraph-left" title="'+lang.L_TOOLBAR_P_LEFT+'"  data-tag="align"></span>\
+	<span onclick="'+this.editor+'.execCommand(\'justifycenter\');;this.selectedIndex=1;" class="icon-paragraph-center" title="'+lang.L_TOOLBAR_P_CENTER+'"  data-tag="align"></span>\
+	<span onclick="'+this.editor+'.execCommand(\'justifyright\');;this.selectedIndex=2;" class="icon-paragraph-right" title="'+lang.L_TOOLBAR_P_RIGHT+'"  data-tag="align"></span>\
+	<span onclick="'+this.editor+'.execCommand(\'justifyfull\');;this.selectedIndex=3;" class="icon-paragraph-justify" title="'+lang.L_TOOLBAR_P_JUSTIFY+'"  data-tag="align"></span>\
 	<span onselectstart="return false;" class="icon-bold" onclick="'+this.editor+'.execCommand(\'bold\')" title="'+lang.L_TOOLBAR_BOLD+'"></span>\
 	<span onselectstart="return false;" class="icon-italic" onclick="'+this.editor+'.execCommand(\'italic\')" title="'+lang.L_TOOLBAR_ITALIC+'"></span>\
 	<span onselectstart="return false;" class="icon-underline" onclick="'+this.editor+'.execCommand(\'underline\')" title="'+lang.L_TOOLBAR_UNDERLINE+'"></span>\
@@ -107,11 +104,12 @@ PLXEDITOR.editor=function() {
 	<span onselectstart="return false;" class="icon-subscript" onclick="'+this.editor+'.execCommand(\'subscript\')" title="'+lang.L_TOOLBAR_SUBSCRIPT+'"></span>\
 	<span onselectstart="return false;" id="'+this.textareaId+'-forecolor" class="icon-adjust" onclick="'+this.editor+'.execCommand(\'forecolor\')" title="'+lang.L_TOOLBAR_FORECOLOR+'"></span>\
 	<span onselectstart="return false;" id="'+this.textareaId+'-backcolor" class="icon-tint" onclick="'+this.editor+'.execCommand(\'backcolor\')" title="'+lang.L_TOOLBAR_BACKCOLOR+'"></span>\
-	<span onselectstart="return false;" class="icon-terminal" onclick="'+this.editor+'.execCommand(\'code\')" title="'+lang.L_TOOLBAR_CODE+'">'+lang.L_TOOLBAR_CODE+'&nbsp</span>\
+	<span onselectstart="return false;" class="icon-pagebreak" onclick="'+this.editor+'.execCommand(\'inserthtml\', \'<hr />\')" title="'+lang.L_TOOLBAR_HR+'" style="float:right;"></span>\
 	<span onselectstart="return false;" class="icon-pilcrow" onclick="'+this.editor+'.execCommand(\'inserthtml\', \'<br />\')" title="'+lang.L_TOOLBAR_BR+'" style="float:right;"></span>\
 	</div>\
 	';
-		var html = '';
+
+	var html = '';
 		html += '<input type="hidden" id="'+this.textareaId+'" name="'+this.textareaId.replace(/id_/,'')+'" value="" />';
 		html += '<div id="'+this.textareaId+'-toolbar" class="plxeditor-toolbar">';
 		// toolbar
@@ -251,11 +249,11 @@ PLXEDITOR.editor=function() {
 	create.prototype.convertLinks=function(txt, how) {
 		// conversion des liens
 		if(how==0) {
-			txt=txt.replace(new RegExp(PLXEDITOR_PATH_MEDIAS, 'g'), "../../"+PLXEDITOR_PATH_MEDIAS);
-			txt=txt.replace(new RegExp(PLXEDITOR_PATH_PLUGINS, 'g'), "../../"+PLXEDITOR_PATH_PLUGINS);			
+			txt=txt.replace(new RegExp(PLXEDITOR_PATH_MEDIAS, 'g'), PLUXML_ROOT+PLXEDITOR_PATH_MEDIAS);
+			txt=txt.replace(new RegExp(PLXEDITOR_PATH_PLUGINS, 'g'), PLUXML_ROOT+PLXEDITOR_PATH_PLUGINS);			
 		} else {
-			txt=txt.replace(new RegExp("../../"+PLXEDITOR_PATH_MEDIAS, 'g'), PLXEDITOR_PATH_MEDIAS);
-			txt=txt.replace(new RegExp("../../"+PLXEDITOR_PATH_PLUGINS, 'g'), PLXEDITOR_PATH_PLUGINS);
+			txt=txt.replace(new RegExp(PLUXML_ROOT+PLXEDITOR_PATH_MEDIAS, 'g'), PLXEDITOR_PATH_MEDIAS);
+			txt=txt.replace(new RegExp(PLUXML_ROOT+PLXEDITOR_PATH_PLUGINS, 'g'), PLXEDITOR_PATH_PLUGINS);
 		}
 		return txt;
 	},
@@ -383,7 +381,6 @@ PLXEDITOR_fallback = function(cible, txt, replace) {
 	path = "/" + path;
 	txt = txt.replace(root,path);*/
 	
-	txt = txt.replace(root,'../../');
 	var res = txt.match(/\.tb\.(jpe?g|gif|png)$/gi);
 	var ext = txt.substr(txt.lastIndexOf('.') + 1);
 	if(res) {
@@ -485,10 +482,10 @@ PLXEDITOR.linker=function() {
 	},
 	create.prototype.panel=function() {
 		var table = '<table class="popup" border="0" cellspacing="0" cellpadding="0">';
-		table += '<tr><td>Lien :</td><td><input type="text" value="http://" id="txtHref" /></td></tr>';
-		table += '<tr><td>Titre du lien :</td><td><input type="text" value="'+this.value+'" id="txtTitle" /></td></tr>';
-		table += '<tr><td>class :</td><td><input type="text" value="" id="txtClass" /></td></tr>';
-		table += '<tr><td>rel :</td><td><input type="text" value="" id="txtRel" /></td></tr>';
+		table += '<tr><td>Link :</td><td><input type="text" value="http://" id="txtHref" /></td></tr>';
+		table += '<tr><td>Title of link :</td><td><input type="text" value="'+this.value+'" id="txtTitle" /></td></tr>';
+		table += '<tr><td>Class :</td><td><input type="text" value="" id="txtClass" /></td></tr>';
+		table += '<tr><td>Relevant to :</td><td><input type="text" value="" id="txtRel" /></td></tr>';
 		table += '<tr><td colspan="2" style="test-align:center;"><input style="display:inline-block;" type="submit" value="Ok" onclick="PLXEDITOR.linker.setLink('+this.editor+')" />&nbsp;\
 		<input style="margin-left:10px; display:inline-block;" type="submit" name="btnCancel" id="btnCancel" value="Annuler" onclick="PLXEDITOR.dialog.close(\'linker\')" /></td></tr>';
 		table += '</table>';
@@ -502,7 +499,7 @@ PLXEDITOR.linker=function() {
 			var sClass = (E$('txtClass') ? (E$('txtClass').value!=''? ' class="'+E$('txtClass').value+'"':'') : '');
 			var sRel = (E$('txtRel') ? (E$('txtRel').value!=''? ' rel="'+E$('txtRel').value+'"':'') : '');
 			if(sTtitle=='' || PLXEDITOR.linker.isUrl(sHref)==false) return;
-			editor.execCommand('inserthtml', '<a href="'+sHref+'" title="'+sTtitle+'"'+sClass+sRel+'>'+sTtitle+'</a> ');
+			editor.execCommand('inserthtml', '<a href="' + sHref + '" title="' + sTtitle + '"' + sClass + sRel+'>' + sTtitle + '</a> ');
 			PLXEDITOR.dialog.close('linker');
 		},
 		isUrl:function(s) {
@@ -536,10 +533,10 @@ PLXEDITOR.youtube=function() {
 	},
 	create.prototype.panel=function() {
 		var table = '<table class="popup" border="0" cellspacing="0" cellpadding="0">';
-		table += '<tr><td>Lien :</td><td><input type="text" value="http://www.youtube.com/embed/" id="txtHref" /></td></tr>';
-		table += '<tr><td>Titre du lien :</td><td><input type="text" value="'+this.value+'" id="txtTitle" /></td></tr>';
-		table += '<tr><td>class :</td><td><input type="text" value="" id="txtClass" /></td></tr>';
-		table += '<tr><td>rel :</td><td><input type="text" value="" id="txtRel" /></td></tr>';
+		table += '<tr><td>Link :</td><td><input type="text" value="http://www.youtube.com/embed/" id="txtHref" /></td></tr>';
+		table += '<tr><td>Title of link :</td><td><input type="text" value="'+this.value+'" id="txtTitle" /></td></tr>';
+		table += '<tr><td>Class :</td><td><input type="text" value="" id="txtClass" /></td></tr>';
+		table += '<tr><td>Relevant to :</td><td><input type="text" value="" id="txtRel" /></td></tr>';
 		table += '<tr><td colspan="2"><input style="display:inline-block;" type="submit" value="Ok" onclick="PLXEDITOR.youtube.setLink('+this.editor+')" />&nbsp;\
 		<input style="display:inline-block; margin-left:10px;" type="submit" name="btnCancel" id="btnCancel" value="Annuler" onclick="PLXEDITOR.dialog.close(\'youtube\')" /></td></tr>';
 		table += '</table>';

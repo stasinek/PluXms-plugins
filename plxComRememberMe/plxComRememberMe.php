@@ -23,7 +23,6 @@ class plxComRememberMe extends plxPlugin {
 		$this->addHook('IndexEnd', 'IndexEnd');
 
 	}
-
 	/**
 	 * Méthode qui ajoute la case à cocher "Se rappeler de moi" au niveau des commentaires
 	 *
@@ -53,7 +52,7 @@ class plxComRememberMe extends plxPlugin {
 			$cookie_path = "/";
 			$cookie_domain = "";
 			$cookie_secure = 0;
-			$cookie_expire = time() + 3600 * 24 * 30 * 2; # durée de vie du cookie = 2 mois
+			$cookie_expire = time() + 3600 * 24 * 30 * 3; # durée de vie du cookie = 3 mois
 			$cookie_value["name"]=plxUtils::unSlash($_POST["name"]);
 			$cookie_value["site"]=plxUtils::unSlash($_POST["site"]);
 			$cookie_value["mail"]=plxUtils::unSlash($_POST["mail"]);
@@ -63,9 +62,7 @@ class plxComRememberMe extends plxPlugin {
 				setcookie("plxComRememberMe", serialize($cookie_value), $cookie_expire, $cookie_path."; HttpOnly", $cookie_domain, $cookie_secure);
 		}';
 		echo "<?php ".$string." ?>";
-
 	}
-
 	/**
 	 * Méthode qui rappelle les données sauvegardées dans le cookie
 	 *
@@ -83,7 +80,6 @@ class plxComRememberMe extends plxPlugin {
 			$_SESSION["msg"]["mail"] = plxUtils::getValue($cookie_value["mail"]);
 		}';
 		echo "<?php ".$string." ?>";
-
 	}
 }
 ?>

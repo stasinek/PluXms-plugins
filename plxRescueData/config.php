@@ -17,7 +17,7 @@ if(!empty($_POST)) {
 
 # initialisation des paramètres par défaut
 $params = $plxPlugin->getParams();
-$timeout = empty($params['timeout']) ? '10' : $params['timeout']['value'];
+$timeout = empty($params['timeout']) ? '30' : $params['timeout']['value'];
 
 ?>
 

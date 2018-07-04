@@ -6,7 +6,6 @@
 class plxRescueData extends plxPlugin {
 
 	private $timeout = null;
-
 	/**
 	 * Constructeur de la classe
 	 *
@@ -30,9 +29,7 @@ class plxRescueData extends plxPlugin {
 		# init des variables
 		$this->timeout = $this->getParam('timeout');
 		if(empty($this->timeout) OR $this->timeout=='') $this->timeout=15;
-
     }
-
 	/**
 	 * Méthode qui ajoute le fichier css dans le fichier header.php du thème
 	 *
@@ -50,7 +47,6 @@ class plxRescueData extends plxPlugin {
 	public function AdminArticleFoot() {
 
 		echo '
-
 <script type="text/javascript">
 $(function(){
 	$("#form_article").sisyphus({
@@ -67,9 +63,7 @@ $(function(){
 	});
 });
 </script>
-
 		';
-
 	}
 
 	public function AdminStaticFoot() {
@@ -90,9 +84,7 @@ $(function(){
 	});
 });
 </script>
-
 		';
 	}
-
 }
 ?>
