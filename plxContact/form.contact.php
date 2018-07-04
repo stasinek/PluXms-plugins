@@ -1,14 +1,11 @@
-<?php if(!defined('PLX_ROOT')) exit; ?>
-<?php
+<?php if(!defined('PLX_ROOT')) exit;
 
 # récuperation d'une instance de plxShow
 $plxShow = plxShow::getInstance();
 $plxShow->plxMotor->plxCapcha = new plxCapcha();
 $plxPlugin = $plxShow->plxMotor->plxPlugins->getInstance('plxContact');
 
-$error=false;
-$success=false;
-
+$error=false; $success=false;
 $captcha = $plxPlugin->getParam('captcha')=='' ? '1' : $plxPlugin->getParam('captcha');
 
 if(!empty($_POST)) {
@@ -34,9 +31,7 @@ if(!empty($_POST)) {
 	$mail='';
 	$content='';
 }
-
 ?>
-
 <div id="form_contact">
 	<?php if($error): ?>
 	<p class="contact_error"><?php echo $error ?></p>

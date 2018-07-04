@@ -1,9 +1,8 @@
+<?php if(!defined('PLX_ROOT')) { exit; }?>
 <?php
-if(!defined('PLX_ROOT')) { exit; }
 
 # Control du token du formulaire
 plxToken::validateFormToken($_POST);
-
 /*
  * Pour obtenir la liste des fichiers *.php utilisant printArea dans le dossier core/admin/ :
  * grep -l printArea ../../core/admin/*.php |sed 's/^.*\/\([^\/]\+\)\.php$/\1/'
@@ -60,7 +59,6 @@ if(!empty($_POST)) {
 	header('Location: parametres_plugin.php?p='.$plugin);
 	exit;
 }
-
 $baseUrl = $plxPlugin->root();
 $field = 'theme';
 ?>

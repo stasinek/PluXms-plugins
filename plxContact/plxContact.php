@@ -42,7 +42,7 @@ class plxContact extends plxPlugin {
 		$string  = "if(\$this->plxMotor->mode=='contact') {";
 		$string .= "\t\$array = array();";
 		$string .= "\t\$array[\$this->plxMotor->cible] = array(
-			'name'		=> '".$this->getParam('mnuName')."',
+			'name'		=> \$plxAdmin->plxPlugins->aPlugins['plxContact']->getParam('mnuName'),
 			'menu'		=> '',
 			'url'		=> 'contact',
 			'readable'	=> 1,
@@ -83,7 +83,8 @@ class plxContact extends plxPlugin {
 
 		$string = "
 			if(\$this->plxMotor->mode=='contact') {
-				echo plxUtils::strCheck(\$this->plxMotor->aConf['title'].' - '.$this->plxMotor->getParam('mnuName'));
+				echo '';
+				echo plxUtils::strCheck(\$this->plxMotor->aConf['title'].' - '.\$plxAdmin->plxPlugins->aPlugins['plxContact']->getParam('mnuName'));
 				return true;
 			}";
 		echo '<?php '.$string.' ?>';
@@ -97,13 +98,15 @@ class plxContact extends plxPlugin {
 	public function plxShowStaticListEnd() {
 		# ajout du menu pour accèder à la page de contact
 
-		if($this->getParam('mnuDisplay')) {
+			if($this->getParam('mnuDisplay')) {
 			$string = "
-			\$class = \$this->plxMotor->mode==\$this->plxMotor->getParam('url') ? 'active' : 'noactive';
-			array_splice(\$menus,(\$this->plxMotor->getParam('mnuPos')-1),0,'<li><a class=\"menu-item static'.\$class.'\" href=\"'.\$this->plxMotor->urlRewrite('?contact').'\" title=\"'.\$this->plxMotor->getParam('mnuName').'\">'.\$this->plxMotor->getParam('mnuName').'</a></li>'); 
+			\$class = \$this->plxMotor->mode=='".$this->getParam('url')."' ? 'active' : 'noactive';
+			array_splice(\$menus,".($this->getParam('mnuPos')-1).",0,
+				'<li><a class=\"menu-item static'.\$class.'\" href=\"\$this->plxMotor->urlRewrite('?".$this->getParam('url')."')\" title=\"".$this->getParam('mnuName')."\">'
+				.'".$this->getParam('mnuName')."</a></li>'); 
 			";
 			echo '<?php '.$string.' ?>';
-		}
+			}
 	}
 	/**
 	 * Méthode qui ajoute le fichier css dans le fichier header.php du thème
@@ -119,6 +122,21 @@ class plxContact extends plxPlugin {
 		echo '<?php '.$string.' ?>';
 	}
 	/**
+	 * Méthode qui affiche un message si l'adresse email du contact n'est pas renseignée
+	 *
+	 * @return	stdio
+	 * @author	Stephane F
+	 **/
+	public function AdminTopBottom() {
+
+		$string = "
+		if('".$this->getParam('email')."'=='') {
+			echo '<p class=\"warning\">Plugin Contact<br />".$this->getLang('L_ERR_EMAIL')."</p>\";
+			plxMsg::Display();
+		}";
+		echo '<?php '.$string.' ?>';
+	}
+	/**
 	 * Méthode qui référence la page de contact dans le sitemap
 	 *
 	 * @return	stdio
@@ -128,26 +146,11 @@ class plxContact extends plxPlugin {
 		$string = "
 		echo '\n';
 		echo '\t<url>\n';
-		echo '\t\t<loc>'.\$this->plxMotor->urlRewrite('?'.\$this->plxMotor->getParam('url')).'</loc>\n';
+		echo '\t\t<loc>".$plxMotor->urlRewrite('?'.$plxAdmin->plxPlugins->aPlugins['plxContact']->getParam('url'))."</loc>\n';
 		echo '\t\t<changefreq>monthly</changefreq>\n';
 		echo '\t\t<priority>0.8</priority>\n';
 		echo '\t</url>\n';
 		";
-		echo '<?php '.$string.' ?>';
-	}
-	/**
-	 * Méthode qui affiche un message si l'adresse email du contact n'est pas renseignée
-	 *
-	 * @return	stdio
-	 * @author	Stephane F
-	 **/
-	public function AdminTopBottom() {
-
-		$string = "
-		if(\$plxAdmin->plxPlugins->aPlugins['plxContact']->getParam('email')=='') {
-			echo '<p class=\"warning\">Plugin Contact<br />'.$this->getLang('L_ERR_EMAIL').'</p>\";
-			plxMsg::Display();
-		}";
 		echo '<?php '.$string.' ?>';
 	}
 }

@@ -81,8 +81,8 @@ class plxSearch extends plxPlugin {
 	 **/
 	public function plxShowPageTitle() {
 		$string = "
-			if(\$this->plxMotor->mode == \$this->getParam('url')) {
-				echo plxUtils::strCheck(\$this->plxMotor->aConf['title']).' - '.plxUtils::strCheck(\$this->plxMotor->plxPlugins->aPlugins['plxSearch']->getLang('L_PAGE_TITLE'));
+			if(\$this->plxMotor->mode =='".$this->getParam('url')."') {
+				echo plxUtils::strCheck(\$this->plxMotor->aConf['title']).' - '.plxUtils::strCheck('".$this->getLang('L_PAGE_TITLE')."');
 				return true;
 			}
 		";
@@ -98,8 +98,11 @@ class plxSearch extends plxPlugin {
 
 		# ajout du menu pour accèder à la page de recherche
 		if($this->getParam('mnuDisplay')) {
-			$string  = "\$class = \$this->plxMotor->mode==\$this->getParam('url') ? 'active' : 'noactive';
-				array_splice(\$menus,".($this->getParam('mnuPos')-1).",0,'<li><a class=\"menu-item static '.\$class.'\" href=\"'.\$this->plxMotor->urlRewrite('?'.\$this->getParam('url')).'\">'.\$this->getParam('mnuName').'</a></li>');
+			
+			$string  = "\$class = \$this->plxMotor->mode=='".$this->getParam('url')."' ? 'active' : 'noactive';
+				array_splice(\$menus,".($this->getParam('mnuPos')-1).",0,
+					'<li><a class=\"menu-item static '.\$class.'\" href=\"".$this->plxMotor->urlRewrite('?'.$this->getParam('url'))."\">'
+					".$this->getParam('mnuName')."</a></li>');
 				";
 			echo "<?php ".$string." ?>";
 		}
@@ -138,7 +141,10 @@ class plxSearch extends plxPlugin {
 	 * @author	Stephane F
 	 **/
 	public function ThemeEndHead() {
-		echo "\t".'<link rel="stylesheet" type="text/css" href="'.PLX_PLUGINS.'plxSearch/style.css" media="screen" />'."\n";
+		$string = "
+			echo '\t<link rel=\"stylesheet\" type=\"text/css\" href=\"'.PLX_PLUGINS.'plxSearch/style.css\" media=\"screen\" />'.PHP_EOL;
+			";
+		echo "<?php ".$string." ?>";
 	}
 	/**
 	 * Méthode qui référence la page de recherche dans le sitemap
@@ -150,7 +156,7 @@ class plxSearch extends plxPlugin {
 		$string = "
 		echo '\n';
 		echo '\t<url>\n';
-		echo '\t\t<loc>".$plxMotor->urlRewrite('?'.$this->getParam('url'))."</loc>\n';
+		echo '\t\t<loc>".$plxMotor->urlRewrite('?'.$plxAdmin->plxPlugins->aPlugins['plxSearch']->getParam('url'))."</loc>\n';
 		echo '\t\t<changefreq>monthly</changefreq>\n';
 		echo '\t\t<priority>0.8</priority>\n';
 		echo '\t</url>\n';

@@ -1,5 +1,4 @@
-<?php
-if(!defined('PLX_ROOT')) { exit; }
+<?php if(!defined('PLX_ROOT')) { exit; }
 
 // https://ace.c9.io/
 // https://docs.emmet.io/
@@ -8,15 +7,11 @@ class kzAce extends plxPlugin {
 
 	//const ACE_PATH = 'ace/lib/ace'; // sans / final !
 	const ACE_PATH = 'ace/build/src'; // sans / final !
-
 	const EMMET_CORE_URL = 'https://cloud9ide.github.io/emmet-core/emmet.js';
 
 	public function __construct($default_lang) {
 
-		parent::__construct($default_lang);
-
-		$this->setConfigProfil(PROFIL_ADMIN);
-
+		parent::__construct($default_lang); $this->setConfigProfil(PROFIL_ADMIN);
 
 		if(is_dir(__DIR__.'/'.$this::ACE_PATH)) {
 			// parametres_plugin.php?p=kzAce
@@ -42,7 +37,6 @@ class kzAce extends plxPlugin {
 	public function root() {
 		return PLX_PLUGINS.__CLASS__.'/';
 	}
-
 	/**
 	 * Gestion des onglets pour les feuilles de style des plugins.
 	 *
@@ -95,13 +89,11 @@ class kzAce extends plxPlugin {
 	</script>
 <?php
 	}
-
 	public function get_available_themes() {
 		/* Dans les sources ou dans les modules compilés, l'emplacement des fichiers de thème varie :
 		 *	ace/lib/ace/theme/*.js
 		 *	ace/build/src/theme-*.js
 		 * */
-
 		// GLOB_BRACE n'est pas supporté par Alpine-Linux
 		$theme_path = '/theme'.((strpos($this::ACE_PATH, 'build') > 0) ? '-' : '/').'*.js';
 
@@ -117,7 +109,6 @@ class kzAce extends plxPlugin {
 		}
 		return $result;
 	}
-
 	private function __print_params() {
 		$i18n = array();
 		foreach(explode(' ', 'savedoc help fullscreen settings') as $field) {
@@ -140,19 +131,16 @@ class kzAce extends plxPlugin {
 			JSON_UNESCAPED_SLASHES + JSON_UNESCAPED_UNICODE + JSON_FORCE_OBJECT
 		);
 	}
-
 	public function AdminFootEndBody() {
 		// Utiliser les apostrophes simples pour data-params (données JSON) !
 		$function_name = 'json_encode';
 		if(function_exists($function_name)) {
-?>
-		<script
+		?><script
 			type="text/javascript"
 			src="<?php echo $this->root(); ?>require.js"
 			data-main="<?php echo $this->root(); ?>app.js"
 			data-params='<?php $this->__print_params(); ?>'
-		></script>
-<?php
+		></script><?php
 		} else {
 			plxMsg::Error(sprintf($this->getLang('L_MISSING_FUNCTION'), $function_name));
 		}

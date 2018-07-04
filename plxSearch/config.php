@@ -1,6 +1,5 @@
 <?php if(!defined('PLX_ROOT')) exit; ?>
 <?php
-
 # Control du token du formulaire
 plxToken::validateFormToken($_POST);
 
@@ -33,9 +32,7 @@ if ($array = $files->query('/^static(-[a-z0-9-_]+)?.php$/')) {
 	foreach($array as $k=>$v)
 		$aTemplates[$v] = $v;
 }
-
 ?>
-
 <h2><?php echo $plxPlugin->getInfo('title') ?></h2>
 
 <form id="form_plxSearch" action="parametres_plugin.php?p=plxSearch" method="post">
@@ -57,18 +54,13 @@ if ($array = $files->query('/^static(-[a-z0-9-_]+)?.php$/')) {
 		<p class="field"><label for="id_savesearch"><?php echo $plxPlugin->lang('L_SAVE_SEARCH') ?>&nbsp;:</label></p>
 		<?php plxUtils::printSelect('savesearch',array('1'=>L_YES,'0'=>L_NO),$savesearch); ?>
 		<p>
-			<?php echo plxToken::getTokenPostMethod() ?>
-			<input type="submit" name="submit" value="<?php $plxPlugin->lang('L_SAVE') ?>" />
-		</p>
+		<?php echo plxToken::getTokenPostMethod() ?>
+		<input type="submit" name="submit" value="<?php $plxPlugin->lang('L_SAVE') ?>"/></p>
 	</fieldset>
 </form>
 
 <br />
 <?php $plxPlugin->lang('L_HELP') ?> :
 <pre style="color:#000;font-size:12px; background:#fff; padding: 10px 20px 20px 20px; border:1px solid #efefef">
-<?php
-echo (htmlspecialchars("
-<?php eval(\$plxShow->callHook('SearchForm')) ?>
-"));
-?>
+<?php echo (htmlspecialchars("<?php eval(\$plxShow->callHook('SearchForm')) ?>")); ?>
 </pre>
