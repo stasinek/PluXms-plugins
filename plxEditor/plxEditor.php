@@ -124,9 +124,9 @@ class plxEditor extends plxPlugin {
 	 * @author	Stephane F
 	 **/
 	public function AdminArticleTop() {
-		echo '<?php $chapo = str_replace($plxAdmin->aConf["medias"],PLX_ROOT..$plxAdmin->aConf["medias"], $chapo); ?>';
+		echo '<?php $chapo = str_replace($plxAdmin->aConf["medias"],PLX_ROOT.$plxAdmin->aConf["medias"], $chapo); ?>';
 		echo '<?php $chapo = str_replace($plxAdmin->aConf["racine_plugins"], "../../".$plxAdmin->aConf["racine_plugins"], $chapo); ?>';
-		echo '<?php $content = str_replace($plxAdmin->aConf["medias"], PLX_ROOT..$plxAdmin->aConf["medias"], $content); ?>';
+		echo '<?php $content = str_replace($plxAdmin->aConf["medias"], PLX_ROOT.$plxAdmin->aConf["medias"], $content); ?>';
 		echo '<?php $content = str_replace($plxAdmin->aConf["racine_plugins"], "../../".$plxAdmin->aConf["racine_plugins"], $content); ?>';
 	}
 

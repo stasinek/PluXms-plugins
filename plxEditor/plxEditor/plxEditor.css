@@ -85,14 +85,14 @@ img {
 	border:none;
 }
 select[data-tag="align"]  { 
-	width: 85px;
+	width: 70px;
 }
 select[data-tag="align"] option { 
 	font-family: 'icomoon', Arial !important;
 	font-size: 18px;
 }
 select[data-tag="style"]  { 
-	width: 85px;
+	width: 70px;
 }
 select[data-tag="style"] option { 
 	font-family: 'icomoon', Arial !important;
@@ -216,6 +216,9 @@ select[data-tag="style"] option {
 .icon-embed:after {
   content: "\e917";
 }
+.icon-embed2 {
+	background-color: #DBB;
+ }
 .icon-embed2:after {
   content: "\e918";
 }
@@ -234,12 +237,6 @@ select[data-tag="style"] option {
 .icon-tint:after {
   content: "\f043";
 }
-.icon-expand:after {
-  content: "\f065";
-}
-.icon-compress:after {
-  content: "\f066";
-}
 .icon-chain-broken:after {
   content: "\f127";
 }
@@ -257,6 +254,18 @@ select[data-tag="style"] option {
 }
 .icon-terminal:after {
   content: "\f120";
+}
+.icon-expand {
+	background-color: #AEA;
+ }
+.icon-expand:after {
+  content: "\f065";
+}
+.icon-compress {
+	background-color: #AAE;
+ }
+.icon-compress:after {
+  content: "\f066";
 }
 #colorpicker, #smilies, #linker, #youtube {
 	padding: 5px;

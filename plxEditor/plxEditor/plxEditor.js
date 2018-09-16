@@ -71,7 +71,6 @@ PLXEDITOR.editor=function() {
 		var toolbar = '\
 	<div  onselectstart="return false;" id="'+this.textareaId+'-toolbar-icons" class="show">\
 	<span onselectstart="return false;" id="'+this.textareaId+'-html" class="icon-embed2" onclick="'+this.editor+'.execCommand(\'html\')" title="'+lang.L_TOOLBAR_HTML+'"style="float:left;">'+lang.L_TOOLBAR_HTML+'&nbsp</span>\
-	<span onselectstart="return false;" class="icon-terminal" onclick="'+this.editor+'.execCommand(\'code\')" title="'+lang.L_TOOLBAR_CODE+'">'+lang.L_TOOLBAR_CODE+'&nbsp</span>\
 	<span onselectstart="return false;" class="icon-list-numbered" onclick="'+this.editor+'.execCommand(\'insertorderedlist\')" title="'+lang.L_TOOLBAR_OL+'"></span>\
 	<span onselectstart="return false;" class="icon-list2" onclick="'+this.editor+'.execCommand(\'insertunorderedlist\')" title="'+lang.L_TOOLBAR_UL+'"></span>\
 	<span onselectstart="return false;" class="icon-quotes-right" onclick="'+this.editor+'.execCommand(\'formatBlock\', \'<blockquote>\')" title="'+lang.L_TOOLBAR_QUOTE+'"></span>\
@@ -83,15 +82,19 @@ PLXEDITOR.editor=function() {
 	<hr>\
 	<select onselectstart="return false;" onchange="'+this.editor+'.execCommand(\'formatblock\', this.value);this.selectedIndex=0;" data-tag="style">\
 		<option value="">STYLE</option>\
+		<option value="<p>">Normal Text&nbsp</option>\
+		<option value="<q>">Quote</option>\
+		<option value="<blockquote>">Block Quote&nbsp</option>\
 		<option value="<h1>">H1</option>\
 		<option value="<h2>">H2</option>\
 		<option value="<h3>">H3</option>\
 		<option value="<h4>">H4</option>\
 		<option value="<h5>">H5</option>\
 		<option value="<h6>">H6</option>\
-		<option value="<p>">P</option>\
-		<option value="<pre>">Pre</option>\
+		<option value="<pre>">Preformated Text&nbsp</option>\
+		<option value="<code>">&#xF120 Code</option>\
 	</select>\
+	<span onselectstart="return false;" class="icon-terminal" onclick="'+this.editor+'.execCommand(\'code\')" title="'+lang.L_TOOLBAR_CODE+'"></span>\
 	<span onclick="'+this.editor+'.execCommand(\'justifyleft\');;this.selectedIndex=0;" class="icon-paragraph-left" title="'+lang.L_TOOLBAR_P_LEFT+'"  data-tag="align"></span>\
 	<span onclick="'+this.editor+'.execCommand(\'justifycenter\');;this.selectedIndex=1;" class="icon-paragraph-center" title="'+lang.L_TOOLBAR_P_CENTER+'"  data-tag="align"></span>\
 	<span onclick="'+this.editor+'.execCommand(\'justifyright\');;this.selectedIndex=2;" class="icon-paragraph-right" title="'+lang.L_TOOLBAR_P_RIGHT+'"  data-tag="align"></span>\
@@ -542,9 +545,10 @@ PLXEDITOR.youtube=function() {
 		table += '</table>';
 		return table;
 	};
-	return{
+	return {
 		create:create,
 		setLink:function(editor) {
+		debugger;
 			//var sWindow = lang.L_TOOLBAR_YOUTUBELINK;
 			var sHref = (E$('txtHref') ? E$('txtHref').value : '');
 			var sTtitle = (E$('txtTitle') ? E$('txtTitle').value : '');
@@ -555,18 +559,18 @@ PLXEDITOR.youtube=function() {
 			PLXEDITOR.dialog.close('youtube');
 		},
 		isUrl:function(url) {
-			var regexp = /(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/
-			return regexp.test(url);
+			var exp = new RegExp('/(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/');
+			return exp.test(url);
 		},
 		pasteYoutubeUrl:function(url) {
-			if(url===null) return;
-			var regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]{11,11}).*/;
-				var match = url.match(regExp);
+			if(url===null | url==='') return;
+			var exp = new RegExp('/^.*(youtube.com\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]{11,11}).*/');
+				var match = url.match(exp);
 				if (match) if (match.length >= 2) {
 					var videoId = match[2];
 					var result = '<div class="frame youtube"><iframe src="https://www.youtube.com/embed/'+videoId+'" width="560" height="315" allowfullscreen></iframe></div>';
 					this.frame.document.execCommand('inserthtml', false, result);
-			}
+					}
 		}
 	}
 }();
